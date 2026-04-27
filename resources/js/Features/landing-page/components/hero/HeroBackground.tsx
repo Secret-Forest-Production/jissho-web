@@ -7,6 +7,7 @@ export default function HeroBackground() {
       <img 
         src={HeroBg} 
         alt="Jissho Hero Background" 
+        draggable="false"
         className="w-full h-full object-cover"
       />
       

@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 
 interface ButtonProps {
     href?: string;
-    variant?: 'primary' | 'outline' | 'ghost';
+    variant?: 'primary' | 'outline' | 'ghost' | 'outlinered';
     size?: 'sm' | 'md' | 'lg';
     className?: string;
     children: React.ReactNode;
@@ -33,6 +33,7 @@ export default function Button({
     const variants = {
         primary: "bg-red-normal text-white hover:bg-red-normal-hover",
         outline: "border-2 border-red-normal text-white hover:bg-red-normal/10 ",
+        outlinered: "border-1 border-red-normal text-red-normal hover:bg-red-normal/10",
         ghost: "text-red-normal hover:bg-red-light/30 bg-transparent",
     };
 
