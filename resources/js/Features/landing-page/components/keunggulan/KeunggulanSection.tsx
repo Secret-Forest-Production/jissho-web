@@ -21,7 +21,7 @@ export default function KeunggulanSection() {
           </div>
 
           <div className="relative z-10 w-full pt-10 lg:pt-0">
-            <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-0">
+            <div className="flex flex-col items-center lg:flex-row lg:items-start lg:gap-0">
               <KeunggulanImage />
               <KeunggulanValue />
             </div>
