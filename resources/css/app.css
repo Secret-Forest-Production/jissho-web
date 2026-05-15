@@ -15,12 +15,14 @@
     --color-red-normal-active: #c80601;
 
     --color-red-dark: #bc0501;
+    --color-red-dark-dark: #d60500;
     --color-red-dark-hover: #960401;
     --color-red-dark-active: #700300;
     --color-red-darker: #580200;
 
     /* blue */
     --color-blue-dark: #0f172a;
+    --color-blue-gray: #f8fafc;
 
     /* grey */
     --color-grey-50: #f9fafb;
@@ -35,6 +37,7 @@
 
     /* text */
     --color-text-gray: #4a5565;
+    --color-text-gray-100: #f3f4f6;
 }
 
 @layer base {
@@ -52,7 +55,48 @@
 }
 
 .custom-pagination .swiper-pagination-bullet-active {
-    background: #FA0701;
+    background: #fa0701;
     width: 30px;
     border-radius: 999px;
+}
+
+.hero-services-swiper {
+    overflow: visible;
+}
+
+.hero-services-swiper .swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.hero-services-swiper .swiper-slide {
+    transform: scale(0.92);
+    transition:
+        transform 0.6s ease,
+        opacity 0.6s ease;
+    opacity: 0.7;
+}
+
+.hero-services-swiper .swiper-slide-active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.hero-services-swiper .swiper-pagination {
+    position: relative;
+    margin-top: 16px;
+    bottom: 0 !important;
+}
+
+.hero-services-swiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #d1d5db;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.hero-services-swiper .swiper-pagination-bullet-active {
+    width: 28px;
+    border-radius: 9999px;
+    background: #ef4444;
 }

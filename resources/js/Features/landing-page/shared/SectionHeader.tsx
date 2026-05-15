@@ -6,6 +6,7 @@ interface SectionHeaderProps {
     description?: string;
     className?: string;
     align?: "center" | "left";
+    showLine?: boolean;
 }
 
 export default function SectionHeader({
@@ -14,6 +15,7 @@ export default function SectionHeader({
     description,
     className = "",
     align = "center",
+    showLine = true,
 }: SectionHeaderProps) {
     const isLeft = align === "left";
 
@@ -33,21 +35,23 @@ export default function SectionHeader({
                     )}
                 </h2>
 
-                <div
-                    className={`absolute -bottom-1 w-full flex ${isLeft ? "justify-start" : "justify-center"}`}
-                >
-                    <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "64px" }}
-                        viewport={{ once: true }}
-                        transition={{
-                            delay: 0.6,
-                            duration: 0.8,
-                            ease: "easeInOut",
-                        }}
-                        className="h-1 bg-red-normal"
-                    />
-                </div>
+                {showLine && (
+                    <div
+                        className={`absolute -bottom-1 w-full flex ${isLeft ? "justify-start" : "justify-center"}`}
+                    >
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "64px" }}
+                            viewport={{ once: true }}
+                            transition={{
+                                delay: 0.6,
+                                duration: 0.8,
+                                ease: "easeInOut",
+                            }}
+                            className="h-1 bg-red-normal"
+                        />
+                    </div>
+                )}
             </div>
 
             {description && (
