@@ -1,36 +1,47 @@
-import React from "react";
 import { motion } from "framer-motion";
+
 import { heroData } from "../../data/hero/hero-link";
+
 import HeroBackground from "./HeroBackground";
+import { heroFadeLeftVariants } from "./hero.animation";
+import type { HeroData } from "./hero.type";
 
 export default function HeroSection() {
+    const hero: HeroData = heroData;
+
     return (
-        <section className="relative w-full py-24 md:py-32 overflow-hidden flex items-center">
+        <header
+            aria-labelledby="tentang-kami-hero-heading"
+            className="relative flex w-full items-center overflow-hidden py-24 md:py-32"
+        >
             <HeroBackground />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="max-w-3xl">
-                    <motion.h2
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                    <motion.h1
+                        custom={0}
+                        variants={heroFadeLeftVariants}
+                        initial="hidden"
+                        whileInView="visible"
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-8"
+                        id="tentang-kami-hero-heading"
+                        className="mb-8 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl"
                     >
-                        {heroData.title}
-                    </motion.h2>
+                        {hero.title}
+                    </motion.h1>
 
                     <motion.p
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        custom={0.2}
+                        variants={heroFadeLeftVariants}
+                        initial="hidden"
+                        whileInView="visible"
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-base md:text-lg text-gray-200 leading-relaxed font-medium"
+                        className="text-base font-medium leading-relaxed text-gray-200 md:text-lg"
                     >
-                        {heroData.description}
+                        {hero.description}
                     </motion.p>
                 </div>
             </div>
-        </section>
+        </header>
     );
 }

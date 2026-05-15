@@ -1,67 +1,99 @@
-import React from "react";
 import { Icon } from "@iconify/react";
+
 import Button from "@/Components/ui/Button";
 
-export default function ContactForm() {
-    const inputStyle =
-        "w-full pl-11 pr-4 py-3 text-md bg-gray-50 rounded-[20px] border-none outline-none focus:outline-none focus:ring-2 focus:ring-red-normal text-sm transition-all duration-200";
-    const labelStyle = "text-base font-semibold text-blue-dark block mb-1";
-    const iconStyle =
-        "absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 transition-colors group-focus-within:text-red-normal text-xl";
+const inputClassName =
+    "w-full rounded-[20px] bg-gray-50 py-3 pl-11 pr-4 text-sm text-text-gray outline-none transition-all duration-200 focus:ring-2 focus:ring-red-normal";
 
+const labelClassName = "mb-1 block text-base font-semibold text-blue-dark";
+
+const iconClassName =
+    "absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-400 transition-colors group-focus-within:text-red-normal";
+
+export default function ContactForm() {
     return (
-        <div className="bg-white p-8 md:p-10 rounded-[30px] shadow-lg">
-            <h3 className="text-xl font-bold text-blue-dark mb-8">
+        <div className="rounded-[30px] bg-white p-8 shadow-lg md:p-10">
+            <h3 className="mb-8 text-xl font-bold text-blue-dark">
                 Formulir Kontak
             </h3>
 
-            <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Nama Lengkap */}
+            <form
+                className="space-y-6"
+                aria-label="Formulir kontak Yayasan Jissho"
+            >
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
-                        <label className={labelStyle}>Nama Lengkap</label>
-                        <div className="relative group">
-                            <Icon icon="tabler:user" className={iconStyle} />
+                        <label htmlFor="fullName" className={labelClassName}>
+                            Nama Lengkap
+                        </label>
+
+                        <div className="group relative">
+                            <Icon
+                                icon="tabler:user"
+                                aria-hidden="true"
+                                className={iconClassName}
+                            />
+
                             <input
+                                id="fullName"
+                                name="fullName"
                                 type="text"
+                                autoComplete="name"
                                 placeholder="Adinda Wirasti"
-                                className={inputStyle}
+                                className={inputClassName}
                             />
                         </div>
                     </div>
 
-                    {/* No HP */}
                     <div>
-                        <label className={labelStyle}>No HP</label>
-                        <div className="relative group">
+                        <label htmlFor="phoneNumber" className={labelClassName}>
+                            No HP
+                        </label>
+
+                        <div className="group relative">
                             <Icon
                                 icon="mynaui:telephone"
-                                className={iconStyle}
+                                aria-hidden="true"
+                                className={iconClassName}
                             />
+
                             <input
-                                type="text"
+                                id="phoneNumber"
+                                name="phoneNumber"
+                                type="tel"
+                                inputMode="tel"
+                                autoComplete="tel"
                                 placeholder="+62 -"
-                                className={inputStyle}
+                                className={inputClassName}
                             />
                         </div>
                     </div>
                 </div>
 
-                {/* Program */}
                 <div>
-                    <label className={labelStyle}>Program diminati</label>
-                    <div className="relative group">
-                        <Icon icon="mdi:pencil-outline" className={iconStyle} />
+                    <label htmlFor="programInterest" className={labelClassName}>
+                        Program diminati
+                    </label>
+
+                    <div className="group relative">
+                        <Icon
+                            icon="mdi:pencil-outline"
+                            aria-hidden="true"
+                            className={iconClassName}
+                        />
+
                         <input
+                            id="programInterest"
+                            name="programInterest"
                             type="text"
                             placeholder="Pilih Program"
-                            className={inputStyle}
+                            className={inputClassName}
                         />
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                    <Button variant="outlinered" size="md">
+                <div className="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
+                    <Button type="button" variant="outlinered" size="md">
                         Konsultasi Gratis
                     </Button>
 

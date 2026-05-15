@@ -1,36 +1,45 @@
-import React from "react";
 import { motion } from "framer-motion";
 
+import { whyCardVariants } from "./why.animation";
+import type { WhyItem } from "./why.type";
+
 interface WhyCardProps {
-    title: string;
-    desc: string;
-    image: string;
+    item: WhyItem;
     index: number;
 }
 
-export default function WhyCard({ title, desc, image, index }: WhyCardProps) {
+export default function WhyCard({ item, index }: WhyCardProps) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-white p-6 md:p-8 shadow-md border border-gray-50 flex items-center gap-6 hover:shadow-lg transition-shadow"
+        <motion.article
+            custom={index}
+            variants={whyCardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+                once: true,
+                margin: "-60px",
+            }}
+            className="flex items-center gap-6 border border-gray-50 bg-white p-6 shadow-md transition-shadow hover:shadow-lg md:p-8"
         >
-            <div className="w-24 h-24 md:w-32 md:h-32 shrink-0">
+            <div className="h-24 w-24 shrink-0 md:h-32 md:w-32">
                 <img
-                    src={image}
-                    alt={title}
+                    src={item.image}
+                    alt={`Ilustrasi ${item.title}`}
+                    loading="lazy"
                     draggable={false}
-                    className="w-full h-full object-contain"
+                    className="h-full w-full object-contain"
                 />
             </div>
+
             <div className="flex flex-col">
-                <h4 className="text-lg md:text-xl font-bold text-blue-dark mb-2">
-                    {title}
-                </h4>
-                <p className="text-sm text-text-gray leading-relaxed">{desc}</p>
+                <h3 className="mb-2 text-lg font-bold text-blue-dark md:text-xl">
+                    {item.title}
+                </h3>
+
+                <p className="text-sm leading-relaxed text-text-gray">
+                    {item.desc}
+                </p>
             </div>
-        </motion.div>
+        </motion.article>
     );
 }

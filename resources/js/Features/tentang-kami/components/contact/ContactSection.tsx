@@ -1,42 +1,65 @@
-import React from "react";
-import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import ContactTitle from "./ContactTitle";
+import { motion } from "framer-motion";
+
 import ContactForm from "./ContactForm";
+import ContactTitle from "./ContactTitle";
+
 import { contactData } from "../../data/contact/contact-link";
+import { contactFormVariants } from "./contact.animation";
+import type { ContactData, ContactSocial } from "./contact.type";
 
 export default function ContactSection() {
+    const { content, socials } = contactData as ContactData;
+
     return (
-        <section className="py-24 bg-white" id="kontak">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <section
+            id="kontak"
+            aria-labelledby="contact-heading"
+            className="bg-white py-24"
+        >
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12">
                     <div className="lg:col-span-5">
                         <ContactTitle />
-                        <h3 className="text-2xl font-bold text-blue-dark mt-8 leading-tight">
-                            {contactData.content.quote}
+
+                        <h3 className="mt-8 text-2xl font-bold leading-tight text-blue-dark">
+                            {content.quote}
                         </h3>
-                        <p className="text-text-gray mt-6 leading-relaxed">
-                            {contactData.content.description}
+
+                        <p className="mt-6 leading-relaxed text-text-gray">
+                            {content.description}
                         </p>
 
-                        <div className="flex gap-4 mt-10">
-                            {contactData.socials.map((social, idx) => (
+                        <nav
+                            aria-label="Media sosial Yayasan Jissho"
+                            className="mt-10 flex gap-4"
+                        >
+                            {socials.map((social: ContactSocial) => (
                                 <a
-                                    key={idx}
+                                    key={social.href}
                                     href={social.href}
-                                    target="blank"
-                                    className={`w-12 h-12 rounded-xl flex items-center justify-center text-3xl transition-transform hover:-translate-y-1 ${social.color}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={social.label}
+                                    className={`flex h-12 w-12 items-center justify-center rounded-xl text-3xl transition-transform hover:-translate-y-1 ${social.color}`}
                                 >
-                                    <Icon icon={social.icon} />
+                                    <Icon
+                                        icon={social.icon}
+                                        aria-hidden="true"
+                                    />
                                 </a>
                             ))}
-                        </div>
+                        </nav>
                     </div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        variants={contactFormVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{
+                            once: true,
+                            margin: "-80px",
+                        }}
                         className="lg:col-span-7"
                     >
                         <ContactForm />

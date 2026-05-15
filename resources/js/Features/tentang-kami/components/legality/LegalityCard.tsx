@@ -1,41 +1,31 @@
-import React from "react";
+import type { LegalityItem } from "./legality.type";
 
 interface LegalityCardProps {
-    title: string;
-    desc: string;
-    image: string; 
-    align?: "left" | "right";
+    item: LegalityItem;
 }
 
-export default function LegalityCard({
-    title,
-    desc,
-    image,
-    align = "left",
-}: LegalityCardProps) {
-    const isRight = align === "right";
-
+export default function LegalityCard({ item }: LegalityCardProps) {
     return (
-        <div
-            className={`flex gap-4 items-start ${isRight ? "text-left" : "text-left"}`}
-        >
-            <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
+        <article className="flex items-start gap-4 text-left">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center md:h-20 md:w-20">
                 <img
-                    src={image}
-                    alt={title}
+                    src={item.image}
+                    alt={`Ikon ${item.title}`}
+                    loading="lazy"
                     draggable={false}
-                    className="w-full h-full object-contain"
+                    className="h-full w-full object-contain"
                 />
             </div>
 
             <div className="space-y-1">
-                <h4 className="font-bold text-blue-dark text-lg md:text-xl leading-tight">
-                    {title}
-                </h4>
-                <p className="text-text-gray text-xs md:text-sm leading-relaxed max-w-[250px]">
-                    {desc}
+                <h3 className="text-lg font-bold leading-tight text-blue-dark md:text-xl">
+                    {item.title}
+                </h3>
+
+                <p className="max-w-62.5 text-xs leading-relaxed text-text-gray md:text-sm">
+                    {item.desc}
                 </p>
             </div>
-        </div>
+        </article>
     );
 }

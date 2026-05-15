@@ -1,44 +1,58 @@
-import React from "react";
 import { motion } from "framer-motion";
-import LegalityTitle from "./LegalityTitle";
+
 import LegalityCard from "./LegalityCard";
+import LegalityTitle from "./LegalityTitle";
+
 import { legalityData } from "../../data/legality/legality-link";
+import { legalityImageVariants } from "./legality.animation";
+import type { LegalityData, LegalityItem } from "./legality.type";
 
 export default function LegalitySection() {
+    const { image, items } = legalityData as LegalityData;
+
+    const leftItems = items.slice(0, 2);
+    const rightItems = items.slice(2, 4);
+
     return (
-        <section className="py-24 bg-white overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+            id="legalitas"
+            aria-labelledby="legality-heading"
+            className="overflow-hidden bg-white py-24"
+        >
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <LegalityTitle />
 
-                <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    {/* Sisi Kiri */}
-                    <div className="lg:col-span-4 space-y-12 order-2 lg:order-1">
-                        {legalityData.items.slice(0, 2).map((item, idx) => (
-                            <LegalityCard key={idx} {...item} />
+                <div className="mt-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+                    <div className="order-2 space-y-12 lg:order-1 lg:col-span-4">
+                        {leftItems.map((item: LegalityItem) => (
+                            <LegalityCard key={item.title} item={item} />
                         ))}
                     </div>
 
-                    {/* Foto Tengah */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="lg:col-span-4 order-1 lg:order-2"
+                    <motion.figure
+                        variants={legalityImageVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{
+                            once: true,
+                            margin: "-80px",
+                        }}
+                        className="order-1 lg:order-2 lg:col-span-4"
                     >
-                        <div className="rounded-[20px] overflow-hidden ">
+                        <div className="overflow-hidden rounded-[20px]">
                             <img
-                                src={legalityData.image}
-                                alt="Yayasan Jissho Building"
-                                className="w-full h-auto object-cover"
+                                src={image}
+                                alt="Gedung dan lingkungan Yayasan Jissho"
+                                loading="lazy"
                                 draggable={false}
+                                className="h-auto w-full object-cover"
                             />
                         </div>
-                    </motion.div>
+                    </motion.figure>
 
-                    {/* Sisi Kanan */}
-                    <div className="lg:col-span-4 space-y-12 order-3">
-                        {legalityData.items.slice(2, 4).map((item, idx) => (
-                            <LegalityCard key={idx} {...item} />
+                    <div className="order-3 space-y-12 lg:col-span-4">
+                        {rightItems.map((item: LegalityItem) => (
+                            <LegalityCard key={item.title} item={item} />
                         ))}
                     </div>
                 </div>

@@ -1,52 +1,71 @@
-import React from "react";
 import { motion } from "framer-motion";
+
 import { completeProfileData } from "../../data/profile/profile-link";
+
 import CompleteProfileTitle from "./ProfileTitle";
+import { profileImageVariants, profileTextVariants } from "./profile.animation";
+import type { CompleteProfileData } from "./profile.type";
 
 export default function CompleteProfileSection() {
-    const { content } = completeProfileData;
+    const { content } = completeProfileData as CompleteProfileData;
 
     return (
-        <section className="py-24 bg-white overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+        <section
+            id="profil-lengkap"
+            aria-labelledby="complete-profile-heading"
+            className="relative overflow-hidden bg-white py-24"
+        >
+            <div
+                aria-hidden="true"
+                className="absolute right-0 top-0 z-0 h-32 w-32 rounded-full bg-red-normal/5 blur-2xl"
+            />
+
+            <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+                    <motion.article
+                        variants={profileTextVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{
+                            once: true,
+                            margin: "-80px",
+                        }}
                     >
                         <CompleteProfileTitle />
 
-                        <h3 className="text-xl md:text-2xl font-semibold text-blue-dark leading-snug mb-6">
+                        <h3 className="mb-6 text-xl font-semibold leading-snug text-blue-dark md:text-2xl">
                             {content.quote}
                         </h3>
 
                         <div className="space-y-6 text-justify lg:text-left">
-                            {content.paragraphs.map((text, idx) => (
+                            {content.paragraphs.map((text) => (
                                 <p
-                                    key={idx}
-                                    className="text-text-gray leading-relaxed text-sm md:text-base"
+                                    key={text}
+                                    className="text-sm leading-relaxed text-text-gray md:text-base"
                                 >
                                     {text}
                                 </p>
                             ))}
                         </div>
-                    </motion.div>
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-red-normal/5 rounded-full -z-0 blur-2xl" />
+                    </motion.article>
 
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.85 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                    <motion.figure
+                        variants={profileImageVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{
+                            once: true,
+                            margin: "-80px",
+                        }}
                     >
                         <img
                             src={content.image}
-                            className="w-full h-auto aspect-4/3 object-cover"
-                            alt="Tentang Yayasan Jissho"
+                            alt="Profil Yayasan Jissho dalam mendukung pembelajaran dan persiapan kerja ke Jepang"
+                            loading="lazy"
                             draggable={false}
+                            className="aspect-4/3 h-auto w-full object-cover"
                         />
-                    </motion.div>
+                    </motion.figure>
                 </div>
             </div>
         </section>

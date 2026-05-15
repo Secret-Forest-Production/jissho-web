@@ -7,6 +7,7 @@ export default function HeroBackground() {
                 src={HeroBg}
                 alt="Pemandangan Jepang dengan Gunung Fuji"
                 className="h-full w-full object-cover"
+                draggable={false}
                 loading="eager"
                 fetchPriority="high"
             />
