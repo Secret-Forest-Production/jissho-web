@@ -7,7 +7,7 @@ export const navLinks: NavLink[] = [
     { label: 'Beranda', href: '/' },
     { label: 'Tentang Kami', href: '/tentang-kami' }, 
     { label: 'Galeri', href: '/galeri' },
-    { label: 'Sejarah', href: '/sejarah' },
-    { label: 'Berita', href: '/berita' },
-    { label: 'Kontak', href: '/kontak' },
+    // { label: 'Sejarah', href: '/sejarah' },
+    { label: 'Berita', href: '/blog' },
+    // { label: 'Kontak', href: '/kontak' },
 ];

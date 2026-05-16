@@ -1,31 +1,34 @@
-import React from 'react';
-import BlogDetailBreadcrumb from '../components/detail/BlogDetailBreadcrumb';
-import BlogDetailHeader from '../components/detail/BlogDetailHeader';
-import BlogDetailContent from '../components/detail/BlogDetailContent';
-import BlogDetailTags from '../components/detail/BlogDetailTags';
-import BlogDetailNav from '../components/detail/BlogDetailNav';
+import { useMemo } from "react";
 
-export default function BlogDetailContainer() {
-  return (
-    <main className="relative w-full flex flex-col min-h-screen bg-white pt-20 pb-16 md:pt-20 md:pb-24">
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white  p-6 md:p-10 lg:p-14 rounded-lg">
-        
-        {/* Breadcrumb */}
-        <BlogDetailBreadcrumb />
+import BlogDetailBreadcrumb from "../components/detail/BlogDetailBreadcrumb";
+import BlogDetailContent from "../components/detail/BlogDetailContent";
+import BlogDetailHeader from "../components/detail/BlogDetailHeader";
+import BlogDetailNav from "../components/detail/BlogDetailNav";
+import BlogDetailTags from "../components/detail/BlogDetailTags";
 
-        {/* Header */}
-        <BlogDetailHeader />
+import { blogPosts } from "../data/blog";
 
-        {/* Main Content (Rich Text + Image + CTA) */}
-        <BlogDetailContent />
+interface BlogDetailContainerProps {
+    slug?: string;
+}
 
-        {/* Tags */}
-        <BlogDetailTags />
+export default function BlogDetailContainer({
+    slug,
+}: BlogDetailContainerProps) {
+    const post = useMemo(
+        () => blogPosts.find((item) => item.slug === slug) ?? blogPosts[0],
+        [slug],
+    );
 
-        {/* Navigation (Prev/Next) */}
-        <BlogDetailNav />
-
-      </section>
-    </main>
-  );
+    return (
+        <main className="relative flex min-h-screen w-full flex-col bg-white pb-16 pt-24 md:pb-24">
+            <article className="mx-auto w-full max-w-7xl rounded-lg bg-white px-4 sm:px-6 md:p-10 lg:p-14">
+                <BlogDetailBreadcrumb title={post.title} />
+                <BlogDetailHeader post={post} />
+                <BlogDetailContent post={post} />
+                <BlogDetailTags tags={post.tags} />
+                <BlogDetailNav currentPostId={post.id} />
+            </article>
+        </main>
+    );
 }

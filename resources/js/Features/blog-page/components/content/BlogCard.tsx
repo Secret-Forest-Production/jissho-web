@@ -1,58 +1,84 @@
-import React from 'react';
-import { Icon } from '@iconify/react';
-import { BlogPost } from '../../data/blog';
-import { Link } from '@inertiajs/react';
+import { Icon } from "@iconify/react";
+import { Link } from "@inertiajs/react";
+import { motion } from "framer-motion";
 
-export default function BlogCard({ post }: { post: BlogPost }) {
-  return (
-    <article className="bg-white border border-gray-200 overflow-hidden flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-      {/* Image Container */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden">
-        <img 
-          src={post.imageUrl} 
-          alt={post.title} 
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-        />
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4 bg-red-normal text-white px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-          {post.category}
-        </div>
-      </div>
+import { fadeUpVariants } from "../../animations/blog.animation";
+import type { BlogPost } from "../../types/blog.type";
 
-      {/* Content */}
-      <div className="p-6 flex flex-col flex-grow">
-        {/* Date */}
-        <div className="flex items-center text-sm text-gray-500 mb-3 gap-2">
-          <Icon icon="mdi:calendar-outline" className="text-gray-400" />
-          <time dateTime={post.date}>{post.date}</time>
-        </div>
+interface BlogCardProps {
+    post: BlogPost;
+    index: number;
+}
 
-        {/* Title */}
-        <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 leading-snug">
-          <Link href={`#`}>
-            {post.title}
-          </Link>
-        </h3>
+export default function BlogCard({ post, index }: BlogCardProps) {
+    return (
+        <motion.article
+            custom={index}
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            className="flex h-full flex-col overflow-hidden border rounded-md border-grey-border transition-shadow hover:shadow-md"
+        >
+            <Link
+                href={`/blog/${post.slug}`}
+                className="group relative aspect-4/3 w-full overflow-hidden"
+            >
+                <img
+                    src={post.imageUrl}
+                    alt={post.title}
+                    loading={index < 2 ? "eager" : "lazy"}
+                    draggable={false}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
 
-        {/* Excerpt */}
-        <p className="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
-          {post.excerpt}
-        </p>
+                <span className="absolute left-4 top-4 bg-red-normal px-3 py-1 text-xs rounded-sm font-semibold uppercase tracking-wider text-white">
+                    {post.category}
+                </span>
+            </Link>
 
-        {/* Read More Link */}
-        <div className="mt-auto">
-          <Link 
-            href={`#`} 
-            className="inline-flex items-center text-red-normal font-semibold text-sm hover:text-red-normal-hover transition-colors group"
-          >
-            Baca Selengkapnya
-            <Icon 
-              icon="mdi:arrow-right" 
-              className="ml-1 w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
-            />
-          </Link>
-        </div>
-      </div>
-    </article>
-  );
+            <div className="flex grow flex-col p-6">
+                <div className="mb-3 flex items-center gap-2 text-sm text-gray-500">
+                    <Icon
+                        icon="uil:calender"
+                        aria-hidden="true"
+                        className="text-gray-400"
+                    />
+                    <time dateTime={post.date}>
+                        {new Date(post.date).toLocaleDateString("id-ID", {
+                            day: "2-digit",
+                            month: "long",
+                            year: "numeric",
+                        })}
+                    </time>
+                </div>
+
+                <h2 className="mb-3 line-clamp-2 text-lg font-bold leading-snug text-gray-900">
+                    <Link
+                        href={`/blog/${post.slug}`}
+                        className="transition hover:text-red-normal"
+                    >
+                        {post.title}
+                    </Link>
+                </h2>
+
+                <p className="mb-6 line-clamp-3 grow text-sm text-gray-600">
+                    {post.excerpt}
+                </p>
+
+                <Link
+                    href={`/blog/${post.slug}`}
+                    aria-label={`Baca selengkapnya: ${post.title}`}
+                    className="group inline-flex items-center text-sm font-semibold text-red-700 transition-colors hover:text-red-normal-hover"
+                >
+                    Baca Selengkapnya
+                    <Icon
+                        icon="mdi:arrow-right"
+                        aria-hidden="true"
+                        className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    />
+                </Link>
+            </div>
+        </motion.article>
+    );
 }
