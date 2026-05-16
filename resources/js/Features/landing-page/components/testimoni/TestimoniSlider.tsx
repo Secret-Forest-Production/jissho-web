@@ -1,49 +1,72 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import TestimoniCard from "./TestimoniCard";
-import { testimoniData } from "../../data/testimoni/testimoni-link";
 import { Icon } from "@iconify/react";
+import { useRef } from "react";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import { testimoniData } from "../../data/testimoni/testimoni-link";
+import TestimoniCard from "./TestimoniCard";
+import { TESTIMONI_SWIPER_CONFIG } from "./testimoni.constant";
+import type { TestimoniItem } from "./testimoni.type";
+
 export default function TestimoniSlider() {
+    const prevRef = useRef<HTMLButtonElement | null>(null);
+    const nextRef = useRef<HTMLButtonElement | null>(null);
+
     return (
         <div className="relative px-6 md:px-16 lg:px-24">
-            <div className="swiper-button-prev-custom absolute left-1 md:left-3 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md w-10 h-10 flex items-center justify-center rounded-full cursor-pointer">
+            <button
+                ref={prevRef}
+                type="button"
+                aria-label="Testimoni sebelumnya"
+                className="absolute left-1 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md transition hover:bg-red-light md:left-3"
+            >
                 <Icon icon="lucide:chevron-left" className="text-red-normal" />
-            </div>
+            </button>
 
-            <div className="swiper-button-next-custom absolute right-1 md:right-3 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md w-10 h-10 flex items-center justify-center rounded-full cursor-pointer">
+            <button
+                ref={nextRef}
+                type="button"
+                aria-label="Testimoni berikutnya"
+                className="absolute right-1 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md transition hover:bg-red-light md:right-3"
+            >
                 <Icon icon="lucide:chevron-right" className="text-red-normal" />
-            </div>
+            </button>
 
             <Swiper
                 modules={[Navigation, Pagination]}
-                spaceBetween={30}
-                slidesPerView={1}
+                {...TESTIMONI_SWIPER_CONFIG}
                 navigation={{
-                    nextEl: ".swiper-button-next-custom",
-                    prevEl: ".swiper-button-prev-custom",
+                    prevEl: prevRef.current,
+                    nextEl: nextRef.current,
                 }}
                 pagination={{
                     clickable: true,
-                    el: ".custom-pagination",
+                    el: ".testimoni-pagination",
                 }}
-                breakpoints={{
-                    1024: { slidesPerView: 2 },
+                onBeforeInit={(swiper: SwiperType) => {
+                    if (
+                        typeof swiper.params.navigation !== "boolean" &&
+                        swiper.params.navigation
+                    ) {
+                        swiper.params.navigation.prevEl = prevRef.current;
+                        swiper.params.navigation.nextEl = nextRef.current;
+                    }
                 }}
                 className="pb-16"
             >
-                {testimoniData.list.map((item, index) => (
-                    <SwiperSlide key={index} className="h-auto">
+                {testimoniData.list.map((item: TestimoniItem) => (
+                    <SwiperSlide key={item.name} className="h-auto">
                         <TestimoniCard item={item} />
                     </SwiperSlide>
                 ))}
             </Swiper>
 
-            <div className="custom-pagination flex justify-center mt-5 gap-1" />
+            <div className="testimoni-pagination custom-pagination mt-5 flex justify-center gap-1" />
         </div>
     );
 }

@@ -14,6 +14,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/tentang-kami', function () {
+    return Inertia::render('TentangKami'); 
+})->name('tentang-kami');
+
 Route::get('/blog', function () {
     return Inertia::render('Blog/Index');
 });
