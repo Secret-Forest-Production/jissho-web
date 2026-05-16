@@ -1,4 +1,4 @@
-import SectionHeader from "../../shared/SectionHeader";
+import SectionHeader from "../../../../Components/ui/SectionHeader";
 import { testimoniData } from "../../data/testimoni/testimoni-link";
 
 export default function TestimoniTitle() {

@@ -34,7 +34,7 @@ export default function Button({
         primary: "bg-red-normal text-white hover:bg-red-normal-hover",
         outline: "border-2 border-red-normal text-white hover:bg-red-normal/10 ",
         outlinered: "border-1 border-red-normal text-red-normal hover:bg-red-normal/10",
-        ghost: "text-red-normal hover:bg-red-light/30 bg-transparent",
+        ghost: "text-red-normal hover:bg-red-light/30 bg-transparent border-2",
     };
 
     const sizes = {

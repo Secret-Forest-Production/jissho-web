@@ -1,19 +1,22 @@
-import React from 'react';
-import BannerBackground from './BannerBackground';
-import BannerValue from './BannerValue';
+import BannerBackground from "./BannerBackground";
+import BannerValue from "./BannerValue";
 
 export default function BannerSection() {
-  return (
-    <section className="relative py-16 md:py-20 overflow-hidden">
-      <BannerBackground />
+    return (
+        <section
+            id="pencapaian"
+            aria-labelledby="banner-stats-heading"
+            className="relative overflow-hidden py-16 md:py-20"
+        >
+            <BannerBackground />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
-        <div className="flex flex-col gap-0 items-start">
-          <div className="w-full">
-            <BannerValue />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+            <div className="relative z-10 mx-auto max-w-7xl px-4 text-left sm:px-6 lg:px-8">
+                <h2 id="banner-stats-heading" className="sr-only">
+                    Pencapaian Yayasan Jissho
+                </h2>
+
+                <BannerValue />
+            </div>
+        </section>
+    );
 }
