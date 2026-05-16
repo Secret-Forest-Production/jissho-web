@@ -22,6 +22,7 @@ export default function HeroServiceCard({ item, index }: Props) {
                 src={item.img}
                 alt={item.title}
                 loading="lazy"
+                draggable={false}
                 className="h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110"
             />
 
