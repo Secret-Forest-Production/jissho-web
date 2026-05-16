@@ -1,4 +1,4 @@
-import SectionHeader from "../../shared/SectionHeader";
+import SectionHeader from "../../../../Components/ui/SectionHeader";
 import { aboutData } from "../../data/about/about-link";
 
 export default function AboutTitle() {

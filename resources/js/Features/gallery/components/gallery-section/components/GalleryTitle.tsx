@@ -1,14 +1,13 @@
 import React from "react";
 import SectionHeader from "@/Components/ui/SectionHeader";
-import { visiMisiData } from "../../data/visi/visi-misi-link";
+import { galleryData } from "../../../data/gallery-link";
 
-export default function VisiMisiTitle() {
-    const { header } = visiMisiData;
-
+export default function GalleryTitle() {
+    const { header } = galleryData;
     return (
         <SectionHeader
             title={header.title}
-            highlight={header.highlight}
+            description={header.description}
             showLine={header.showLine}
         />
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import SectionHeader from "@/Features/landing-page/shared/SectionHeader";
+import SectionHeader from "@/Components/ui/SectionHeader";
 import { legalityData } from "../../data/legality/legality-link";
 
 export default function LegalityTitle() {

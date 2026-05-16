@@ -1,12 +1,12 @@
-import SectionHeader from '../../shared/SectionHeader';
-import { galeriData } from '../../data/galeri/galeri-link';
+import SectionHeader from "../../../../Components/ui/SectionHeader";
+import { galeriData } from "../../data/galeri/galeri-link";
 
 export default function GaleriTitle() {
-  return (
-    <SectionHeader 
-      title={galeriData.title.main}
-      highlight={galeriData.title.highlight}
-      description={galeriData.description}
-    />
-  );
+    return (
+        <SectionHeader
+            title={galeriData.title.main}
+            highlight={galeriData.title.highlight}
+            description={galeriData.description}
+        />
+    );
 }

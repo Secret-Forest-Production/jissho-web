@@ -1,5 +1,5 @@
 import React from "react";
-import SectionHeader from "@/Features/landing-page/shared/SectionHeader";
+import SectionHeader from "@/Components/ui/SectionHeader";
 import { whyData } from "../../data/why/why-link";
 
 export default function WhyHeader() {
