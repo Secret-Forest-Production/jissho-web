@@ -1,37 +1,74 @@
-import React from 'react';
-import { Link } from '@inertiajs/react';
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
+import { Link } from "@inertiajs/react";
 
-export default function BlogDetailNav() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-      {/* Previous Article */}
-      <Link 
-        href="#" 
-        className="group border border-gray-200 p-6 flex flex-col justify-center bg-white hover:border-red-normal hover:shadow-md transition-all"
-      >
-        <div className="flex items-center text-red-normal font-bold text-xs uppercase tracking-wider mb-2">
-          <Icon icon="mdi:arrow-left" className="mr-2 w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
-          Artikel Sebelumnya
-        </div>
-        <h4 className="text-gray-900 font-bold group-hover:text-red-normal transition-colors line-clamp-2">
-          Tips Lulus JLPT N3 Dalam 6 Bulan
-        </h4>
-      </Link>
+import { blogPosts } from "../../data/blog";
 
-      {/* Next Article */}
-      <Link 
-        href="#" 
-        className="group border border-gray-200 p-6 flex flex-col justify-center text-right bg-white hover:border-red-normal hover:shadow-md transition-all"
-      >
-        <div className="flex items-center justify-end text-red-normal font-bold text-xs uppercase tracking-wider mb-2">
-          Artikel Berikutnya
-          <Icon icon="mdi:arrow-right" className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-        </div>
-        <h4 className="text-gray-900 font-bold group-hover:text-red-normal transition-colors line-clamp-2">
-          Daftar Kota Terbaik untuk Kerja di Jepang
-        </h4>
-      </Link>
-    </div>
-  );
+interface BlogDetailNavProps {
+    currentPostId: number;
+}
+
+export default function BlogDetailNav({ currentPostId }: BlogDetailNavProps) {
+    const currentIndex = blogPosts.findIndex(
+        (post) => post.id === currentPostId,
+    );
+
+    const previousPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
+
+    const nextPost =
+        currentIndex < blogPosts.length - 1
+            ? blogPosts[currentIndex + 1]
+            : null;
+
+    if (!previousPost && !nextPost) return null;
+
+    return (
+        <nav
+            aria-label="Navigasi artikel"
+            className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2"
+        >
+            {previousPost ? (
+                <Link
+                    href={`/blog/${previousPost.slug}`}
+                    className="group flex flex-col justify-center border rounded-lg border-gray-200 bg-white p-6 transition-all hover:border-red-normal hover:shadow-md"
+                >
+                    <div className="mb-2 flex items-center text-xs font-bold uppercase tracking-wider text-red-normal">
+                        <Icon
+                            icon="mdi:arrow-left"
+                            aria-hidden="true"
+                            className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
+                        />
+                        Artikel Sebelumnya
+                    </div>
+
+                    <h3 className="line-clamp-2 font-bold text-gray-900 transition-colors group-hover:text-red-normal">
+                        {previousPost.title}
+                    </h3>
+                </Link>
+            ) : (
+                <div />
+            )}
+
+            {nextPost ? (
+                <Link
+                    href={`/blog/${nextPost.slug}`}
+                    className="group flex flex-col justify-center border rounded-lg border-gray-200 bg-white p-6 text-right transition-all hover:border-red-normal hover:shadow-md"
+                >
+                    <div className="mb-2 flex items-center justify-end text-xs font-bold uppercase tracking-wider text-red-normal">
+                        Artikel Berikutnya
+                        <Icon
+                            icon="mdi:arrow-right"
+                            aria-hidden="true"
+                            className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                        />
+                    </div>
+
+                    <h3 className="line-clamp-2 font-bold text-gray-900 transition-colors group-hover:text-red-normal">
+                        {nextPost.title}
+                    </h3>
+                </Link>
+            ) : (
+                <div />
+            )}
+        </nav>
+    );
 }

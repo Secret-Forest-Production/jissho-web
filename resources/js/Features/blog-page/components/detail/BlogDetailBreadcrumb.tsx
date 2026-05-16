@@ -1,15 +1,22 @@
-import React from 'react';
-import { Link } from '@inertiajs/react';
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
+import { Link } from "@inertiajs/react";
 
-export default function BlogDetailBreadcrumb() {
-  return (
-    <nav className="flex items-center text-sm text-gray-500 mb-6 space-x-2">
-      <Link href="/blog" className="hover:text-red-normal transition-colors">
-        Berita
-      </Link>
-      <Icon icon="mdi:chevron-right" className="w-4 h-4" />
-      <span className="text-red-normal font-medium">Detail Artikel</span>
-    </nav>
-  );
+export default function BlogDetailBreadcrumb({ title }: { title: string }) {
+    return (
+        <nav
+            aria-label="Breadcrumb"
+            className="mb-6 flex items-center space-x-2 text-sm text-gray-500"
+        >
+            <Link
+                href="/blog"
+                className="transition-colors hover:text-red-normal"
+            >
+                Berita
+            </Link>
+            <Icon icon="mdi:chevron-right" className="h-4 w-4" />
+            <span className="line-clamp-1 font-medium text-red-normal">
+                {title}
+            </span>
+        </nav>
+    );
 }

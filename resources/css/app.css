@@ -27,6 +27,7 @@
 
     /* grey */
     --color-grey-50: #f9fafb;
+    --color-grey-border: #C3C5D9;
 
     /* background */
     --background-image-hero-gradient: linear-gradient(

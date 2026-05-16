@@ -24,11 +24,13 @@ Route::get('/galeri', function () {
 
 Route::get('/blog', function () {
     return Inertia::render('Blog/Index');
-});
+})->name('blog.index');
 
-Route::get('/blog/detail', function () {
-    return Inertia::render('Blog/Show');
-});
+Route::get('/blog/{slug}', function ($slug) {
+    return Inertia::render('Blog/Show', [
+        'slug' => $slug,
+    ]);
+})->name('blog.show');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

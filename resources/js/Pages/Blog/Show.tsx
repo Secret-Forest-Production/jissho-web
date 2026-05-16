@@ -1,12 +1,16 @@
-import React from 'react';
-import { Head } from '@inertiajs/react';
-import BlogDetailContainer from '@/Features/blog-page/containers/blog-detail-container';
+import { Head } from "@inertiajs/react";
 
-export default function Show() {
-  return (
-    <>
-      <Head title="Mempersiapkan Karier di Jepang" />
-      <BlogDetailContainer />
-    </>
-  );
+import BlogDetailContainer from "@/Features/blog-page/containers/blog-detail-container";
+
+interface ShowProps {
+    slug: string;
+}
+
+export default function Show({ slug }: ShowProps) {
+    return (
+        <>
+            <Head title="Detail Artikel - Yayasan Jissho" />
+            <BlogDetailContainer slug={slug} />
+        </>
+    );
 }

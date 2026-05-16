@@ -1,34 +1,60 @@
-import React from 'react';
+import { motion } from "framer-motion";
+import { blogHeroData } from "../../data/blog";
 
 export default function BlogHero() {
-  return (
-    <section className="relative w-full pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-      {/* Background Image & Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&q=80" 
-          alt="Blog Background" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-[#0f172a]/80" />
-      </div>
+    return (
+        <header
+            aria-labelledby="blog-hero-heading"
+            className="relative flex min-h-130 w-full items-center overflow-hidden py-24 md:min-h-155 md:py-32 lg:py-40"
+        >
+            <div className="absolute inset-0 z-0">
+                <img
+                    src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&q=80"
+                    alt=""
+                    loading="eager"
+                    fetchPriority="high"
+                    draggable={false}
+                    className="h-full w-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-blue-dark/70" />
+            </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center md:items-start text-center md:text-left">
-        <div className="bg-red-normal text-white px-4 py-1 text-sm font-semibold tracking-wider mb-6">
-          WARTA JISSHO
-        </div>
-        
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-          Wawasan Terbaru <span className="text-red-normal">&</span> Tips <br className="hidden md:block" />
-          Sukses Karir di Jepang
-        </h1>
-        
-        <p className="text-gray-300 max-w-2xl text-lg">
-          Temukan kumpulan artikel eksklusif mengenai metode belajar bahasa Jepang, 
-          persiapan dokumen kerja, hingga cerita inspiratif dari alumni Yayasan Jissho.
-        </p>
-      </div>
-    </section>
-  );
+            <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex max-w-4xl flex-col items-center text-center md:items-start md:text-left">
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="mb-6 rounded-sm bg-red-normal px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-md shadow-red-normal/10 md:text-sm"
+                    >
+                        {blogHeroData.badge}
+                    </motion.div>
+
+                    <motion.h1
+                        id="blog-hero-heading"
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="mb-6 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
+                    >
+                        <span className="text-red-normal">
+                            {blogHeroData.title}
+                        </span>{" "}
+                        {blogHeroData.highlight}
+                        <br className="hidden md:block" />
+                        {blogHeroData.titleSuffix}
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="max-w-2xl text-base leading-relaxed text-gray-200 md:text-lg lg:text-xl"
+                    >
+                        {blogHeroData.description}
+                    </motion.p>
+                </div>
+            </div>
+        </header>
+    );
 }

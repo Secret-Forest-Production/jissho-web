@@ -5,9 +5,9 @@ import { Link } from '@inertiajs/react';
 
 export default function PopularPostsWidget() {
   return (
-    <div className="bg-white border border-gray-200 p-6 shadow-sm">
+    <div className="bg-white border border-grey-border p-6 rounded-lg">
       <div className="flex items-center gap-2 mb-4">
-        <Icon icon="mdi:trending-up" className="text-red-normal w-5 h-5" />
+        <Icon icon="mdi:trending-up" className="text-red-700 w-5 h-5" />
         <h3 className="font-bold text-gray-900 text-lg">Postingan Populer</h3>
       </div>
       <ul className="space-y-4">
@@ -25,7 +25,7 @@ export default function PopularPostsWidget() {
                 <h4 className="text-sm font-bold text-gray-800 line-clamp-2 group-hover:text-red-normal transition-colors leading-snug">
                   {post.title}
                 </h4>
-                <span className="text-xs text-gray-500 mt-1 uppercase tracking-wider font-semibold">
+                <span className="text-xs text-grey-border mt-1 uppercase tracking-wider">
                   {post.views} VIEWS
                 </span>
               </div>
