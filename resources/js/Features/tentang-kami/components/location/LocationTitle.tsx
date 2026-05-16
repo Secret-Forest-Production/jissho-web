@@ -1,5 +1,5 @@
 import React from "react";
-import SectionHeader from "@/Features/landing-page/shared/SectionHeader";
+import SectionHeader from "@/Components/ui/SectionHeader";
 import { locationData } from "../../data/location/location-link";
 
 export default function LocationTitle() {

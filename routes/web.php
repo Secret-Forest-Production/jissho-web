@@ -15,8 +15,12 @@ Route::get('/', function () {
 });
 
 Route::get('/tentang-kami', function () {
-    return Inertia::render('TentangKami'); 
+    return Inertia::render('TentangKami');
 })->name('tentang-kami');
+
+Route::get('/galeri', function () {
+    return Inertia::render('Galeri');
+})->name('galeri');
 
 Route::get('/blog', function () {
     return Inertia::render('Blog/Index');
@@ -36,4 +40,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

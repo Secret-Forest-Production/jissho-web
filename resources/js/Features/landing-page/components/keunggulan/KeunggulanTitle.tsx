@@ -1,4 +1,4 @@
-import SectionHeader from "../../shared/SectionHeader";
+import SectionHeader from "../../../../Components/ui/SectionHeader";
 import { keunggulanData } from "../../data/keunggulan/keunggulan-link";
 
 export default function KeunggulanTitle() {

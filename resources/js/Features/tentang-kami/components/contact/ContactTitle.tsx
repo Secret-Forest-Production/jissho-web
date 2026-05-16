@@ -1,5 +1,5 @@
 import React from "react";
-import SectionHeader from "@/Features/landing-page/shared/SectionHeader";
+import SectionHeader from "@/Components/ui/SectionHeader";
 import { contactData } from "../../data/contact/contact-link";
 
 export default function ContactTitle() {

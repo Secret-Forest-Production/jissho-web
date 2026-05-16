@@ -1,4 +1,4 @@
-import SectionHeader from "../../shared/SectionHeader";
+import SectionHeader from "../../../../Components/ui/SectionHeader";
 import { programData } from "../../data/program/program-link";
 
 export default function ProgramTitle() {
