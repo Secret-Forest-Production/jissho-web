@@ -18,6 +18,7 @@ export interface BlogCategory {
     count: number;
 }
 
+
 export interface BlogHeroData {
     badge: string;
     title: string;

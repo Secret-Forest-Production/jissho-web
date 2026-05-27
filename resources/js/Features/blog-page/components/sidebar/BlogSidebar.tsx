@@ -8,6 +8,7 @@ interface BlogSidebarProps {
     activeCategory: string;
     onSearchChange: (value: string) => void;
     onCategoryChange: (value: string) => void;
+    showCta?: boolean;
 }
 
 export default function BlogSidebar({
@@ -15,6 +16,7 @@ export default function BlogSidebar({
     activeCategory,
     onSearchChange,
     onCategoryChange,
+    showCta = true,
 }: BlogSidebarProps) {
     return (
         <aside
@@ -22,12 +24,15 @@ export default function BlogSidebar({
             className="flex w-full flex-col gap-6"
         >
             <SearchWidget value={searchQuery} onChange={onSearchChange} />
+
             <CategoryWidget
                 activeCategory={activeCategory}
                 onCategoryChange={onCategoryChange}
             />
+
             <PopularPostsWidget />
-            <CtaWidget />
+
+            {showCta && <CtaWidget />}
         </aside>
     );
 }

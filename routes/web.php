@@ -18,9 +18,13 @@ Route::get('/tentang-kami', function () {
     return Inertia::render('TentangKami');
 })->name('tentang-kami');
 
-Route::get('/galeri', function () {
-    return Inertia::render('Galeri');
-})->name('galeri');
+Route::get('/program', function () {
+    return Inertia::render('Program/Index');
+})->name('program');
+
+Route::get('/daftar-sekarang', function () {
+    return Inertia::render('Program/Register');
+})->name('program.register');
 
 Route::get('/blog', function () {
     return Inertia::render('Blog/Index');
@@ -31,6 +35,11 @@ Route::get('/blog/{slug}', function ($slug) {
         'slug' => $slug,
     ]);
 })->name('blog.show');
+
+Route::get('/galeri', function () {
+    return Inertia::render('Galeri');
+})->name('galeri');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

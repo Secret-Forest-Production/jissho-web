@@ -4,20 +4,24 @@ interface SectionHeaderProps {
     id?: string;
     title: string;
     highlight?: string;
+    suffix?: string;
     description?: string;
     className?: string;
     align?: "center" | "left";
     showLine?: boolean;
+    descriptionClassName?: string;
 }
 
 export default function SectionHeader({
     id,
     title,
     highlight,
+    suffix,
     description,
     className = "",
     align = "center",
     showLine = true,
+    descriptionClassName = "",
 }: SectionHeaderProps) {
     const isLeft = align === "left";
 
@@ -30,7 +34,7 @@ export default function SectionHeader({
                 duration: 0.8,
                 ease: [0.22, 1, 0.36, 1],
             }}
-            className={`max-w-4xl flex flex-col ${
+            className={`flex max-w-4xl flex-col ${
                 isLeft
                     ? "items-start text-left"
                     : "mx-auto mb-16 items-center text-center"
@@ -39,12 +43,18 @@ export default function SectionHeader({
             <div className={`relative ${showLine ? "pb-4" : ""}`}>
                 <h2
                     id={id}
-                    className="text-3xl font-bold leading-tight text-blue-dark md:text-4xl"
+                    className="text-2xl font-bold leading-tight text-blue-dark md:text-3xl lg:text-4xl"
                 >
-                    {title}{" "}
+                    {title}
+
                     {highlight && (
-                        <span className="text-red-normal">{highlight}</span>
+                        <>
+                            {" "}
+                            <span className="text-red-normal">{highlight}</span>
+                        </>
                     )}
+
+                    {suffix && <> {suffix}</>}
                 </h2>
 
                 {showLine && (
@@ -62,7 +72,7 @@ export default function SectionHeader({
                                 duration: 0.8,
                                 ease: [0.22, 1, 0.36, 1],
                             }}
-                            className="h-1 bg-red-normal"
+                            className="h-1 rounded-full bg-red-normal"
                         />
                     </div>
                 )}
@@ -70,9 +80,11 @@ export default function SectionHeader({
 
             {description && (
                 <p
-                    className={`text-sm leading-relaxed text-text-gray md:text-base ${
+                    className={`text-sm leading-relaxed text-gray-600 md:text-base ${
                         showLine ? "mt-6" : "mt-3"
-                    } ${isLeft ? "max-w-xs" : "mx-auto max-w-2xl"}`}
+                    } ${
+                        isLeft ? "max-w-xl" : "mx-auto max-w-3xl"
+                    } ${descriptionClassName}`}
                 >
                     {description}
                 </p>
