@@ -27,7 +27,7 @@ export default function LocationSection() {
                 </div>
 
                 {mainOffice?.mapUrl && (
-                    <div className="mt-12 h-112.5 w-full overflow-hidden rounded-[20px] shadow-2xl">
+                    <div className="mt-12 h-112.5 w-full overflow-hidden rounded-[20px]">
                         <iframe
                             title={`Peta lokasi ${mainOffice.name}`}
                             src={mainOffice.mapUrl}
