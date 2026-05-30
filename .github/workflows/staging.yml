@@ -57,17 +57,17 @@ jobs:
       # 7. UBAH: Git Pull menggunakan native SSH
       - name: Execute Git Pull on VM via SSH
         run: |
-          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cd /home/root/javatour && git pull origin main"
+          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cd /mnt/docker_sys/projects/jissho-web && git pull origin main"
 
       # 8. Transfer menggunakan Rsync (Otomatis akan menggunakan proxy SSH dari langkah 6)
       - name: Sync Build Assets to VM via Rsync
         run: |
-          rsync -avz public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/root/javatour/public/build/
+          rsync -avz public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/mnt/docker_sys/projects/jissho-web/public/build/
 
       # 9. UBAH: Post-Deployment menggunakan native SSH
       - name: Post-Deployment Laravel Commands
         run: |
-          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cd /home/root/javatour && \
+          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cd /mnt/docker_sys/projects/jissho-web && \
           docker compose exec -T app php artisan config:clear && \
           docker compose exec -T app php artisan view:clear && \
           docker compose exec -T app php artisan config:cache && \
