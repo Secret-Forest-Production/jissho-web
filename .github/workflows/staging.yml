@@ -68,6 +68,8 @@ jobs:
       - name: Post-Deployment Laravel Commands
         run: |
           ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cd /mnt/docker_sys/projects/jissho-web && \
+          docker compose up -d --build && \
+          docker compose exec -T app composer install --no-interaction --prefer-dist --optimize-autoloader && \
           docker compose exec -T app php artisan config:clear && \
           docker compose exec -T app php artisan view:clear && \
           docker compose exec -T app php artisan config:cache && \
