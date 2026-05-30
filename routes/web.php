@@ -5,6 +5,14 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+Route::post('/language', function (Illuminate\Http\Request $request) {
+    $locale = $request->input('locale');
+    if (in_array($locale, ['id', 'en', 'ja'])) {
+        session()->put('locale', $locale);
+    }
+    return back();
+})->name('language.switch');
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -26,15 +34,13 @@ Route::get('/daftar-sekarang', function () {
     return Inertia::render('Program/Register');
 })->name('program.register');
 
-Route::get('/blog', function () {
-    return Inertia::render('Blog/Index');
-})->name('blog.index');
+Route::post('/daftar-sekarang', [App\Http\Controllers\RegistrationController::class, 'store'])
+    ->middleware('throttle:register')
+    ->name('register.store');
 
-Route::get('/blog/{slug}', function ($slug) {
-    return Inertia::render('Blog/Show', [
-        'slug' => $slug,
-    ]);
-})->name('blog.show');
+Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
+
+Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
 
 Route::get('/galeri', function () {
     return Inertia::render('Galeri');

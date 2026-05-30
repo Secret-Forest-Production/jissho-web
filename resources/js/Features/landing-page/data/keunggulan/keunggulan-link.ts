@@ -1,29 +1,29 @@
 export const keunggulanData = {
   title: {
-    main: "Keunggulan",
-    highlight: "Kami"
+    main: "keunggulan.title",
+    highlight: "keunggulan.highlight"
   },
-  description: "Mengapa memilih Yayasan Jissho sebagai partner Anda menuju Jepang",
+  description: "keunggulan.description",
   values: [
     {
       icon: "mingcute:group-line",
-      title: "Pengajar Berpengalaman",
-      description: "Tim pengajar profesional dengan sertifikasi dan pengalaman mengajar bahasa Jepang lebih dari 5 tahun"
+      title: "keunggulan.items.teachers.title",
+      description: "keunggulan.items.teachers.description"
     },
     {
       icon: "mynaui:book-check",
-      title: "Kurikulum Terstruktur",
-      description: "Materi pembelajaran yang sistematis mengikuti standar JLPT dan kebutuhan industri Jepang"
+      title: "keunggulan.items.curriculum.title",
+      description: "keunggulan.items.curriculum.description"
     },
     {
       icon: "hugeicons:airplane-02",
-      title: "Bimbingan Kerja ke Jepang",
-      description: "Pendampingan lengkap dari proses pembelajaran hingga penempatan kerja di perusahaan Jepang"
+      title: "keunggulan.items.guidance.title",
+      description: "keunggulan.items.guidance.description"
     },
     {
       icon: "solar:medal-ribbon-outline",
-      title: "Sertifikasi Resmi",
-      description: "Sertifikat resmi yang diakui oleh lembaga dan perusahaan di Jepang untuk keperluan visa kerja"
+      title: "keunggulan.items.certification.title",
+      description: "keunggulan.items.certification.description"
     }
   ]
 };

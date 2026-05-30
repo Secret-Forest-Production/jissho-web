@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
 import Button from "@/Components/ui/Button";
 
@@ -11,20 +12,22 @@ const iconClassName =
     "absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-400 transition-colors group-focus-within:text-red-normal";
 
 export default function ContactForm() {
+    const { t } = useTranslation("common");
+
     return (
         <div className="rounded-[30px] bg-white p-8 shadow-lg md:p-10">
             <h3 className="mb-8 text-xl font-bold text-blue-dark">
-                Formulir Kontak
+                {t("about_page.contact.form.title")}
             </h3>
 
             <form
                 className="space-y-6"
-                aria-label="Formulir kontak Yayasan Jissho"
+                aria-label={t("about_page.contact.form.aria_form")}
             >
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
                         <label htmlFor="fullName" className={labelClassName}>
-                            Nama Lengkap
+                            {t("about_page.contact.form.name_label")}
                         </label>
 
                         <div className="group relative">
@@ -39,7 +42,7 @@ export default function ContactForm() {
                                 name="fullName"
                                 type="text"
                                 autoComplete="name"
-                                placeholder="Adinda Wirasti"
+                                placeholder={t("about_page.contact.form.name_placeholder")}
                                 className={inputClassName}
                             />
                         </div>
@@ -47,7 +50,7 @@ export default function ContactForm() {
 
                     <div>
                         <label htmlFor="phoneNumber" className={labelClassName}>
-                            No HP
+                            {t("about_page.contact.form.phone_label")}
                         </label>
 
                         <div className="group relative">
@@ -63,7 +66,7 @@ export default function ContactForm() {
                                 type="tel"
                                 inputMode="tel"
                                 autoComplete="tel"
-                                placeholder="+62 -"
+                                placeholder={t("about_page.contact.form.phone_placeholder")}
                                 className={inputClassName}
                             />
                         </div>
@@ -72,7 +75,7 @@ export default function ContactForm() {
 
                 <div>
                     <label htmlFor="programInterest" className={labelClassName}>
-                        Program diminati
+                        {t("about_page.contact.form.program_label")}
                     </label>
 
                     <div className="group relative">
@@ -86,7 +89,7 @@ export default function ContactForm() {
                             id="programInterest"
                             name="programInterest"
                             type="text"
-                            placeholder="Pilih Program"
+                            placeholder={t("about_page.contact.form.program_placeholder")}
                             className={inputClassName}
                         />
                     </div>
@@ -94,11 +97,11 @@ export default function ContactForm() {
 
                 <div className="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
                     <Button type="button" variant="outlinered" size="md">
-                        Konsultasi Gratis
+                        {t("hero.landing.cta_consultation")}
                     </Button>
 
                     <Button type="submit" variant="primary" size="md">
-                        Daftar Sekarang
+                        {t("hero.landing.cta_register")}
                     </Button>
                 </div>
             </form>

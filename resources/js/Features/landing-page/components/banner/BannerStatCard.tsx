@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { bannerStatVariants } from "./banner.animation";
 import type { BannerStatItem } from "./banner.type";
@@ -9,6 +10,8 @@ interface BannerStatCardProps {
 }
 
 export default function BannerStatCard({ stat, index }: BannerStatCardProps) {
+    const { t } = useTranslation("common");
+
     return (
         <motion.article
             custom={index}
@@ -26,10 +29,10 @@ export default function BannerStatCard({ stat, index }: BannerStatCardProps) {
             </h3>
 
             <p className="mt-2.5 max-w-37.5 text-sm font-medium leading-tight text-white/80 md:text-base">
-                {stat.label}
+                {t(stat.label)}
             </p>
 
-            <p className="mt-2 text-xs text-white/60 md:text-sm">{stat.desc}</p>
+            <p className="mt-2 text-xs text-white/60 md:text-sm">{t(stat.desc)}</p>
         </motion.article>
     );
 }

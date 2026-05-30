@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Jangan lupa untuk mengganti "http://localhost" dengan domain asli Anda saat rilis (production)
+Sitemap: http://localhost/sitemap.xml

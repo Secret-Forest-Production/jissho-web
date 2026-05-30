@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import ContactForm from "./ContactForm";
 import ContactTitle from "./ContactTitle";
@@ -10,6 +11,7 @@ import type { ContactData, ContactSocial } from "./contact.type";
 
 export default function ContactSection() {
     const { content, socials } = contactData as ContactData;
+    const { t } = useTranslation("common");
 
     return (
         <section
@@ -23,15 +25,15 @@ export default function ContactSection() {
                         <ContactTitle />
 
                         <h3 className="mt-8 text-2xl font-bold leading-tight text-blue-dark">
-                            {content.quote}
+                            {t("about_page.contact.quote")}
                         </h3>
 
                         <p className="mt-6 leading-relaxed text-text-gray">
-                            {content.description}
+                            {t("about_page.contact.description")}
                         </p>
 
                         <nav
-                            aria-label="Media sosial Yayasan Jissho"
+                            aria-label={t("about_page.contact.aria_social")}
                             className="mt-10 flex gap-4"
                         >
                             {socials.map((social: ContactSocial) => (

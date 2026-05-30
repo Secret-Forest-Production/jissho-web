@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { visiMisiCardVariants } from "./visi-misi.animation";
 import type { VisiMisiItem } from "./visi-misi.type";
@@ -11,6 +12,7 @@ interface VisiMisiCardProps {
 
 export default function VisiMisiCard({ item, index }: VisiMisiCardProps) {
     const isVisi = item.type === "visi";
+    const { t } = useTranslation("common");
 
     return (
         <motion.article
@@ -36,10 +38,12 @@ export default function VisiMisiCard({ item, index }: VisiMisiCardProps) {
             </div>
 
             <div className="space-y-4">
-                <h3 className="text-2xl font-bold md:text-3xl">{item.title}</h3>
+                <h3 className="text-2xl font-bold md:text-3xl">
+                    {t(`about_page.visi_misi.${item.type}.title`)}
+                </h3>
 
                 <p className="text-sm leading-relaxed opacity-90 md:text-base">
-                    {item.content}
+                    {t(`about_page.visi_misi.${item.type}.content`)}
                 </p>
             </div>
         </motion.article>

@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
 import type { TestimoniItem } from "./testimoni.type";
 
@@ -7,6 +8,8 @@ interface TestimoniCardProps {
 }
 
 export default function TestimoniCard({ item }: TestimoniCardProps) {
+    const { t } = useTranslation("common");
+
     return (
         <article className="relative m-1 bg-white p-6 shadow-md md:m-2 md:p-8">
             <Icon
@@ -20,7 +23,7 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
                     <div className="h-16 w-16 overflow-hidden rounded-full border-4 border-red-light-active">
                         <img
                             src={item.image}
-                            alt={`Foto ${item.name}`}
+                            alt={t("testimoni.aria_photo", { name: t(item.name) })}
                             loading="lazy"
                             draggable={false}
                             className="h-full w-full object-cover"
@@ -30,16 +33,16 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
 
                 <figcaption className="flex flex-col gap-4">
                     <blockquote className="line-clamp-4 text-sm leading-relaxed text-text-gray md:text-base">
-                        “{item.message}”
+                        “{t(item.message)}”
                     </blockquote>
 
                     <div>
                         <h3 className="text-lg font-bold text-blue-dark">
-                            {item.name}
+                            {t(item.name)}
                         </h3>
 
                         <p className="text-sm text-red-normal md:text-base">
-                            {item.role}
+                            {t(item.role)}
                         </p>
                     </div>
                 </figcaption>

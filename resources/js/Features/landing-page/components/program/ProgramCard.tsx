@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import Button from "@/Components/ui/Button";
 
@@ -12,6 +13,8 @@ interface ProgramCardProps {
 }
 
 export default function ProgramCard({ item, index }: ProgramCardProps) {
+    const { t } = useTranslation("common");
+
     return (
         <motion.article
             custom={index}
@@ -33,15 +36,15 @@ export default function ProgramCard({ item, index }: ProgramCardProps) {
 
             <div className="grow space-y-4">
                 <h3 className="text-xl font-bold text-blue-dark">
-                    {item.title}
+                    {t(item.title)}
                 </h3>
 
                 <p className="text-base leading-relaxed text-gray-500">
-                    {item.desc}
+                    {t(item.desc)}
                 </p>
 
                 <ul
-                    aria-label={`Fitur program ${item.title}`}
+                    aria-label={t("program_list.aria_features", { title: t(item.title) })}
                     className="space-y-3 py-4"
                 >
                     {item.features.map((feature) => (
@@ -55,7 +58,7 @@ export default function ProgramCard({ item, index }: ProgramCardProps) {
                                 className="shrink-0 text-lg text-red-normal transition-transform group-hover/item:scale-110"
                             />
 
-                            <span className="leading-tight">{feature}</span>
+                            <span className="leading-tight">{t(feature)}</span>
                         </li>
                     ))}
                 </ul>
@@ -65,9 +68,9 @@ export default function ProgramCard({ item, index }: ProgramCardProps) {
                 <Button
                     variant="outlinered"
                     className="w-full py-2.5"
-                    aria-label={`Lihat detail program ${item.title}`}
+                    aria-label={t("program_list.aria_detail", { title: t(item.title) })}
                 >
-                    Detail
+                    {t("common.detail")}
                 </Button>
             </div>
         </motion.article>

@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { fadeUpVariants } from "./keunggulan.animation";
 import type { KeunggulanValueItem as KeunggulanValueItemType } from "./keunggulan.type";
@@ -13,6 +14,8 @@ export default function KeunggulanValueItem({
     item,
     index,
 }: KeunggulanValueItemProps) {
+    const { t } = useTranslation("common");
+
     return (
         <motion.article
             custom={index}
@@ -36,10 +39,10 @@ export default function KeunggulanValueItem({
             </div>
 
             <div className="space-y-1">
-                <h3 className="text-lg font-bold md:text-xl">{item.title}</h3>
+                <h3 className="text-lg font-bold md:text-xl">{t(item.title)}</h3>
 
                 <p className="text-sm leading-relaxed text-white/80 md:text-base">
-                    {item.description}
+                    {t(item.description)}
                 </p>
             </div>
         </motion.article>

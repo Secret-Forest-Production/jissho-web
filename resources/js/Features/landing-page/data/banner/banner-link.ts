@@ -4,23 +4,18 @@ export const bannerData = {
   stats: [
     {
       value: "500+",
-      label: "Peserta Terangkat ke Jepang",
-      desc: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+      label: "banner.stats.participants",
+      desc: "banner.description"
     },
     {
       value: "10+",
-      label: "Tahun Pengalaman",
-      desc: "lorem ipsum dolor sit amet consectetur adipisicing elit."
-    },
-    {
-      value: "10+",
-      label: "Tahun Pengalaman",
-      desc: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+      label: "banner.stats.experience",
+      desc: "banner.description"
     },
     {
       value: "50+",
-      label: "Mitra Perusahaan Jepang",
-      desc: "lorem ipsum dolor sit amet consectetur adipisicing elit."
+      label: "banner.stats.partners",
+      desc: "banner.description"
     }
   ]
 };

@@ -1,5 +1,6 @@
 import LocationCard from "./LocationCard";
 import LocationTitle from "./LocationTitle";
+import { useTranslation } from "react-i18next";
 
 import { locationData } from "../../data/location/location-link";
 import type { LocationData, OfficeLocation } from "./location.type";
@@ -7,6 +8,9 @@ import type { LocationData, OfficeLocation } from "./location.type";
 export default function LocationSection() {
     const { offices } = locationData as LocationData;
     const mainOffice = offices[0];
+
+    const locationKeys = ["indo", "japan"];
+    const { t } = useTranslation("common");
 
     return (
         <section
@@ -18,10 +22,11 @@ export default function LocationSection() {
                 <LocationTitle />
 
                 <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
-                    {offices.map((office: OfficeLocation) => (
+                    {offices.map((office: OfficeLocation, idx: number) => (
                         <LocationCard
                             key={`${office.country}-${office.name}`}
                             office={office}
+                            translationKey={locationKeys[idx]}
                         />
                     ))}
                 </div>
@@ -29,7 +34,7 @@ export default function LocationSection() {
                 {mainOffice?.mapUrl && (
                     <div className="mt-12 h-112.5 w-full overflow-hidden rounded-[20px]">
                         <iframe
-                            title={`Peta lokasi ${mainOffice.name}`}
+                            title={t("about_page.location.aria_map", { name: mainOffice.name })}
                             src={mainOffice.mapUrl}
                             className="h-full w-full border-0"
                             allowFullScreen

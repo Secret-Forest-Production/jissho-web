@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
+import { router } from "@inertiajs/react";
 
 const languages = [
     {
@@ -32,8 +33,13 @@ export default function LanguageSwitcher() {
 
     const handleChangeLanguage = (languageCode: string) => {
         if (i18n.language !== languageCode) {
-            i18n.changeLanguage(languageCode);
-            localStorage.setItem("language", languageCode);
+            router.post(route("language.switch"), { locale: languageCode }, {
+                onSuccess: () => {
+                    i18n.changeLanguage(languageCode);
+                    localStorage.setItem("language", languageCode);
+                },
+                preserveScroll: true
+            });
         }
 
         setIsOpen(false);

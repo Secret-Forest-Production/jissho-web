@@ -1,4 +1,5 @@
 import SectionHeader from "@/Components/ui/SectionHeader";
+import { useTranslation } from "react-i18next";
 
 import { programMagangData } from "../../data/program.data";
 import ProgramSidebarNav from "./ProgramSidebarNav";
@@ -6,22 +7,24 @@ import ProgramRequirementDetail from "../requirement/ProgramRequirementDetail";
 import ProgramDurationSection from "../duration/ProgramDurationSection";
 import ProgramBenefitSection from "../benefit/ProgramBenefitSection";
 
-const sidebarItems = [
-    {
-        id: "detail-program",
-        label: "Detail Program",
-    },
-    {
-        id: "durasi-program",
-        label: "Durasi Program",
-    },
-    {
-        id: "benefit-program",
-        label: "Benefit",
-    },
-];
-
 export default function ProgramMagangSection() {
+    const { t } = useTranslation("common");
+
+    const sidebarItems = [
+        {
+            id: "detail-program",
+            label: t("program_page.magang.requirement.eyebrow"),
+        },
+        {
+            id: "durasi-program",
+            label: t("program_page.magang.duration.eyebrow"),
+        },
+        {
+            id: "benefit-program",
+            label: t("program_page.magang.benefit.eyebrow"),
+        },
+    ];
+
     return (
         <section
             id="program-magang"
@@ -39,32 +42,26 @@ export default function ProgramMagangSection() {
                     </div>
 
                     <SectionHeader
-                        title={programMagangData.title}
-                        highlight={programMagangData.highlight}
-                        suffix={programMagangData.suffix}
-                        description={programMagangData.description}
+                        title={t("program_page.magang.title")}
+                        highlight={t("program_page.magang.highlight")}
+                        suffix={t("program_page.magang.suffix")}
+                        description={t("program_page.magang.description")}
                         className="mb-0"
                     />
                 </div>
 
                 <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
                     <ProgramSidebarNav
-                        title="Program Internship dan Jissho"
+                        title={t("nav.programInternship")}
                         items={sidebarItems}
                     />
 
                     <div className="min-w-0 lg:col-span-9">
-                        <ProgramRequirementDetail
-                            data={programMagangData.detailRequirement}
-                        />
+                        <ProgramRequirementDetail />
 
-                        <ProgramDurationSection
-                            data={programMagangData.duration}
-                        />
+                        <ProgramDurationSection />
 
-                        <ProgramBenefitSection
-                            data={programMagangData.benefit}
-                        />
+                        <ProgramBenefitSection />
                     </div>
                 </div>
             </div>

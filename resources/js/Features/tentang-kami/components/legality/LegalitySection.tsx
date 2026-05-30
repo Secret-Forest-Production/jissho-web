@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import LegalityCard from "./LegalityCard";
 import LegalityTitle from "./LegalityTitle";
@@ -13,6 +14,9 @@ export default function LegalitySection() {
     const leftItems = items.slice(0, 2);
     const rightItems = items.slice(2, 4);
 
+    const legalityKeys = ["kemenaker", "npwp", "notary", "international"];
+    const { t } = useTranslation("common");
+
     return (
         <section
             id="legalitas"
@@ -24,8 +28,12 @@ export default function LegalitySection() {
 
                 <div className="mt-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
                     <div className="order-2 space-y-12 lg:order-1 lg:col-span-4">
-                        {leftItems.map((item: LegalityItem) => (
-                            <LegalityCard key={item.title} item={item} />
+                        {leftItems.map((item: LegalityItem, idx: number) => (
+                            <LegalityCard
+                                key={item.title}
+                                item={item}
+                                translationKey={legalityKeys[idx]}
+                            />
                         ))}
                     </div>
 
@@ -42,7 +50,7 @@ export default function LegalitySection() {
                         <div className="overflow-hidden rounded-[20px]">
                             <img
                                 src={image}
-                                alt="Gedung dan lingkungan Yayasan Jissho"
+                                alt={t("about_page.legality.aria_img")}
                                 loading="lazy"
                                 draggable={false}
                                 className="h-auto w-full object-cover"
@@ -51,8 +59,12 @@ export default function LegalitySection() {
                     </motion.figure>
 
                     <div className="order-3 space-y-12 lg:col-span-4">
-                        {rightItems.map((item: LegalityItem) => (
-                            <LegalityCard key={item.title} item={item} />
+                        {rightItems.map((item: LegalityItem, idx: number) => (
+                            <LegalityCard
+                                key={item.title}
+                                item={item}
+                                translationKey={legalityKeys[idx + 2]}
+                            />
                         ))}
                     </div>
                 </div>

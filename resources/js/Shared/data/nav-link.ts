@@ -44,7 +44,7 @@ export const navLinks: NavLink[] = [
             },
         ],
     },
-    { labelKey: "nav.history", href: "/sejarah" },
+    /* { labelKey: "nav.history", href: "/sejarah" }, */
     { labelKey: "nav.blog", href: "/blog" },
-    { labelKey: "nav.contact", href: "/kontak" },
+    /* { labelKey: "nav.contact", href: "/kontak" }, */
 ];

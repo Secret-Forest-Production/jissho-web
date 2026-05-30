@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { completeProfileData } from "../../data/profile/profile-link";
 
@@ -8,6 +9,12 @@ import type { CompleteProfileData } from "./profile.type";
 
 export default function CompleteProfileSection() {
     const { content } = completeProfileData as CompleteProfileData;
+    const { t } = useTranslation("common");
+
+    const paragraphs = [
+        t("about_page.profile.p1"),
+        t("about_page.profile.p2")
+    ];
 
     return (
         <section
@@ -34,13 +41,13 @@ export default function CompleteProfileSection() {
                         <CompleteProfileTitle />
 
                         <h3 className="mb-6 text-xl font-semibold leading-snug text-blue-dark md:text-2xl">
-                            {content.quote}
+                            {t("about_page.profile.quote")}
                         </h3>
 
                         <div className="space-y-6 text-justify lg:text-left">
-                            {content.paragraphs.map((text) => (
+                            {paragraphs.map((text, idx) => (
                                 <p
-                                    key={text}
+                                    key={idx}
                                     className="text-sm leading-relaxed text-text-gray md:text-base"
                                 >
                                     {text}
@@ -60,7 +67,7 @@ export default function CompleteProfileSection() {
                     >
                         <img
                             src={content.image}
-                            alt="Profil Yayasan Jissho dalam mendukung pembelajaran dan persiapan kerja ke Jepang"
+                            alt={t("about_page.profile.aria_img")}
                             loading="lazy"
                             draggable={false}
                             className="aspect-4/3 h-auto w-full object-cover"

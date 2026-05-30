@@ -1,4 +1,8 @@
 {
+    "common": {
+        "detail": "Detail",
+        "see_more": "Lihat Selengkapnya"
+    },
     "nav": {
         "home": "Beranda",
         "about": "Tentang Kami",
@@ -35,11 +39,12 @@
         "en": "English",
         "ja": "日本語"
     },
-
     "hero": {
         "landing": {
             "title": "Wujudkan Impian Belajar & Bekerja di Jepang",
-            "description": "Bersama Yayasan Jissho, kami mempersiapkan Anda dengan pembelajaran bahasa Jepang berkualitas, budaya kerja profesional, dan bimbingan karir untuk sukses di Negeri Sakura."
+            "description": "Bersama Yayasan Jissho, kami mempersiapkan Anda dengan pembelajaran bahasa Jepang berkualitas, budaya kerja profesional, dan bimbingan karir untuk sukses di Negeri Sakura.",
+            "cta_register": "Daftar Sekarang",
+            "cta_consultation": "Konsultasi Gratis"
         },
         "about": {
             "badge": "Tentang Kami",
@@ -67,6 +72,513 @@
             "highlight": "dan Masa Depan",
             "titleSuffix": "Gemilang di Jepang",
             "description": "Pelatihan bahasa intensif, penyaluran kerja resmi, dan pendampingan penuh hingga keberangkatan. Mulai perjalanan sukses Anda di Negeri Sakura sekarang!"
+        },
+        "services": {
+            "basicClass": {
+                "title": "Kelas Dasar",
+                "description": "Pembelajaran bahasa Jepang dari nol untuk pemula dengan metode interaktif."
+            },
+            "jlpt": {
+                "title": "JLPT Preparation",
+                "description": "Bimbingan intensif persiapan ujian sertifikasi bahasa Jepang (N5 - N2)."
+            },
+            "culture": {
+                "title": "Bahasa & Budaya",
+                "description": "Pemahaman etika dan budaya kerja di Jepang agar cepat beradaptasi."
+            },
+            "more": "Lihat Selengkapnya"
+        }
+    },
+    "about": {
+        "title": "Tentang",
+        "highlight": "Yayasan Jissho",
+        "description": "Yayasan Jissho adalah lembaga pelatihan kerja Jepang terpercaya yang berkomitmen mengantarkan generasi muda Indonesia untuk belajar dan bekerja di Jepang dengan persiapan yang matang dan profesional.",
+        "visi": {
+            "title": "Visi Kami",
+            "content": "Menjadi lembaga pelatihan kerja Jepang terdepan yang melahirkan tenaga kerja Indonesia berkualitas dan berkarakter untuk bersaing di tingkat internasional."
+        },
+        "misi": {
+            "title": "Misi Kami",
+            "content": "Memberikan pelatihan bahasa dan budaya Jepang berkualitas tinggi serta mendampingi peserta dalam proses penempatan kerja di Jepang dengan pendekatan profesional dan personal."
+        },
+        "values": {
+            "discipline": {
+                "title": "Discipline",
+                "description": "Membentuk karakter disiplin khas budaya Jepang dalam setiap pembelajaran"
+            },
+            "integrity": {
+                "title": "Integrity",
+                "description": "Menjunjung tinggi kejujuran dan tanggung jawab profesional"
+            },
+            "professionalism": {
+                "title": "Professionalism",
+                "description": "Menghadirkan standar pengajaran dan pelayanan terbaik"
+            }
+        }
+    },
+    "keunggulan": {
+        "title": "Keunggulan",
+        "highlight": "Kami",
+        "description": "Mengapa memilih Yayasan Jissho sebagai partner Anda menuju Jepang",
+        "items": {
+            "teachers": {
+                "title": "Pengajar Berpengalaman",
+                "description": "Tim pengajar profesional dengan sertifikasi dan pengalaman mengajar bahasa Jepang lebih dari 5 tahun"
+            },
+            "curriculum": {
+                "title": "Kurikulum Terstruktur",
+                "description": "Materi pembelajaran yang sistematis mengikuti standar JLPT dan kebutuhan industri Jepang"
+            },
+            "guidance": {
+                "title": "Bimbingan Kerja ke Jepang",
+                "description": "Pendampingan lengkap dari proses pembelajaran hingga penempatan kerja di perusahaan Jepang"
+            },
+            "certification": {
+                "title": "Sertifikasi Resmi",
+                "description": "Sertifikat resmi yang diakui oleh lembaga dan perusahaan di Jepang untuk keperluan visa kerja"
+            }
+        }
+    },
+    "program_list": {
+        "title": "Program",
+        "highlight": "Kursus",
+        "description": "Pilihan program pembelajaran yang dirancang khusus untuk memenuhi kebutuhan Anda",
+        "aria_features": "Fitur program {{title}}",
+        "aria_detail": "Lihat detail program {{title}}",
+        "items": {
+            "basic": {
+                "title": "Kelas Dasar",
+                "description": "Pembelajaran bahasa Jepang dari nol untuk pemula dengan metode interaktif dan menyenangkan",
+                "features": {
+                    "f1": "Hiragana & Katakana",
+                    "f2": "Grammar Dasar",
+                    "f3": "Percakapan Sehari-hari"
+                }
+            },
+            "jlpt": {
+                "title": "JLPT Preparation",
+                "description": "Persiapan intensif untuk ujian kemampuan bahasa Jepang level N5 hingga N2",
+                "features": {
+                    "f1": "Drill Soal JLPT",
+                    "f2": "Strategi Ujian",
+                    "f3": "Mock Test Berkala"
+                }
+            },
+            "culture": {
+                "title": "Bahasa + Budaya",
+                "description": "Program komprehensif menggabungkan bahasa Jepang dan pemahaman budaya kerja",
+                "features": {
+                    "f1": "Etiket Jepang",
+                    "f2": "Budaya Kerja",
+                    "f3": "Kebiasaan Sosial"
+                }
+            },
+            "work": {
+                "title": "Persiapan Kerja Jepang",
+                "description": "Bimbingan lengkap mulai dari pelatihan hingga penempatan kerja di Jepang",
+                "features": {
+                    "f1": "Interview Skills",
+                    "f2": "Dokumen Visa",
+                    "f3": "Job Matching"
+                }
+            }
+        }
+    },
+    "banner": {
+        "title": "Pencapaian Yayasan Jissho",
+        "description": "Dedikasi kami dalam melahirkan tenaga kerja profesional yang siap bersaing di kancah internasional.",
+        "stats": {
+            "participants": "Peserta Terangkat ke Jepang",
+            "experience": "Tahun Pengalaman",
+            "partners": "Mitra Perusahaan Jepang"
+        }
+    },
+    "testimoni": {
+        "title": "Testimoni",
+        "highlight": "Alumni",
+        "description": "Kisah sukses para alumni yang telah mewujudkan impian bekerja di Jepang",
+        "aria_photo": "Foto {{name}}",
+        "items": {
+            "rizki": {
+                "name": "Rizki Pratama",
+                "role": "Alumni - Bekerja di Tokyo",
+                "message": "Yayasan Jissho benar-benar mempersiapkan saya dengan matang. Tidak hanya bahasa, tapi juga budaya kerja Jepang yang sangat membantu adaptasi saya di sini."
+            },
+            "siti": {
+                "name": "Siti Aisyah",
+                "role": "Alumni - Bekerja di Osaka",
+                "message": "Dukungan dari tim Jissho sangat luar biasa. Mereka selalu siap membantu, bahkan setelah saya bekerja di Jepang. Saya merasa seperti bagian dari keluarga Jissho."
+            },
+            "andi": {
+                "name": "Andi Wijaya",
+                "role": "Alumni - Bekerja di Kyoto",
+                "message": "Program pelatihan yang disediakan Jissho sangat komprehensif. Saya merasa sangat siap menghadapi tantangan bekerja di Jepang, and sekarang saya menikmati setiap momen di sini."
+            },
+            "lina": {
+                "name": "Lina Kusuma",
+                "role": "Alumni - Bekerja di Sapporo",
+                "message": "Jissho tidak hanya memberikan pelatihan bahasa, tetapi juga membekali kami dengan keterampilan praktis yang sangat berguna di tempat kerja. Saya sangat bersyukur bisa menjadi bagian dari Jissho."
+            }
+        }
+    },
+    "galeri": {
+        "title": "Galeri",
+        "highlight": "Aktivitas",
+        "description": "Beberapa momen berharga dari kegiatan yang telah kita gelar",
+        "aria_main": "Galeri Aktivitas Yayasan Jissho"
+    },
+    "mitra": {
+        "title": "Mitra",
+        "highlight": "Kami",
+        "description": "Mitra yang bekerja sama dengan kami"
+    },
+    "about_page": {
+        "profile": {
+            "title": "Profil",
+            "highlight": "Lengkap",
+            "quote": "“Wujudkan karier impianmu di Jepang bersama lembaga terpercaya.”",
+            "p1": "Yayasan Jissho adalah lembaga pelatihan kerja Jepang terpercaya yang telah berpengalaman dalam mempersiapkan tenaga kerja Indonesia berkualitas untuk bekerja di Jepang. Kami menyediakan program pelatihan komprehensif yang mencakup bahasa Jepang, budaya kerja, hingga pendampingan penempatan kerja dengan standar profesional tinggi.",
+            "p2": "Dengan kurikulum terstruktur dan pengajar berpengalaman, kami berkomitmen mengantarkan setiap peserta meraih kesuksesan karir di Negeri Sakura dengan persiapan yang matang dan menyeluruh. Sejak berdiri, kami telah memberangkatkan ratusan alumni yang kini sukses berkarir di berbagai perusahaan Jepang terkemuka.",
+            "aria_img": "Profil Yayasan Jissho dalam mendukung pembelajaran dan persiapan kerja ke Jepang"
+        },
+        "why": {
+            "title": "Mengapa Memilih",
+            "highlight": "Yayasan Jissho?",
+            "items": {
+                "curriculum": {
+                    "title": "Kurikulum Terstruktur",
+                    "desc": "Materi pembelajaran komprehensif yang mencakup bahasa dan budaya kerja Jepang."
+                },
+                "teachers": {
+                    "title": "Pengajar Berpengalaman",
+                    "desc": "Bimbingan langsung dari instruktur ahli untuk persiapan yang matang dan menyeluruh."
+                },
+                "career": {
+                    "title": "Pendampingan Karier",
+                    "desc": "Materi pembelajaran komprehensif yang mencakup bahasa dan budaya kerja Jepang."
+                },
+                "proof": {
+                    "title": "Bukti Nyata",
+                    "desc": "Telah memberangkatkan ratusan alumni yang kini sukses berkarier di Negeri Sakura."
+                }
+            }
+        },
+        "legality": {
+            "title": "Legalitas &",
+            "highlight": "Izin Resmi",
+            "description": "Yayasan Jissho telah terdaftar dan memiliki izin operasional resmi dari Kementerian Ketenagakerjaan Republik Indonesia. Kami beroperasi sesuai dengan regulasi pemerintah dan standar internasional untuk menjamin keamanan dan kepastian hukum bagi setiap peserta pelatihan.",
+            "aria_img": "Gedung dan lingkungan Yayasan Jissho",
+            "items": {
+                "kemenaker": {
+                    "title": "Izin Kemenaker RI",
+                    "desc": "Terdaftar resmi di Kementerian Ketenagakerjaan Republik Indonesia sebagai lembaga pelatihan kerja"
+                },
+                "npwp": {
+                    "title": "NPWP Yayasan",
+                    "desc": "Terdaftar sebagai badan hukum dengan nomor pokok wajib pajak resmi"
+                },
+                "notary": {
+                    "title": "Akta Notaris",
+                    "desc": "Memiliki akta pendirian yayasan yang sah dan terdaftar secara hukum"
+                },
+                "international": {
+                    "title": "Kerjasama Internasional",
+                    "desc": "Memiliki kemitraan resmi dengan perusahaan dan lembaga di Jepang"
+                }
+            }
+        },
+        "visi_misi": {
+            "title": "Visi &",
+            "highlight": "Misi",
+            "visi": {
+                "title": "Visi Kami",
+                "content": "Menjadi lembaga pelatihan kerja Jepang terdepan yang melahirkan tenaga kerja Indonesia berkualitas dan berkarakter untuk bersaing di tingkat internasional dengan menjunjung tinggi nilai-nilai profesionalisme dan integritas."
+            },
+            "misi": {
+                "title": "Misi Kami",
+                "content": "Memberikan pelatihan bahasa dan budaya Jepang berkualitas tinggi, mendampingi peserta dalam proses penempatan kerja di Jepang, serta membangun kemitraan yang kuat dengan perusahaan Jepang untuk memberikan peluang karir terbaik bagi alumni."
+            }
+        },
+        "greeting": {
+            "title": "Sapaan Hangat dari",
+            "highlight": "Direktur Kami",
+            "description": "Kisah sukses para alumni yang telah mewujudkan impian bekerja di Jepang",
+            "name": "Rismaja Putra, S.S., M.M.",
+            "role": "Direktur Yayasan Jissho",
+            "q1": "“Kami percaya bahwa setiap individu memiliki potensi luar biasa untuk sukses. Di Yayasan Jissho, kami tidak hanya mengajarkan bahasa Jepang, tetapi juga membentuk karakter, mentalitas, dan profesionalisme yang dibutuhkan untuk berhasil di lingkungan kerja internasional.”",
+            "q2": "“Komitmen kami adalah mendampingi Anda di setiap langkah perjalanan menuju Jepang - dari pembelajaran pertama hingga Anda sukses berkarir di Negeri Sakura. Mari bersama-sama wujudkan impian Anda!”",
+            "aria_img": "Foto {{name}}"
+        },
+        "location": {
+            "title": "Lokasi",
+            "highlight": "Kantor",
+            "aria_map": "Peta lokasi {{name}}",
+            "offices": {
+                "indo": {
+                    "country": "Indonesia",
+                    "note": "Pusat pelatihan dan administrasi utama untuk persiapan keberangkatan ke Jepang"
+                },
+                "japan": {
+                    "country": "Jepang",
+                    "note": "Melayani koordinasi penempatan kerja dan pendampingan alumni yang bekerja di Jepang"
+                }
+            }
+        },
+        "contact": {
+            "title": "Hubungi",
+            "highlight": "Kami",
+            "quote": "“Wujudkan karier impianmu di Jepang bersama lembaga terpercaya.”",
+            "description": "Tim kami siap membantu menjawab pertanyaan Anda mengenai program pelatihan, proses keberangkatan, hingga peluang karier di Jepang. Hubungi kami sekarang untuk konsultasi lebih lanjut.",
+            "aria_social": "Media sosial Yayasan Jissho",
+            "form": {
+                "title": "Formulir Kontak",
+                "aria_form": "Formulir kontak Yayasan Jissho",
+                "name_label": "Nama Lengkap",
+                "name_placeholder": "Adinda Wirasti",
+                "phone_label": "No HP",
+                "phone_placeholder": "+62 -",
+                "program_label": "Program diminati",
+                "program_placeholder": "Pilih Program"
+            }
+        }
+    },
+    "program_page": {
+        "magang": {
+            "title": "Program",
+            "highlight": "Magang",
+            "suffix": "(Technical Intern Training)",
+            "description": "Program magang teknis ke Jepang dengan durasi 3–5 tahun untuk pengembangan keterampilan profesional.",
+            "requirement": {
+                "eyebrow": "Detail Syarat",
+                "title": "Apa itu Program Magang (Internship) di Jissho?",
+                "description": "Ingin membangun karier internasional dan mengasah keterampilan profesional langsung di Negeri Sakura? Yuk, cek poin-poin persyaratan di bawah ini sebelum Anda mendaftar!",
+                "g1": {
+                    "title": "Persyaratan Umum (Karakter & Fisik)",
+                    "i1": "Usia: Minimal 18 tahun dan maksimal 26–28 tahun (beberapa sektor tertentu memperbolehkan hingga usia 30 tahun).",
+                    "i2": "Pendidikan Minimal: Lulusan SMA, SMK, MA, Diploma (D3), atau Sarjana (S1) segala jurusan.",
+                    "i3": "Tinggi & Berat Badan Proporsional:",
+                    "i3_c1": "Pria: Minimal 160 cm",
+                    "i3_c2": "Wanita: Minimal 150 cm",
+                    "i4": "Kesehatan Fisik: Sehat jasmani dan rohani, tidak memiliki riwayat penyakit kronis (seperti TBC, hepatitis, asma, atau patah tulang yang parah).",
+                    "i5": "Kondisi Fisik Khusus: Tidak bertato, tidak bertindik (khusus pria), dan tidak buta warna (parsial maupun total)."
+                },
+                "g2": {
+                    "title": "Persyaratan Dokumen (Administrasi)",
+                    "description": "Pastikan dokumen-dokumen resmi berikut siap dalam bentuk asli dan salinan (copy):",
+                    "i1": "Kartu Tanda Penduduk (KTP) & Kartu Keluarga (KK).",
+                    "i2": "Akte Kelahiran.",
+                    "i3": "Ijazah Terakhir + Transkrip Nilai / Raport.",
+                    "i4": "Surat Izin Orang Tua / Wali / Suami / Istri (bermaterai).",
+                    "i5": "Surat Keterangan Catatan Kepolisian (SKCK) yang masih aktif.",
+                    "i6": "Pasfoto terbaru latar belakang putih/merah (sesuai ketentuan LPK)."
+                },
+                "g3": {
+                    "title": "Persyaratan Kompetensi & Mental",
+                    "i1": "Komitmen Belajar: Bersedia mengikuti Pelatihan Kerja Terpusat (Diklat) bahasa dan budaya Jepang (biasanya hingga level N5 atau N4).",
+                    "i2": "Sikap (Attitude): Memiliki disiplin tinggi, mental yang kuat, dan mampu bekerja sama dalam tim.",
+                    "i3": "Izin Resmi: Mendapatkan dukungan penuh dari keluarga untuk bekerja di luar negeri selama kurun waktu kontrak (biasanya 1 hingga 3 tahun)."
+                }
+            },
+            "duration": {
+                "eyebrow": "Durasi Program",
+                "title": "Total Durasi Kontrak: 3 hingga 5 Tahun",
+                "description": "Kontrak kerja utama berlangsung selama 3 tahun, dengan peluang perpanjangan hingga 5 tahun jika peserta lulus ujian evaluasi teknis di Jepang.",
+                "t1": {
+                    "title": "Tahap 1: Pelatihan di Indonesia (Diklat Pra-Pemberangkatan)",
+                    "duration": "4 - 6 Bulan",
+                    "desc": "Aktivitas: Pelatihan intensif bahasa Jepang (target minimal setara N5/N4), pembentukan fisik, mental, disiplin (FMD), serta pengenalan budaya kerja Jepang di LPK."
+                },
+                "t2": {
+                    "title": "Tahap 2: Magang Tahun Ke-1 (Ginou Jisshuu 1-Gou)",
+                    "duration": "1 Tahun (Termasuk 1 bulan pertama masa adaptasi/Kenshuu)",
+                    "desc": "Aktivitas: Fokus pada adaptasi lingkungan, penguasaan dasar-dasar pekerjaan, dan bahasa sehari-hari di perusahaan penerima."
+                },
+                "t3": {
+                    "title": "Tahap 3: Magang Tahun Ke-2 & Ke-3 (Ginou Jisshuu 2-Gou)",
+                    "duration": "2 Tahun",
+                    "desc": "Aktivitas: Peningkatan keahlian teknis secara penuh. Di akhir tahun ke-3, peserta akan mengikuti ujian praktik dan teori untuk mendapatkan sertifikat resmi."
+                },
+                "t4": {
+                    "title": "Tahap 4: Perpanjangan Tahun Ke-4 & Ke-5 (Ginou Jisshuu 3-Gou - Opsional)",
+                    "duration": "2 Tahun",
+                    "desc": "Aktivitas: Khusus bagi peserta yang memiliki rekam jejak kerja yang sangat baik dan lulus ujian tingkat madya. Peserta berhak pulang ke Indonesia terlebih dahulu (cuti) sebelum melanjutkan kontrak 2 tahun terakhir."
+                }
+            },
+            "benefit": {
+                "eyebrow": "Benefit",
+                "title": "Kenapa Harus Memilih Program Magang Bersama Kami?",
+                "description": "Kami tidak hanya memberangkatkan Anda, tetapi juga memastikan Anda siap bersaing, sukses, dan terlindungi selama di Jepang.",
+                "b1": {
+                    "title": "Gaji & Tunjangan Standar Jepang (Sesuai Regulasi)",
+                    "desc": "Dapatkan penghasilan bulanan yang kompetitif sesuai dengan standar upah minimum di Jepang, lengkap dengan uang lembur, asuransi kesehatan, dan jaminan kecelakaan kerja."
+                },
+                "b2": {
+                    "title": "Pelatihan Bahasa & Budaya Intensif (Siap Kerja)",
+                    "desc": "Kurikulum pelatihan yang dirancang khusus oleh pengajar berpengalaman agar Anda menguasai bahasa Jepang dan memahami budaya kerja Jepang sebelum terbang."
+                },
+                "b3": {
+                    "title": "Penyaluran Kerja ke Perusahaan Terpercaya & Resmi",
+                    "desc": "LPK kami bekerja sama langsung dengan Perusahaan Penerima dan Sending Organization resmi yang legal dan diawasi ketat oleh pemerintah Indonesia dan Jepang."
+                },
+                "b4": {
+                    "title": "Pendampingan Penuh (Dari Diklat hingga Kepulangan)",
+                    "desc": "Kami mendampingi Anda mulai dari proses administrasi, pembuatan paspor/visa, keberangkatan, pemantauan kondisi selama di Jepang, hingga kepulangan kembali ke tanah air."
+                },
+                "b5": {
+                    "title": "Sertifikat Resmi Internasional (JITCO/OTIT)",
+                    "desc": "Setelah menyelesaikan program, Anda akan mendapatkan sertifikat kompetensi resmi yang menjadi modal emas dan nilai tambah luar biasa untuk karier Anda."
+                },
+                "b6": {
+                    "title": "Peluang Melanjutkan ke Program Kerja (Specified Skilled Worker / SSW)",
+                    "desc": "Bagi alumni magang yang berprestasi, kami menyediakan jalur khusus untuk kembali bekerja di Jepang dengan visa keterampilan khusus."
+                }
+            }
+        },
+        "kerja": {
+            "title": "Program",
+            "highlight": "Kerja",
+            "suffix": "SSW (Specified Skilled Worker)",
+            "description": "Visa kerja profesional untuk tenaga terampil di berbagai sektor industri Jepang.",
+            "ssw1": {
+                "title": "SSW Type 1 (特定技能1号)",
+                "duration": "Maksimal 5 tahun",
+                "durationDesc": "Dapat diperpanjang hingga total 5 tahun",
+                "i1": "Memerlukan keterampilan dan pengetahuan tertentu",
+                "i2": "Lulus ujian keterampilan dan JLPT N4",
+                "i3": "Tidak dapat membawa keluarga"
+            },
+            "ssw2": {
+                "title": "SSW Type 2 (特定技能2号)",
+                "duration": "Tidak terbatas",
+                "durationDesc": "Dapat diperpanjang tanpa batas waktu",
+                "i1": "Keahlian tingkat mahir dan pengalaman kerja",
+                "i2": "Dapat membawa keluarga (istri/suami dan anak)",
+                "i3": "Jalur menuju permanent residence"
+            }
+        },
+        "kuliah": {
+            "title": "Program",
+            "highlight": "Kuliah",
+            "suffix": "& Perguruan Tinggi",
+            "description": "Raih gelar akademik dari universitas ternama di Jepang dengan beasiswa dan fasilitas lengkap.",
+            "s1": {
+                "title": "Program Sarjana (S1)",
+                "duration": "4 Tahun",
+                "benefit": "Gelar sarjana dari universitas Jepang yang diakui internasional."
+            },
+            "s2": {
+                "title": "Program Pascasarjana (S2)",
+                "duration": "2 Tahun",
+                "benefit": "Riset akademik dan networking profesional global."
+            },
+            "language": {
+                "title": "Sekolah Bahasa Jepang",
+                "duration": "1–2 Tahun",
+                "benefit": "Persiapan JLPT dan transisi ke universitas Jepang."
+            },
+            "requirement_common": "Lulus SMA/SMK, JLPT N2 atau EJU, Dokumen akademik lengkap",
+            "scholarships": {
+                "title": "Beasiswa",
+                "mext": {
+                    "title": "MEXT Scholarship",
+                    "desc": "Beasiswa penuh dari pemerintah Jepang"
+                },
+                "jasso": {
+                    "title": "JASSO Scholarship",
+                    "desc": "Bantuan biaya hidup untuk mahasiswa internasional"
+                },
+                "university": {
+                    "title": "University Scholarship",
+                    "desc": "Beasiswa dari universitas masing-masing"
+                }
+            },
+            "assistances": {
+                "title": "Layanan Pendampingan",
+                "i1": "Konsultasi pemilihan universitas dan jurusan",
+                "i2": "Bantuan persiapan dokumen aplikasi",
+                "i3": "Pelatihan ujian masuk (EJU, JLPT)",
+                "i4": "Panduan pengurusan visa pelajar",
+                "i5": "Orientasi kehidupan di Jepang"
+            }
+        },
+        "industri": {
+            "title": "Sektor Industri yang Tersedia",
+            "description": "Visa kerja profesional untuk tenaga terampil di berbagai sektor industri Jepang.",
+            "items": {
+                "manufacturing": {
+                    "title": "Manufacturing",
+                    "desc": "Industri manufaktur dan produksi"
+                },
+                "food_service": {
+                    "title": "Food Service",
+                    "desc": "Layanan makanan dan restoran"
+                },
+                "nursing": {
+                    "title": "Nursing Care",
+                    "desc": "Perawatan lansia dan kesehatan"
+                },
+                "auto_repair": {
+                    "title": "Auto Repair",
+                    "desc": "Perbaikan kendaraan bermotor"
+                },
+                "construction": {
+                    "title": "Construction",
+                    "desc": "Konstruksi dan bangunan"
+                },
+                "logistics": {
+                    "title": "Logistics",
+                    "desc": "Pergudangan dan logistik"
+                },
+                "agriculture": {
+                    "title": "Agriculture",
+                    "desc": "Pertanian dan perikanan"
+                },
+                "cleaning": {
+                    "title": "Cleaning",
+                    "desc": "Layanan kebersihan gedung"
+                }
+            }
+        }
+    },
+    "register_page": {
+        "title": "Daftar Sekarang",
+        "description": "Isi formulir di bawah ini untuk memulai perjalanan Anda ke Jepang",
+        "personal": {
+            "title": "Data Pribadi",
+            "name_label": "Nama Lengkap",
+            "name_placeholder": "Masukkan nama lengkap",
+            "email_label": "Email",
+            "email_placeholder": "nama@email.com",
+            "gender_label": "Jenis Kelamin",
+            "gender_placeholder": "Pilih Jenis Kelamin Anda",
+            "gender_male": "Laki-laki",
+            "gender_female": "Perempuan",
+            "phone_label": "No HP (WhatsApp)",
+            "phone_placeholder": "0812...",
+            "age_label": "Usia",
+            "age_placeholder": "Contoh: 25",
+            "origin_label": "Asal (Kota/Kabupaten)",
+            "origin_placeholder": "Contoh: Medan, Sumatera Utara"
+        },
+        "qualification": {
+            "title": "Sertifikat & Kualifikasi",
+            "helper": "Isi jika memiliki, atau kosongkan jika belum ada",
+            "jft": "Sertifikat JFT (Japan Foundation Test)",
+            "senmonkyu": "Sertifikat Senmonkyu (専門級) yang Dimiliki",
+            "skill": "Sertifikat Skill Test / SSW yang Dimiliki"
+        },
+        "experience": {
+            "title": "Pengalaman di Jepang",
+            "label": "Pengalaman Kerja / Kuliah di Jepang",
+            "placeholder": "Ceritakan pengalaman kerja atau kuliah Anda di Jepang (jika ada). Contoh: Magang di Tokyo selama 3 tahun di bidang manufaktur, atau kosongkan jika belum pernah",
+            "helper": "Opsional - Isi jika pernah ke Jepang, atau kosongkan jika belum pernah"
+        },
+        "agreement": "Dengan mendaftar, Anda menyetujui bahwa data Anda akan digunakan untuk keperluan pendaftaran program",
+        "submit": "Kirim Pendaftaran",
+        "form": {
+            "upload_btn": "Upload",
+            "upload_hint": "Pilih sebuah file drag atau drop disini",
+            "upload_max_size": "Maksimal 5MB ukuran file"
         }
     }
 }

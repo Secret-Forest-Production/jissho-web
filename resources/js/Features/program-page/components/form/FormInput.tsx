@@ -4,6 +4,8 @@ interface FormInputProps {
     type?: "text" | "number" | "email" | "tel";
     placeholder?: string;
     required?: boolean;
+    value?: string | number;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function FormInput({
@@ -12,6 +14,8 @@ export default function FormInput({
     type = "text",
     placeholder,
     required = false,
+    value,
+    onChange,
 }: FormInputProps) {
     return (
         <div>
@@ -29,6 +33,8 @@ export default function FormInput({
                 type={type}
                 placeholder={placeholder}
                 required={required}
+                value={value}
+                onChange={onChange}
                 className="w-full rounded-2xl border border-gray-300 px-5 py-4.5 mt-0.5 text-sm text-blue-dark outline-none transition-all placeholder:text-gray-400 focus:border-red-normal focus:ring-2 focus:ring-red-normal/10"
             />
         </div>

@@ -7,6 +7,8 @@ import type { WhyData, WhyItem } from "./why.type";
 export default function WhySection() {
     const { list } = whyData as WhyData;
 
+    const whyKeys = ["curriculum", "teachers", "career", "proof"];
+
     return (
         <section
             id="mengapa-jissho"
@@ -18,7 +20,12 @@ export default function WhySection() {
 
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
                     {list.map((item: WhyItem, index: number) => (
-                        <WhyCard key={item.title} item={item} index={index} />
+                        <WhyCard
+                            key={item.title}
+                            item={item}
+                            index={index}
+                            translationKey={whyKeys[index]}
+                        />
                     ))}
                 </div>
             </div>

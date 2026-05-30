@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "@/Components/ui/Button";
+import { useTranslation } from "react-i18next";
 
 export default function HeroActions() {
+    const { t } = useTranslation("common");
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -11,11 +14,11 @@ export default function HeroActions() {
             className="flex flex-wrap gap-4 pt-6 justify-center md:justify-start"
         >
             <Button href="/daftar" variant="primary" size="lg">
-                Daftar Sekarang
+                {t("hero.landing.cta_register")}
             </Button>
 
             <Button href="/konsultasi" variant="outline" size="lg">
-                Konsultasi Gratis
+                {t("hero.landing.cta_consultation")}
             </Button>
         </motion.div>
     );

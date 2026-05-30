@@ -19,19 +19,19 @@ export const landingHeroData: TranslatedHeroData = {
 
 export const heroServicesData: HeroService[] = [
     {
-        title: "Kelas Dasar",
-        desc: "Pembelajaran bahasa Jepang dari nol untuk pemula dengan metode interaktif.",
+        title: "hero.services.basicClass.title",
+        desc: "hero.services.basicClass.description",
         img: ServiceImg1,
-        linkText: "Lihat Selengkapnya",
+        linkText: "hero.services.more",
     },
     {
-        title: "JLPT Preparation",
-        desc: "Bimbingan intensif persiapan ujian sertifikasi bahasa Jepang (N5 - N2).",
+        title: "hero.services.jlpt.title",
+        desc: "hero.services.jlpt.description",
         img: ServiceImg2,
     },
     {
-        title: "Bahasa & Budaya",
-        desc: "Pemahaman etika dan budaya kerja di Jepang agar cepat beradaptasi.",
+        title: "hero.services.culture.title",
+        desc: "hero.services.culture.description",
         img: ServiceImg3,
     },
 ];
