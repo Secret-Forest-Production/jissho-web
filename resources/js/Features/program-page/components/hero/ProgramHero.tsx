@@ -1,31 +1,32 @@
-import SectionHero from "@/Components/ui/SectionHero";
+import { useTranslation } from "react-i18next";
 
-interface ProgramHeroProps {
-    badge: string;
-    title: string;
-    highlightText: string;
-    titleSuffix?: string;
-    description: string;
-    backgroundImage: string;
+import SectionHero from "@/Components/ui/SectionHero";
+import type { ProgramHeroData } from "../../types/program.type";
+
+interface ProgramHeroProps extends ProgramHeroData {
+    headingId?: string;
 }
 
 export default function ProgramHero({
-    badge,
-    title,
-    highlightText,
-    titleSuffix,
-    description,
+    badgeKey,
+    titleKey,
+    highlightKey,
+    titleSuffixKey,
+    descriptionKey,
     backgroundImage,
+    headingId = "program-hero-heading",
 }: ProgramHeroProps) {
+    const { t } = useTranslation("common");
+
     return (
         <SectionHero
-            badge={badge}
-            title={title}
-            highlightText={highlightText}
-            titleSuffix={titleSuffix}
-            description={description}
+            badge={t(badgeKey)}
+            title={t(titleKey)}
+            highlightText={t(highlightKey)}
+            titleSuffix={titleSuffixKey ? t(titleSuffixKey) : undefined}
+            description={t(descriptionKey)}
             backgroundImage={backgroundImage}
-            headingId="program-hero-heading"
+            headingId={headingId}
         />
     );
 }

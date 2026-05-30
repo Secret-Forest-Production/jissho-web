@@ -1,21 +1,25 @@
 import { useState } from "react";
 import { Link, usePage } from "@inertiajs/react";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
+import LanguageSwitcher from "@/Components/ui/LanguageSwitcher";
 import { navLinks } from "@/Shared/data/nav-link";
 import Logo from "@/Shared/assets/logo.webp";
 
 type NavChild = {
-    label: string;
+    labelKey: string;
     href: string;
     icon?: string;
 };
 
 type NavItem = {
-    label: string;
+    labelKey: string;
     href: string;
     children?: NavChild[];
 };
+
+type TranslateFn = (key: string) => string;
 
 const NAVBAR_HEIGHT_CLASS = "h-20";
 const MOBILE_MENU_TOP_CLASS = "top-20";
@@ -36,12 +40,42 @@ function isHashActive(currentUrl: string, href: string) {
     return currentUrl === href || currentUrl.startsWith(path);
 }
 
+function scrollToSection(href: string) {
+    const [, hash] = href.split("#");
+
+    if (!hash) return;
+
+    const element = document.getElementById(hash);
+
+    if (!element) return;
+
+    element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+    });
+}
+
+interface ActiveUnderlineProps {
+    isActive: boolean;
+}
+
+function ActiveUnderline({ isActive }: ActiveUnderlineProps) {
+    return (
+        <span
+            className={`absolute bottom-0 left-0 h-0.5 bg-red-normal transition-all duration-300 ${
+                isActive ? "w-full" : "w-0 group-hover:w-full"
+            }`}
+        />
+    );
+}
+
 interface DesktopNavLinkProps {
     link: NavItem;
     currentUrl: string;
+    t: TranslateFn;
 }
 
-function DesktopNavLink({ link, currentUrl }: DesktopNavLinkProps) {
+function DesktopNavLink({ link, currentUrl, t }: DesktopNavLinkProps) {
     const isItemActive = isActivePath(currentUrl, link.href);
 
     if (hasChildren(link)) {
@@ -56,7 +90,7 @@ function DesktopNavLink({ link, currentUrl }: DesktopNavLinkProps) {
                             : "text-blue-dark/80 hover:text-red-normal"
                     }`}
                 >
-                    {link.label}
+                    {t(link.labelKey)}
 
                     <Icon
                         icon="heroicons:chevron-down-20-solid"
@@ -73,6 +107,7 @@ function DesktopNavLink({ link, currentUrl }: DesktopNavLinkProps) {
                                 key={child.href}
                                 child={child}
                                 currentUrl={currentUrl}
+                                t={t}
                             />
                         ))}
                     </div>
@@ -90,7 +125,7 @@ function DesktopNavLink({ link, currentUrl }: DesktopNavLinkProps) {
                     : "text-blue-dark/80 hover:text-red-normal"
             }`}
         >
-            {link.label}
+            {t(link.labelKey)}
             <ActiveUnderline isActive={isItemActive} />
         </Link>
     );
@@ -99,17 +134,27 @@ function DesktopNavLink({ link, currentUrl }: DesktopNavLinkProps) {
 interface DesktopDropdownItemProps {
     child: NavChild;
     currentUrl: string;
+    t: TranslateFn;
 }
 
-function DesktopDropdownItem({ child, currentUrl }: DesktopDropdownItemProps) {
+function DesktopDropdownItem({
+    child,
+    currentUrl,
+    t,
+}: DesktopDropdownItemProps) {
     const isChildActive = isHashActive(currentUrl, child.href);
+
+    const handleClick = () => {
+        scrollToSection(child.href);
+    };
 
     return (
         <Link
             href={child.href}
+            onClick={handleClick}
             className={`flex items-center gap-3 px-4 py-2.5 text-sm font-medium transition-all ${
                 isChildActive
-                    ? " text-blue-dark/80 "
+                    ? "bg-red-light/30 text-red-normal"
                     : "text-blue-dark/80 hover:bg-gray-100 hover:text-red-normal"
             }`}
         >
@@ -117,14 +162,14 @@ function DesktopDropdownItem({ child, currentUrl }: DesktopDropdownItemProps) {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gray-100">
                     <img
                         src={child.icon}
-                        alt={child.label}
+                        alt={t(child.labelKey)}
                         draggable={false}
                         className="h-5 w-5 object-contain"
                     />
                 </span>
             )}
 
-            <span>{child.label}</span>
+            <span>{t(child.labelKey)}</span>
         </Link>
     );
 }
@@ -135,6 +180,7 @@ interface MobileNavLinkProps {
     openDropdown: string | null;
     onToggleDropdown: (href: string) => void;
     onCloseMenu: () => void;
+    t: TranslateFn;
 }
 
 function MobileNavLink({
@@ -143,6 +189,7 @@ function MobileNavLink({
     openDropdown,
     onToggleDropdown,
     onCloseMenu,
+    t,
 }: MobileNavLinkProps) {
     const isItemActive = isActivePath(currentUrl, link.href);
 
@@ -160,7 +207,7 @@ function MobileNavLink({
                             : "text-blue-dark/80 hover:bg-red-light/20"
                     }`}
                 >
-                    <span>{link.label}</span>
+                    <span>{t(link.labelKey)}</span>
 
                     <Icon
                         icon="heroicons:chevron-down-20-solid"
@@ -184,6 +231,7 @@ function MobileNavLink({
                                 child={child}
                                 currentUrl={currentUrl}
                                 onCloseMenu={onCloseMenu}
+                                t={t}
                             />
                         ))}
                     </div>
@@ -202,7 +250,7 @@ function MobileNavLink({
                     : "text-blue-dark/80 hover:bg-red-light/20"
             }`}
         >
-            {link.label}
+            {t(link.labelKey)}
         </Link>
     );
 }
@@ -211,19 +259,29 @@ interface MobileDropdownItemProps {
     child: NavChild;
     currentUrl: string;
     onCloseMenu: () => void;
+    t: TranslateFn;
 }
 
 function MobileDropdownItem({
     child,
     currentUrl,
     onCloseMenu,
+    t,
 }: MobileDropdownItemProps) {
     const isChildActive = isHashActive(currentUrl, child.href);
+
+    const handleClick = () => {
+        onCloseMenu();
+
+        window.setTimeout(() => {
+            scrollToSection(child.href);
+        }, 300);
+    };
 
     return (
         <Link
             href={child.href}
-            onClick={onCloseMenu}
+            onClick={handleClick}
             className={`flex items-center gap-4 rounded-xl px-4 py-3 transition-all ${
                 isChildActive
                     ? "bg-red-light/40 text-red-normal"
@@ -234,29 +292,15 @@ function MobileDropdownItem({
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-50">
                     <img
                         src={child.icon}
-                        alt={child.label}
+                        alt={t(child.labelKey)}
                         draggable={false}
                         className="h-7 w-7 object-contain"
                     />
                 </span>
             )}
 
-            <span className="font-medium">{child.label}</span>
+            <span className="font-medium">{t(child.labelKey)}</span>
         </Link>
-    );
-}
-
-interface ActiveUnderlineProps {
-    isActive: boolean;
-}
-
-function ActiveUnderline({ isActive }: ActiveUnderlineProps) {
-    return (
-        <span
-            className={`absolute bottom-0 left-0 h-0.5 bg-red-normal transition-all duration-300 ${
-                isActive ? "w-full" : "w-0 group-hover:w-full"
-            }`}
-        />
     );
 }
 
@@ -267,6 +311,9 @@ export default function Navbar() {
     );
 
     const { url } = usePage();
+    const { t: translate } = useTranslation("common");
+
+    const t: TranslateFn = (key) => translate(key);
 
     const closeMobileMenu = () => {
         setIsOpen(false);
@@ -303,29 +350,36 @@ export default function Navbar() {
                                     key={link.href}
                                     link={link}
                                     currentUrl={url}
+                                    t={t}
                                 />
                             ))}
                         </div>
+
+                        <LanguageSwitcher />
                     </div>
 
-                    <button
-                        type="button"
-                        onClick={toggleMobileMenu}
-                        aria-label={isOpen ? "Tutup menu" : "Buka menu"}
-                        aria-expanded={isOpen}
-                        className="p-2 text-blue-dark transition-transform active:scale-90 lg:hidden"
-                    >
-                        <Icon
-                            icon={
-                                isOpen
-                                    ? "heroicons:x-mark-20-solid"
-                                    : "heroicons:bars-3-bottom-right-20-solid"
-                            }
-                            className={`text-3xl transition-all duration-300 ${
-                                isOpen ? "rotate-90 text-red-normal" : ""
-                            }`}
-                        />
-                    </button>
+                    <div className="flex items-center gap-2 lg:hidden">
+                        <LanguageSwitcher />
+
+                        <button
+                            type="button"
+                            onClick={toggleMobileMenu}
+                            aria-label={isOpen ? "Tutup menu" : "Buka menu"}
+                            aria-expanded={isOpen}
+                            className="p-2 text-blue-dark transition-transform active:scale-90"
+                        >
+                            <Icon
+                                icon={
+                                    isOpen
+                                        ? "heroicons:x-mark-20-solid"
+                                        : "heroicons:bars-3-bottom-right-20-solid"
+                                }
+                                className={`text-3xl transition-all duration-300 ${
+                                    isOpen ? "rotate-90 text-red-normal" : ""
+                                }`}
+                            />
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -343,6 +397,7 @@ export default function Navbar() {
                             openDropdown={openMobileDropdown}
                             onToggleDropdown={toggleMobileDropdown}
                             onCloseMenu={closeMobileMenu}
+                            t={t}
                         />
                     ))}
                 </div>

@@ -6,7 +6,7 @@ import type {
     SektorIndustriData,
 } from "../types/program.type";
 
-import ProgramHeroImg from "@/Shared/assets/program/program-hero.webp";
+import { heroImages } from "@/Shared/data/hero-images";
 
 import IconMagang from "@/Shared/assets/icons/program-magang.webp";
 import IconKerja from "@/Shared/assets/icons/program-kerja.webp";
@@ -16,13 +16,11 @@ import IconIndustri from "@/Shared/assets/icons/sektor-industri.webp";
 import KuliahImg1 from "@/Shared/assets/program/kuliah-1.webp";
 
 export const programHeroData: ProgramHeroData = {
-    badge: "Program Unggulan",
-    title: "Program",
-    highlightText: "Kami",
-    description:
-        "Berbagai program untuk mewujudkan impian Anda bekerja, magang, atau kuliah di Jepang.",
-    backgroundImage:
-        "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&q=80", //jangan lupa ganti
+    badgeKey: "hero.program.badge",
+    titleKey: "hero.program.title",
+    highlightKey: "hero.program.highlight",
+    descriptionKey: "hero.program.description",
+    backgroundImage: heroImages.program,
 };
 
 export const programMagangData: ProgramMagangData = {

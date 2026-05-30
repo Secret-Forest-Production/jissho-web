@@ -10,11 +10,11 @@ export interface RegisterFileField {
 }
 
 export interface RegisterHeroData {
-    badge: string;
-    title: string;
-    highlightText: string;
-    titleSuffix?: string;
-    description: string;
+    badgeKey: string;
+    titleKey: string;
+    highlightKey: string;
+    titleSuffixKey?: string;
+    descriptionKey: string;
     backgroundImage: string;
 }
 

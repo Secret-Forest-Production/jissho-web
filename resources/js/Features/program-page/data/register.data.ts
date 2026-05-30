@@ -5,15 +5,15 @@ import type {
     RegisterSelectField,
 } from "../types/register.type";
 
+import { heroImages } from "@/Shared/data/hero-images";
+
 export const registerHeroData: RegisterHeroData = {
-    badge: "Daftar Sekarang",
-    title: "Raih Karier Global",
-    highlightText: "dan Masa Depan",
-    titleSuffix: "Gemilang di Jepang",
-    description:
-        "Pelatihan bahasa intensif, penyaluran kerja resmi, dan pendampingan penuh hingga keberangkatan. Mulai perjalanan sukses Anda di Negeri Sakura sekarang!",
-    backgroundImage:
-        "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&q=80",
+    badgeKey: "hero.register.badge",
+    titleKey: "hero.register.title",
+    highlightKey: "hero.register.highlight",
+    titleSuffixKey: "hero.register.titleSuffix",
+    descriptionKey: "hero.register.description",
+    backgroundImage: heroImages.register,
 };
 
 export const registerPersonalFields: RegisterPersonalField[] = [

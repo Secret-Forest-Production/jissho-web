@@ -1,14 +1,14 @@
 import type { BlogCategory, BlogHeroData, BlogPost } from "../types/blog.type";
 
+import { heroImages } from "@/Shared/data/hero-images";
+
 export const blogHeroData: BlogHeroData = {
-    badge: "Warta Jissho",
-    title: "Wawasan Terbaru",
-    highlight: "& tips",
-    titleSuffix: "Sukses Karir di Jepang",
-    description:
-        "Temukan kumpulan artikel eksklusif mengenai metode belajar bahasa Jepang, persiapan dokumen kerja, hingga cerita inspiratif dari alumni Yayasan Jissho.",
-    backgroundImage:
-        "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&q=80",
+    badgeKey: "hero.blog.badge",
+    titleKey: "hero.blog.title",
+    highlightKey: "hero.blog.highlight",
+    titleSuffixKey: "hero.blog.titleSuffix",
+    descriptionKey: "hero.blog.description",
+    backgroundImage: heroImages.blog,
 };
 
 export const blogPosts: BlogPost[] = [
