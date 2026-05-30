@@ -6,7 +6,8 @@ import LandingContainers from '@/Features/landing-page/containers/landing-contai
 export default function Welcome({ auth }: PageProps) {
     return (
         <main>
-            <Head title="Welcome" />
+            <Head title="Landing Page" />
+            
             <LandingContainers />
         </main>
     );

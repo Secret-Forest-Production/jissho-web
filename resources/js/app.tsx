@@ -1,22 +1,25 @@
-import '../css/app.css';
+import "../css/app.css";
 
-import { createInertiaApp } from '@inertiajs/react';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import { createRoot } from 'react-dom/client';
-import AppLayout from '@/Layouts/AppLayout'; 
+import { createInertiaApp } from "@inertiajs/react";
+import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
+import { createRoot } from "react-dom/client";
+import AppLayout from "@/Layouts/AppLayout";
+import "./i18n";
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => {
         const page = resolvePageComponent(
             `./Pages/${name}.tsx`,
-            import.meta.glob('./Pages/**/*.tsx'),
+            import.meta.glob("./Pages/**/*.tsx"),
         );
 
         page.then((module: any) => {
-            module.default.layout = module.default.layout || ((page: React.ReactNode) => <AppLayout children={page} />);
+            module.default.layout =
+                module.default.layout ||
+                ((page: React.ReactNode) => <AppLayout children={page} />);
         });
 
         return page;
@@ -26,6 +29,6 @@ createInertiaApp({
         root.render(<App {...props} />);
     },
     progress: {
-        color: '#4B5563',
+        color: "#4B5563",
     },
 });

@@ -19,10 +19,10 @@ export interface BlogCategory {
 }
 
 export interface BlogHeroData {
-    badge: string;
-    title: string;
-    highlight: string;
-    titleSuffix: string;
-    description: string;
+    badgeKey: string;
+    titleKey: string;
+    highlightKey: string;
+    titleSuffixKey: string;
+    descriptionKey: string;
     backgroundImage: string;
 }

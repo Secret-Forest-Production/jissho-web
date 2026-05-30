@@ -1,7 +1,11 @@
-import HeroBgImg from '@/Shared/assets/tentang-kami/hero-bg.webp'; 
+import { heroImages } from "@/Shared/data/hero-images";
+import type { TranslatedHeroData } from "@/Shared/types/hero.type";
 
-export const heroData = {
-    title: "Mengapa Memilih Yayasan Jissho Sebagai Partner Karier Anda?",
-    description: "Kami percaya bahwa persiapan yang matang adalah kunci kesuksesan. Melalui program pelatihan intensif yang mencakup bahasa dan etika kerja profesional, kami memastikan Anda siap bersaing secara global dan beradaptasi dengan cepat di lingkungan kerja Jepang.",
-    backgroundImage: HeroBgImg,
+export const heroData: TranslatedHeroData = {
+    badgeKey: "hero.about.badge",
+    titleKey: "hero.about.title",
+    highlightKey: "hero.about.highlight",
+    titleSuffixKey: "hero.about.titleSuffix",
+    descriptionKey: "hero.about.description",
+    backgroundImage: heroImages.about,
 };

@@ -1,4 +1,7 @@
 import { motion, type Variants } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
+import { landingHeroData } from "../../data/hero/hero-link";
 
 const titleVariants: Variants = {
     hidden: {
@@ -16,6 +19,8 @@ const titleVariants: Variants = {
 };
 
 export default function HeroTitle() {
+    const { t } = useTranslation("common");
+
     return (
         <motion.div
             variants={titleVariants}
@@ -23,14 +28,12 @@ export default function HeroTitle() {
             animate="visible"
             className="space-y-5"
         >
-            <h1 className="max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
-                Wujudkan Impian Belajar & Bekerja di Jepang
+            <h1 className="max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+                {t(landingHeroData.titleKey)}
             </h1>
 
             <p className="max-w-2xl text-base leading-relaxed text-gray-200 md:text-lg lg:text-xl">
-                Bersama Yayasan Jissho, kami mempersiapkan Anda dengan
-                pembelajaran bahasa Jepang berkualitas, budaya kerja
-                profesional, dan bimbingan karir untuk sukses di Negeri Sakura.
+                {t(landingHeroData.descriptionKey)}
             </p>
         </motion.div>
     );

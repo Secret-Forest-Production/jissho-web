@@ -19,7 +19,7 @@
     --color-red-dark-hover: #960401;
     --color-red-dark-active: #700300;
     --color-red-darker: #580200;
-    --color-red-darker-hover: #A35656;
+    --color-red-darker-hover: #a35656;
 
     /* blue */
     --color-blue-dark: #0f172a;
@@ -27,7 +27,7 @@
 
     /* grey */
     --color-grey-50: #f9fafb;
-    --color-grey-border: #C3C5D9;
+    --color-grey-border: #c3c5d9;
 
     /* background */
     --background-image-hero-gradient: linear-gradient(
@@ -101,4 +101,13 @@
     width: 28px;
     border-radius: 9999px;
     background: #ef4444;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
