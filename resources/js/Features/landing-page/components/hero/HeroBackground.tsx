@@ -1,15 +1,13 @@
-import HeroBg from "@/Shared/assets/home/hero-background.webp";
+import { landingHeroData } from "../../data/hero/hero-link";
 
 export default function HeroBackground() {
     return (
         <div className="absolute inset-0 -z-10">
             <img
-                src={HeroBg}
-                alt="Pemandangan Jepang dengan Gunung Fuji"
-                className="h-full w-full object-cover"
+                src={landingHeroData.backgroundImage}
+                alt=""
                 draggable={false}
-                loading="eager"
-                fetchPriority="high"
+                className="h-full w-full object-cover"
             />
 
             <div

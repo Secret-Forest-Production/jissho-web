@@ -1,0 +1,72 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "about": "私たちについて",
+        "program": "プログラム",
+        "history": "沿革",
+        "blog": "ニュース",
+        "contact": "お問い合わせ",
+        "programInternship": "技能実習プログラム",
+        "programWork": "就労プログラム",
+        "programStudy": "留学プログラム",
+        "industrySector": "対応業種"
+    },
+    "footer": {
+        "brandTitle": "Yayasan",
+        "brandHighlight": "Jissho",
+        "description": "日本で働く夢を実現するための信頼できる日本語・職業訓練機関です。",
+        "quickLinks": "クイックリンク",
+        "program": "プログラム",
+        "contact": "お問い合わせ",
+        "copyright": "All rights reserved.",
+        "links": {
+            "about": "私たちについて",
+            "advantages": "強み",
+            "testimonials": "体験談",
+            "contact": "お問い合わせ",
+            "basicClass": "基礎クラス",
+            "jlptPreparation": "JLPT対策",
+            "languageCulture": "日本語＋文化",
+            "workPreparation": "就労準備"
+        }
+    },
+    "language": {
+        "id": "Indonesia",
+        "en": "English",
+        "ja": "日本語"
+    },
+    
+    "hero": {
+        "landing": {
+            "title": "日本で学び、働く夢を実現しましょう",
+            "description": "Yayasan Jisshoでは、質の高い日本語学習、職場文化の理解、キャリアサポートを通じて、日本での成功をサポートします。"
+        },
+        "about": {
+            "badge": "私たちについて",
+            "title": "なぜ",
+            "highlight": "Yayasan Jissho",
+            "titleSuffix": "をキャリアパートナーに選ぶのか？",
+            "description": "私たちは、十分な準備こそが成功の鍵だと考えています。日本語、職場文化、ビジネスマナーを含む集中的な研修を通じて、グローバルに活躍し、日本の職場環境に早く適応できるようサポートします。"
+        },
+        "program": {
+            "badge": "主なプログラム",
+            "title": "私たちの",
+            "highlight": "プログラム",
+            "description": "日本で働く、実習する、または学ぶ夢を実現するためのさまざまなプログラムを提供しています。"
+        },
+        "blog": {
+            "badge": "Jisshoニュース",
+            "title": "最新情報",
+            "highlight": "とヒント",
+            "titleSuffix": "日本でのキャリア成功へ",
+            "description": "日本語学習、就労書類の準備、卒業生の体験談など、Yayasan Jisshoの特別記事をご覧ください。"
+        },
+        "register": {
+            "badge": "今すぐ申し込む",
+            "title": "グローバルなキャリア",
+            "highlight": "と明るい未来を",
+            "titleSuffix": "日本で実現",
+            "description": "集中的な日本語研修、正式な就労サポート、出発までの手厚いサポートで、日本への一歩を踏み出しましょう。"
+        }
+    }
+}

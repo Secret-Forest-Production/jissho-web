@@ -4,47 +4,47 @@ import IconKuliah from "@/Shared/assets/icons/program-kuliah.webp";
 import IconIndustri from "@/Shared/assets/icons/sektor-industri.webp";
 
 export interface NavChildLink {
-    label: string;
+    labelKey: string;
     href: string;
     icon?: string;
 }
 
 export interface NavLink {
-    label: string;
+    labelKey: string;
     href: string;
     children?: NavChildLink[];
 }
 
 export const navLinks: NavLink[] = [
-    { label: "Beranda", href: "/" },
-    { label: "Tentang Kami", href: "/tentang-kami" },
+    { labelKey: "nav.home", href: "/" },
+    { labelKey: "nav.about", href: "/tentang-kami" },
     {
-        label: "Program",
+        labelKey: "nav.program",
         href: "/program",
         children: [
             {
-                label: "Program Magang",
+                labelKey: "nav.programInternship",
                 href: "/program#program-magang",
                 icon: IconMagang,
             },
             {
-                label: "Program Kerja",
+                labelKey: "nav.programWork",
                 href: "/program#program-kerja",
                 icon: IconKerja,
             },
             {
-                label: "Program Kuliah",
+                labelKey: "nav.programStudy",
                 href: "/program#program-kuliah",
                 icon: IconKuliah,
             },
             {
-                label: "Sektor Industri",
+                labelKey: "nav.industrySector",
                 href: "/program#sektor-industri",
                 icon: IconIndustri,
             },
         ],
     },
-    { label: "Sejarah", href: "/sejarah" },
-    { label: "Berita", href: "/blog" },
-    { label: "Kontak", href: "/kontak" },
+    { labelKey: "nav.history", href: "/sejarah" },
+    { labelKey: "nav.blog", href: "/blog" },
+    { labelKey: "nav.contact", href: "/kontak" },
 ];

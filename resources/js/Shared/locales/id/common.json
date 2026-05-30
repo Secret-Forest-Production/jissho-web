@@ -1,0 +1,72 @@
+{
+    "nav": {
+        "home": "Beranda",
+        "about": "Tentang Kami",
+        "program": "Program",
+        "history": "Sejarah",
+        "blog": "Berita",
+        "contact": "Kontak",
+        "programInternship": "Program Magang",
+        "programWork": "Program Kerja",
+        "programStudy": "Program Kuliah",
+        "industrySector": "Sektor Industri"
+    },
+    "footer": {
+        "brandTitle": "Yayasan",
+        "brandHighlight": "Jissho",
+        "description": "Lembaga Pelatihan Kerja Jepang terpercaya untuk mewujudkan impian bekerja di Negeri Sakura.",
+        "quickLinks": "Quick Links",
+        "program": "Program",
+        "contact": "Kontak",
+        "copyright": "All rights reserved.",
+        "links": {
+            "about": "Tentang Kami",
+            "advantages": "Keunggulan",
+            "testimonials": "Testimoni",
+            "contact": "Kontak",
+            "basicClass": "Kelas Dasar",
+            "jlptPreparation": "Persiapan JLPT",
+            "languageCulture": "Bahasa + Budaya",
+            "workPreparation": "Persiapan Kerja"
+        }
+    },
+    "language": {
+        "id": "Indonesia",
+        "en": "English",
+        "ja": "日本語"
+    },
+
+    "hero": {
+        "landing": {
+            "title": "Wujudkan Impian Belajar & Bekerja di Jepang",
+            "description": "Bersama Yayasan Jissho, kami mempersiapkan Anda dengan pembelajaran bahasa Jepang berkualitas, budaya kerja profesional, dan bimbingan karir untuk sukses di Negeri Sakura."
+        },
+        "about": {
+            "badge": "Tentang Kami",
+            "title": "Mengapa Memilih",
+            "highlight": "Yayasan Jissho",
+            "titleSuffix": "Sebagai Partner Karier Anda?",
+            "description": "Kami percaya bahwa persiapan yang matang adalah kunci kesuksesan. Melalui program pelatihan intensif yang mencakup bahasa dan etika kerja profesional, kami memastikan Anda siap bersaing secara global dan beradaptasi dengan cepat di lingkungan kerja Jepang."
+        },
+        "program": {
+            "badge": "Program Unggulan",
+            "title": "Program",
+            "highlight": "Kami",
+            "description": "Berbagai program untuk mewujudkan impian Anda bekerja, magang, atau kuliah di Jepang."
+        },
+        "blog": {
+            "badge": "Warta Jissho",
+            "title": "Wawasan Terbaru",
+            "highlight": "& tips",
+            "titleSuffix": "Sukses Karir di Jepang",
+            "description": "Temukan kumpulan artikel eksklusif mengenai metode belajar bahasa Jepang, persiapan dokumen kerja, hingga cerita inspiratif dari alumni Yayasan Jissho."
+        },
+        "register": {
+            "badge": "Daftar Sekarang",
+            "title": "Raih Karier Global",
+            "highlight": "dan Masa Depan",
+            "titleSuffix": "Gemilang di Jepang",
+            "description": "Pelatihan bahasa intensif, penyaluran kerja resmi, dan pendampingan penuh hingga keberangkatan. Mulai perjalanan sukses Anda di Negeri Sakura sekarang!"
+        }
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "program": "Program",
+        "history": "History",
+        "blog": "News",
+        "contact": "Contact",
+        "programInternship": "Internship Program",
+        "programWork": "Work Program",
+        "programStudy": "Study Program",
+        "industrySector": "Industry Sector"
+    },
+    "footer": {
+        "brandTitle": "Yayasan",
+        "brandHighlight": "Jissho",
+        "description": "A trusted Japanese vocational training institution to help you achieve your dream of working in Japan.",
+        "quickLinks": "Quick Links",
+        "program": "Program",
+        "contact": "Contact",
+        "copyright": "All rights reserved.",
+        "links": {
+            "about": "About Us",
+            "advantages": "Advantages",
+            "testimonials": "Testimonials",
+            "contact": "Contact",
+            "basicClass": "Basic Class",
+            "jlptPreparation": "JLPT Preparation",
+            "languageCulture": "Language + Culture",
+            "workPreparation": "Work Preparation"
+        }
+    },
+    "language": {
+        "id": "Indonesia",
+        "en": "English",
+        "ja": "日本語"
+    },
+    
+    "hero": {
+        "landing": {
+            "title": "Turn Your Dream of Studying & Working in Japan into Reality",
+            "description": "With Yayasan Jissho, we prepare you through quality Japanese language learning, professional work culture training, and career guidance to succeed in Japan."
+        },
+        "about": {
+            "badge": "About Us",
+            "title": "Why Choose",
+            "highlight": "Yayasan Jissho",
+            "titleSuffix": "as Your Career Partner?",
+            "description": "We believe that thorough preparation is the key to success. Through intensive training programs covering language and professional work ethics, we help you compete globally and adapt quickly to Japan’s work environment."
+        },
+        "program": {
+            "badge": "Featured Programs",
+            "title": "Our",
+            "highlight": "Programs",
+            "description": "Various programs to help you achieve your dream of working, interning, or studying in Japan."
+        },
+        "blog": {
+            "badge": "Jissho News",
+            "title": "Latest Insights",
+            "highlight": "& tips",
+            "titleSuffix": "for Career Success in Japan",
+            "description": "Explore exclusive articles about Japanese learning methods, work document preparation, and inspiring stories from Yayasan Jissho alumni."
+        },
+        "register": {
+            "badge": "Register Now",
+            "title": "Build a Global Career",
+            "highlight": "and a Brighter Future",
+            "titleSuffix": "in Japan",
+            "description": "Intensive language training, official job placement, and full support until departure. Start your successful journey to Japan today!"
+        }
+    }
+}
