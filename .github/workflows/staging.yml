@@ -1,0 +1,75 @@
+name: Staging via Cloudflare Tunnel
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout kode dari GitHub repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Install dependency Node dan jalankan build aset
+      - name: Install Dependencies & Build Assets
+        run: |
+          npm install
+          npm run build
+
+      # 4. Setup SSH Key Agent
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: 'unnecessary'
+          if_key_exists: replace
+
+      # 5. BARU: Install Cloudflared di GitHub Runner
+      - name: Install Cloudflared
+        run: |
+          wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+          sudo dpkg -i cloudflared-linux-amd64.deb
+
+      # 6. BARU: Setup SSH Config untuk proxy via Cloudflare Tunnel
+      - name: Configure SSH ProxyCommand
+        run: |
+          mkdir -p ~/.ssh
+          # Menulis config SSH agar otomatis pakai cloudflared saat nembak domain server
+          cat << 'EOF' >> ~/.ssh/config
+          Host ${{ secrets.SSH_HOST }}
+            ProxyCommand cloudflared access ssh --hostname %h --id ${{ secrets.CF_CLIENT_ID }} --secret ${{ secrets.CF_CLIENT_SECRET }}
+            StrictHostKeyChecking no
+          EOF
+          chmod 600 ~/.ssh/config
+
+      # 7. UBAH: Git Pull menggunakan native SSH
+      - name: Execute Git Pull on VM via SSH
+        run: |
+          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cd /mnt/docker_sys/projects/jissho-web && git pull origin main"
+
+      # 8. Transfer menggunakan Rsync (Otomatis akan menggunakan proxy SSH dari langkah 6)
+      - name: Sync Build Assets to VM via Rsync
+        run: |
+          rsync -avz public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/mnt/docker_sys/projects/jissho-web/public/build/
+
+      # 9. UBAH: Post-Deployment menggunakan native SSH
+      - name: Post-Deployment Laravel Commands
+        run: |
+          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cd /mnt/docker_sys/projects/jissho-web && \
+          docker compose exec -T app php artisan config:clear && \
+          docker compose exec -T app php artisan view:clear && \
+          docker compose exec -T app php artisan config:cache && \
+          docker compose exec -T app php artisan view:cache && \
+          docker compose exec -T app chown -R www-data:www-data public/build"
