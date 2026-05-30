@@ -1,12 +1,15 @@
+import { useTranslation } from "react-i18next";
 import SectionHeader from "../../../../Components/ui/SectionHeader";
 import { mitraData } from "../../data/mitra/mitra-link";
 
 export default function MitraTitle() {
+    const { t } = useTranslation("common");
+
     return (
         <SectionHeader
-            title={mitraData.title.main}
-            highlight={mitraData.title.highlight}
-            description={mitraData.description}
+            title={t("mitra.title")}
+            highlight={t("mitra.highlight")}
+            description={t("mitra.description")}
             align="left"
             className="mb-0"
         />

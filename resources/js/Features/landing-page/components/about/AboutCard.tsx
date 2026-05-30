@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { fadeUpVariants } from "./about.animation";
 import type { AboutVisiMisiItem } from "./about.type";
@@ -9,6 +10,8 @@ interface AboutCardProps {
 }
 
 export default function AboutCard({ item, index }: AboutCardProps) {
+    const { t } = useTranslation("common");
+
     return (
         <motion.article
             custom={index}
@@ -22,7 +25,7 @@ export default function AboutCard({ item, index }: AboutCardProps) {
             className="group rounded-2xl border border-transparent bg-text-gray-100 p-8 shadow-lg transition-all duration-300 hover:border-red-light"
         >
             <h3 className="relative mb-4 inline-block text-xl font-bold text-blue-dark">
-                {item.title}
+                {t(item.title)}
                 <span
                     aria-hidden="true"
                     className="absolute -bottom-1 left-0 h-0.5 w-0 bg-red-normal transition-all duration-300 group-hover:w-full"
@@ -30,7 +33,7 @@ export default function AboutCard({ item, index }: AboutCardProps) {
             </h3>
 
             <p className="text-sm leading-relaxed text-text-gray md:text-base">
-                {item.content}
+                {t(item.content)}
             </p>
         </motion.article>
     );

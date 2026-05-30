@@ -1,9 +1,12 @@
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
 import SectionHeader from "@/Components/ui/SectionHeader";
 import { programKerjaData } from "../../data/program.data";
 
 export default function ProgramKerjaSection() {
+    const { t } = useTranslation("common");
+
     return (
         <section id="program-kerja" className="scroll-mt-28 bg-white py-20">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -18,21 +21,22 @@ export default function ProgramKerjaSection() {
                     </div>
 
                     <SectionHeader
-                        title={programKerjaData.title}
-                        highlight={programKerjaData.highlight}
-                        suffix={programKerjaData.suffix}
-                        description={programKerjaData.description}
+                        title={t("program_page.kerja.title")}
+                        highlight={t("program_page.kerja.highlight")}
+                        suffix={t("program_page.kerja.suffix")}
+                        description={t("program_page.kerja.description")}
                         className="mb-0"
                     />
                 </div>
 
                 <div className="grid gap-8 md:grid-cols-2">
-                    {programKerjaData.sswTypes.map((type) => {
+                    {programKerjaData.sswTypes.map((type, typeIdx) => {
                         const isDark = type.isDark;
+                        const key = `ssw${typeIdx + 1}`;
 
                         return (
                             <article
-                                key={type.title}
+                                key={typeIdx}
                                 className={`rounded-xl p-6 shadow-md shadow-blue-dark/10 md:p-8 ${
                                     isDark
                                         ? "bg-blue-dark text-white"
@@ -40,7 +44,7 @@ export default function ProgramKerjaSection() {
                                 }`}
                             >
                                 <h3 className="text-xl font-bold leading-tight md:text-2xl">
-                                    {type.title}
+                                    {t(`program_page.kerja.${key}.title`)}
                                 </h3>
 
                                 <div className="mt-6 flex items-center gap-3">
@@ -61,27 +65,25 @@ export default function ProgramKerjaSection() {
                                                     : "text-blue-dark"
                                             }`}
                                         >
-                                            Durasi: {type.duration}
+                                            {t("program_page.magang.duration.eyebrow").split(" ")[0]}: {t(`program_page.kerja.${key}.duration`)}
                                         </p>
 
-                                        {type.durationDescription && (
-                                            <p
-                                                className={`mt-1 text-sm ${
-                                                    isDark
-                                                        ? "text-white/70"
-                                                        : "text-gray-500"
-                                                }`}
-                                            >
-                                                {type.durationDescription}
-                                            </p>
-                                        )}
+                                        <p
+                                            className={`mt-1 text-sm ${
+                                                isDark
+                                                    ? "text-white/70"
+                                                    : "text-gray-500"
+                                            }`}
+                                        >
+                                            {t(`program_page.kerja.${key}.durationDesc`)}
+                                        </p>
                                     </div>
                                 </div>
 
                                 <ul className="mt-5 space-y-3">
-                                    {type.items.map((item) => (
+                                    {[1, 2, 3].map((idx) => (
                                         <li
-                                            key={item}
+                                            key={idx}
                                             className={`flex items-start gap-3 text-sm leading-relaxed ${
                                                 isDark
                                                     ? "text-white/90"
@@ -97,7 +99,7 @@ export default function ProgramKerjaSection() {
                                                 }`}
                                             />
 
-                                            <span>{item}</span>
+                                            <span>{t(`program_page.kerja.${key}.i${idx}`)}</span>
                                         </li>
                                     ))}
                                 </ul>

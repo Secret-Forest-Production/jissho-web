@@ -4,6 +4,8 @@ interface FormTextareaProps {
     placeholder?: string;
     required?: boolean;
     helperText?: string;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export default function FormTextarea({
@@ -12,6 +14,8 @@ export default function FormTextarea({
     placeholder,
     required = false,
     helperText,
+    value,
+    onChange,
 }: FormTextareaProps) {
     return (
         <div>
@@ -29,6 +33,8 @@ export default function FormTextarea({
                 rows={5}
                 placeholder={placeholder}
                 required={required}
+                value={value}
+                onChange={onChange}
                 className="min-h-36 w-full resize-none rounded-2xl border border-slate-400/70 bg-white px-5 py-4 text-sm text-blue-dark outline-none transition-all placeholder:text-gray-400 focus:border-red-normal focus:ring-2 focus:ring-red-normal/10"
             />
 

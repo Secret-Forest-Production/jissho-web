@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import SectionHeader from "@/Components/ui/SectionHeader";
 import { sektorIndustriData } from "../../data/program.data";
@@ -34,6 +35,19 @@ const cardVariants: Variants = {
 };
 
 export default function SektorIndustriSection() {
+    const { t } = useTranslation("common");
+
+    const industryKeys = [
+        "manufacturing",
+        "food_service",
+        "nursing",
+        "auto_repair",
+        "construction",
+        "logistics",
+        "agriculture",
+        "cleaning"
+    ];
+
     return (
         <section id="sektor-industri" className="scroll-mt-28 bg-gray-50 py-20">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -57,8 +71,8 @@ export default function SektorIndustriSection() {
                     </div>
 
                     <SectionHeader
-                        title={sektorIndustriData.title}
-                        description={sektorIndustriData.description}
+                        title={t("program_page.industri.title")}
+                        description={t("program_page.industri.description")}
                         className="mb-0"
                     />
                 </motion.div>
@@ -70,9 +84,9 @@ export default function SektorIndustriSection() {
                     viewport={{ once: true, margin: "-80px" }}
                     className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
                 >
-                    {sektorIndustriData.industries.map((industry) => (
+                    {sektorIndustriData.industries.map((industry, idx) => (
                         <motion.article
-                            key={industry.title}
+                            key={idx}
                             variants={cardVariants}
                             whileHover={{
                                 y: -5,
@@ -101,11 +115,11 @@ export default function SektorIndustriSection() {
                             </motion.div>
 
                             <h3 className="text-sm font-bold text-blue-dark">
-                                {industry.title}
+                                {t(`program_page.industri.items.${industryKeys[idx]}.title`)}
                             </h3>
 
                             <p className="mt-3 text-sm leading-relaxed text-gray-600">
-                                {industry.description}
+                                {t(`program_page.industri.items.${industryKeys[idx]}.desc`)}
                             </p>
                         </motion.article>
                     ))}

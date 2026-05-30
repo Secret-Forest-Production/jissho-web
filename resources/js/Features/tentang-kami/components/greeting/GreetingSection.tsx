@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import GreetingTitle from "./GreetingTitle";
 import { greetingData } from "../../data/greeting/greeting-link";
@@ -8,6 +9,12 @@ import type { GreetingData } from "./greeting.type";
 
 export default function GreetingSection() {
     const { content } = greetingData as GreetingData;
+    const { t } = useTranslation("common");
+
+    const quotes = [
+        t("about_page.greeting.q1"),
+        t("about_page.greeting.q2")
+    ];
 
     return (
         <section
@@ -32,7 +39,7 @@ export default function GreetingSection() {
                         <div className="h-full lg:col-span-5">
                             <img
                                 src={content.image}
-                                alt={`Foto ${content.name}`}
+                                alt={t("about_page.greeting.aria_img", { name: t("about_page.greeting.name") })}
                                 loading="lazy"
                                 draggable={false}
                                 className="h-full w-full object-cover"
@@ -41,9 +48,9 @@ export default function GreetingSection() {
 
                         <figcaption className="p-8 md:p-16 lg:col-span-7 lg:pr-20">
                             <blockquote className="space-y-6">
-                                {content.quotes.map((quote) => (
+                                {quotes.map((quote, idx) => (
                                     <p
-                                        key={quote}
+                                        key={idx}
                                         className="text-sm italic leading-relaxed text-text-gray md:text-base lg:text-lg"
                                     >
                                         {quote}
@@ -53,11 +60,11 @@ export default function GreetingSection() {
 
                             <div className="mt-10 border-t border-gray-100 pt-8">
                                 <h3 className="text-2xl font-semibold text-blue-dark">
-                                    {content.name}
+                                    {t("about_page.greeting.name")}
                                 </h3>
 
                                 <p className="mt-1 text-sm font-medium text-red-normal">
-                                    {content.role}
+                                    {t("about_page.greeting.role")}
                                 </p>
                             </div>
                         </figcaption>

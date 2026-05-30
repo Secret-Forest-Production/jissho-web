@@ -1,34 +1,34 @@
 export const aboutData = {
   title: {
-    main: "Tentang",
-    highlight: "Yayasan Jissho"
+    main: "about.title",
+    highlight: "about.highlight"
   },
-  description: "Yayasan Jissho adalah lembaga pelatihan kerja Jepang terpercaya yang berkomitmen mengantarkan generasi muda Indonesia untuk belajar dan bekerja di Jepang dengan persiapan yang matang dan profesional.",
+  description: "about.description",
   visiMisi: [
     {
-      title: "Visi Kami",
-      content: "Menjadi lembaga pelatihan kerja Jepang terdepan yang melahirkan tenaga kerja Indonesia berkualitas dan berkarakter untuk bersaing di tingkat internasional."
+      title: "about.visi.title",
+      content: "about.visi.content"
     },
     {
-      title: "Misi Kami",
-      content: "Memberikan pelatihan bahasa dan budaya Jepang berkualitas tinggi serta mendampingi peserta dalam proses penempatan kerja di Jepang dengan pendekatan profesional dan personal."
+      title: "about.misi.title",
+      content: "about.misi.content"
     }
   ],
   values: [
     {
       icon: "material-symbols:target",
-      title: "Discipline",
-      description: "Membentuk karakter disiplin khas budaya Jepang dalam setiap pembelajaran"
+      title: "about.values.discipline.title",
+      description: "about.values.discipline.description"
     },
     {
       icon: "solar:medal-ribbon-outline",
-      title: "Integrity",
-      description: "Menjunjung tinggi kejujuran dan tanggung jawab profesional"
+      title: "about.values.integrity.title",
+      description: "about.values.integrity.description"
     },
     {
       icon: "solar:eye-outline",
-      title: "Professionalism",
-      description: "Menghadirkan standar pengajaran dan pelayanan terbaik"
+      title: "about.values.professionalism.title",
+      description: "about.values.professionalism.description"
     }
   ]
 };

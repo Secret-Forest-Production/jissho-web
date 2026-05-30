@@ -1,12 +1,15 @@
+import { useTranslation } from "react-i18next";
 import SectionHeader from "../../../../Components/ui/SectionHeader";
 import { keunggulanData } from "../../data/keunggulan/keunggulan-link";
 
 export default function KeunggulanTitle() {
+    const { t } = useTranslation("common");
+
     return (
         <SectionHeader
-            title={keunggulanData.title.main}
-            highlight={keunggulanData.title.highlight}
-            description={keunggulanData.description}
+            title={t(keunggulanData.title.main)}
+            highlight={t(keunggulanData.title.highlight)}
+            description={t(keunggulanData.description)}
         />
     );
 }

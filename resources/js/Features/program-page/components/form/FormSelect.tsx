@@ -1,12 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 
+interface SelectOption {
+    label: string;
+    value: string;
+}
+
 interface FormSelectProps {
     label: string;
     name: string;
     placeholder?: string;
     required?: boolean;
-    options: string[];
+    options: SelectOption[];
+    value?: string;
+    onChange?: (e: { target: { name: string; value: string } }) => void;
 }
 
 export default function FormSelect({
@@ -15,9 +22,10 @@ export default function FormSelect({
     placeholder = "Pilih salah satu",
     required = false,
     options,
+    value,
+    onChange,
 }: FormSelectProps) {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedValue, setSelectedValue] = useState("");
     const selectRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -37,10 +45,14 @@ export default function FormSelect({
         };
     }, []);
 
-    const handleSelect = (option: string) => {
-        setSelectedValue(option);
+    const handleSelect = (optionValue: string) => {
+        if (onChange) {
+            onChange({ target: { name, value: optionValue } });
+        }
         setIsOpen(false);
     };
+
+    const selectedOption = options.find((opt) => opt.value === value);
 
     return (
         <div ref={selectRef} className="relative">
@@ -56,7 +68,7 @@ export default function FormSelect({
                 id={name}
                 name={name}
                 type="hidden"
-                value={selectedValue}
+                value={value || ""}
                 required={required}
             />
 
@@ -71,10 +83,10 @@ export default function FormSelect({
             >
                 <span
                     className={
-                        selectedValue ? "text-blue-dark" : "text-gray-400"
+                        selectedOption ? "text-blue-dark" : "text-gray-400"
                     }
                 >
-                    {selectedValue || placeholder}
+                    {selectedOption ? selectedOption.label : placeholder}
                 </span>
 
                 <Icon
@@ -88,20 +100,20 @@ export default function FormSelect({
             {isOpen && (
                 <div className="absolute left-0 top-[calc(100%+8px)] z-40 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl shadow-blue-dark/10">
                     {options.map((option) => {
-                        const isSelected = selectedValue === option;
+                        const isSelected = value === option.value;
 
                         return (
                             <button
-                                key={option}
+                                key={option.value}
                                 type="button"
-                                onClick={() => handleSelect(option)}
+                                onClick={() => handleSelect(option.value)}
                                 className={`block w-full px-5 py-3 text-left text-sm transition-all ${
                                     isSelected
                                         ? "bg-red-normal text-white"
                                         : "text-gray-600 hover:bg-red-normal/10 hover:text-red-normal"
                                 }`}
                             >
-                                {option}
+                                {option.label}
                             </button>
                         );
                     })}

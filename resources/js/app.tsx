@@ -26,6 +26,15 @@ createInertiaApp({
     },
     setup({ el, App, props }) {
         const root = createRoot(el);
+        
+        // Synchronize i18next with server-side locale
+        const locale = props.initialPage.props.locale as string;
+        if (locale) {
+            import("./i18n").then(({ default: i18n }) => {
+                i18n.changeLanguage(locale);
+            });
+        }
+
         root.render(<App {...props} />);
     },
     progress: {

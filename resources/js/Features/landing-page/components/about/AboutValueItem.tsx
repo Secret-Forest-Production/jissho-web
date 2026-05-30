@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { fadeUpVariants } from "./about.animation";
 import type { AboutValueItem as AboutValueItemType } from "./about.type";
@@ -10,6 +11,8 @@ interface AboutValueItemProps {
 }
 
 export default function AboutValueItem({ item, index }: AboutValueItemProps) {
+    const { t } = useTranslation("common");
+
     return (
         <motion.article
             custom={index}
@@ -30,10 +33,10 @@ export default function AboutValueItem({ item, index }: AboutValueItemProps) {
                 />
             </div>
 
-            <h3 className="text-lg font-bold text-blue-dark">{item.title}</h3>
+            <h3 className="text-lg font-bold text-blue-dark">{t(item.title)}</h3>
 
             <p className="max-w-xs text-sm leading-relaxed text-text-gray">
-                {item.description}
+                {t(item.description)}
             </p>
         </motion.article>
     );
