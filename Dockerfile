@@ -8,7 +8,10 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     zip \
-    unzip
+    unzip \
+    libzip-dev \
+    libicu-dev \
+    pkg-config
 
 # Bersihkan cache apt agar image tidak bengkak
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
