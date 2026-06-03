@@ -1,16 +1,10 @@
-import SEO from "@/Components/shared/SEO";
-
 import AboutTitle from "./AboutTitle";
 import AboutVisiMisi from "./AboutVisiMisi";
 import AboutValue from "./AboutValue";
 
-import { aboutData } from "../../data/about/about-link";
-
 export default function AboutSection() {
     return (
         <>
-            <SEO title="Tentang Kami" description={aboutData.description} />
-
             <section
                 id="tentang-kami"
                 aria-labelledby="about-heading"

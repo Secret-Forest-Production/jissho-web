@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface BlogPaginationProps {
     currentPage: number;
@@ -24,7 +24,7 @@ export default function BlogPagination({
                 onClick={() => onPageChange(currentPage - 1)}
                 className="flex h-10 w-10 items-center rounded-sm justify-center border border-gray-300 bg-white text-gray-500 transition hover:bg-gray-50 disabled:opacity-50"
             >
-                <Icon icon="mdi:chevron-left" className="h-5 w-5" />
+                <ChevronLeft className="h-5 w-5" />
             </button>
 
             {Array.from({ length: totalPages }, (_, index) => index + 1).map(
@@ -51,7 +51,7 @@ export default function BlogPagination({
                 onClick={() => onPageChange(currentPage + 1)}
                 className="flex h-10 w-10 items-center rounded-sm justify-center border border-gray-300 bg-white text-gray-500 transition hover:bg-gray-50 disabled:opacity-50"
             >
-                <Icon icon="mdi:chevron-right" className="h-5 w-5" />
+                <ChevronRight className="h-5 w-5" />
             </button>
         </nav>
     );

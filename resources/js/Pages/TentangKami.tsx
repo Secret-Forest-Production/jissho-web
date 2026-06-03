@@ -1,20 +1,18 @@
-import React from 'react';
-import { Head } from '@inertiajs/react';
-import { PageProps } from '@/types';
-import TentangContainers from '@/Features/tentang-kami/containers/tentang-containers';
-import { useTranslation } from "react-i18next";
+import SEO from "@/Components/shared/SEO";
+import TentangContainers from "@/Features/tentang-kami/containers/tentang-containers";
+import { PageProps } from "@/types";
 
 export default function TentangKami({ auth }: PageProps) {
-    const { t } = useTranslation("common");
-
     return (
         <>
-            <Head title={t("nav.about")} />
-            
-            <main className="pt-20"> 
+            <SEO
+                title="Tentang Kami"
+                description="Kenali Yayasan Jissho sebagai lembaga pelatihan bahasa Jepang, persiapan budaya kerja, dan pendampingan untuk belajar serta bekerja di Jepang."
+            />
+
+            <main className="pt-20">
                 <TentangContainers />
             </main>
-
         </>
     );
 }

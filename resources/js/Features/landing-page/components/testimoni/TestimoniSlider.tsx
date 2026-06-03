@@ -1,4 +1,3 @@
-import { Icon } from "@iconify/react";
 import { useRef } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,6 +11,7 @@ import { testimoniData } from "../../data/testimoni/testimoni-link";
 import TestimoniCard from "./TestimoniCard";
 import { TESTIMONI_SWIPER_CONFIG } from "./testimoni.constant";
 import type { TestimoniItem } from "./testimoni.type";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function TestimoniSlider() {
     const prevRef = useRef<HTMLButtonElement | null>(null);
@@ -25,7 +25,7 @@ export default function TestimoniSlider() {
                 aria-label="Testimoni sebelumnya"
                 className="absolute left-1 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md transition hover:bg-red-light md:left-3"
             >
-                <Icon icon="lucide:chevron-left" className="text-red-normal" />
+                <ChevronLeft className="text-red-normal w-4 h-4" />
             </button>
 
             <button
@@ -34,7 +34,7 @@ export default function TestimoniSlider() {
                 aria-label="Testimoni berikutnya"
                 className="absolute right-1 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md transition hover:bg-red-light md:right-3"
             >
-                <Icon icon="lucide:chevron-right" className="text-red-normal" />
+                <ChevronRight className="text-red-normal w-4 h-4" />
             </button>
 
             <Swiper
