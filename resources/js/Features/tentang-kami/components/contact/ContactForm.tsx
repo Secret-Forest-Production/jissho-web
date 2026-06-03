@@ -1,7 +1,7 @@
-import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 
 import Button from "@/Components/ui/Button";
+import { Pencil, Phone, User } from "lucide-react";
 
 const inputClassName =
     "w-full rounded-[20px] bg-gray-50 py-3 pl-11 pr-4 text-sm text-text-gray outline-none transition-all duration-200 focus:ring-2 focus:ring-red-normal";
@@ -9,7 +9,7 @@ const inputClassName =
 const labelClassName = "mb-1 block text-base font-semibold text-blue-dark";
 
 const iconClassName =
-    "absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-400 transition-colors group-focus-within:text-red-normal";
+    "absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 transition-colors group-focus-within:text-red-normal";
 
 export default function ContactForm() {
     const { t } = useTranslation("common");
@@ -31,8 +31,7 @@ export default function ContactForm() {
                         </label>
 
                         <div className="group relative">
-                            <Icon
-                                icon="tabler:user"
+                            <User
                                 aria-hidden="true"
                                 className={iconClassName}
                             />
@@ -42,7 +41,9 @@ export default function ContactForm() {
                                 name="fullName"
                                 type="text"
                                 autoComplete="name"
-                                placeholder={t("about_page.contact.form.name_placeholder")}
+                                placeholder={t(
+                                    "about_page.contact.form.name_placeholder",
+                                )}
                                 className={inputClassName}
                             />
                         </div>
@@ -54,8 +55,7 @@ export default function ContactForm() {
                         </label>
 
                         <div className="group relative">
-                            <Icon
-                                icon="mynaui:telephone"
+                            <Phone
                                 aria-hidden="true"
                                 className={iconClassName}
                             />
@@ -66,7 +66,9 @@ export default function ContactForm() {
                                 type="tel"
                                 inputMode="tel"
                                 autoComplete="tel"
-                                placeholder={t("about_page.contact.form.phone_placeholder")}
+                                placeholder={t(
+                                    "about_page.contact.form.phone_placeholder",
+                                )}
                                 className={inputClassName}
                             />
                         </div>
@@ -79,17 +81,15 @@ export default function ContactForm() {
                     </label>
 
                     <div className="group relative">
-                        <Icon
-                            icon="mdi:pencil-outline"
-                            aria-hidden="true"
-                            className={iconClassName}
-                        />
+                        <Pencil aria-hidden="true" className={iconClassName} />
 
                         <input
                             id="programInterest"
                             name="programInterest"
                             type="text"
-                            placeholder={t("about_page.contact.form.program_placeholder")}
+                            placeholder={t(
+                                "about_page.contact.form.program_placeholder",
+                            )}
                             className={inputClassName}
                         />
                     </div>

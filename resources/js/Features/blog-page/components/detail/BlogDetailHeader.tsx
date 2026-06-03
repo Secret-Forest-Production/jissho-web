@@ -1,6 +1,5 @@
-import { Icon } from "@iconify/react";
-
 import type { BlogPost } from "../../types/blog.type";
+import { Calendar, Clock, User } from "lucide-react";
 
 export default function BlogDetailHeader({ post }: { post: BlogPost }) {
     return (
@@ -15,7 +14,7 @@ export default function BlogDetailHeader({ post }: { post: BlogPost }) {
 
             <div className="flex flex-wrap items-center gap-4 text-sm text-[#434656]">
                 <div className="flex items-center gap-1.5">
-                    <Icon icon="uil:calender" className="h-4 w-4" />
+                    <Calendar className="h-4 w-4" />
                     <time dateTime={post.date}>
                         {new Date(post.date).toLocaleDateString("id-ID", {
                             day: "2-digit",
@@ -26,12 +25,12 @@ export default function BlogDetailHeader({ post }: { post: BlogPost }) {
                 </div>
 
                 <div className="flex items-center gap-1.5">
-                    <Icon icon="mdi:account-outline" className="h-4 w-4" />
+                    <User className="h-4 w-4" />
                     <span>{post.author}</span>
                 </div>
 
                 <div className="flex items-center gap-1.5">
-                    <Icon icon="mdi:clock-outline" className="h-4 w-4" />
+                    <Clock className="h-4 w-4" />
                     <span>{post.readingTime}</span>
                 </div>
             </div>

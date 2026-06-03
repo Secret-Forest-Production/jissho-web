@@ -1,4 +1,5 @@
-import { Icon } from "@iconify/react";
+import { Search } from "lucide-react";
+
 
 interface SearchWidgetProps {
     value: string;
@@ -9,17 +10,16 @@ export default function SearchWidget({ value, onChange }: SearchWidgetProps) {
     return (
         <section className="border border-grey-border bg-white p-6 rounded-lg">
             <div className="mb-4 flex items-center gap-2">
-                <Icon icon="mdi:magnify" className="h-5 w-5 text-red-700" />
+                <Search className="h-4 w-4 text-red-700" />
                 <h2 className="text-lg font-bold text-gray-900">
                     Cari Artikel
                 </h2>
             </div>
 
             <div className="relative">
-                <Icon
-                    icon="mdi:magnify"
+                <Search
                     aria-hidden="true"
-                    className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400"
+                    className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400"
                 />
 
                 <input

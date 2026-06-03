@@ -1,5 +1,3 @@
-import SEO from "@/Components/shared/SEO";
-
 import HeroActions from "./HeroActions";
 import HeroBackground from "./HeroBackground";
 import HeroServices from "./HeroServices";
@@ -8,11 +6,6 @@ import HeroTitle from "./HeroTitle";
 export default function HeroSection() {
     return (
         <>
-            <SEO
-                title="Beranda"
-                description="Yayasan Jissho membantu mewujudkan impian Anda untuk belajar dan bekerja di Jepang melalui pembelajaran bahasa Jepang dan persiapan budaya kerja profesional."
-            />
-
             <section className="relative flex w-full flex-col">
                 <HeroBackground />
 

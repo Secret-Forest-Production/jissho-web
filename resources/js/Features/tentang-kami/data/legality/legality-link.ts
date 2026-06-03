@@ -1,6 +1,6 @@
-import LegalityMainImg from "@/Shared/assets/tentang-kami/legality-main.webp";
-import IconDoc from "@/Shared/assets/tentang-kami/icon-1.webp";
-import IconPartnership from "@/Shared/assets/tentang-kami/icon-2.webp";
+import LegalityMainImg from "@/Shared/assets-optimized/tentang-kami/legality-main.webp";
+import IconDoc from "@/Shared/assets-optimized/tentang-kami/icon-1.webp";
+import IconPartnership from "@/Shared/assets-optimized/tentang-kami/icon-2.webp";
 
 export const legalityData = {
     header: {
@@ -15,7 +15,7 @@ export const legalityData = {
         {
             title: "Izin Kemenaker RI",
             desc: "Terdaftar resmi di Kementerian Ketenagakerjaan Republik Indonesia sebagai lembaga pelatihan kerja",
-            image: IconDoc, 
+            image: IconDoc,
         },
         {
             title: "NPWP Yayasan",

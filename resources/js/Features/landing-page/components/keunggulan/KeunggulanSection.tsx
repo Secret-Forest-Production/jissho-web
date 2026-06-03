@@ -1,4 +1,4 @@
-import KeunggulanBgImg from "@/Shared/assets/home/keunggulan-background.webp";
+import KeunggulanBgImg from "@/Shared/assets-optimized/home/keunggulan-background.webp";
 
 import KeunggulanImage from "./KeunggulanImage";
 import KeunggulanTitle from "./KeunggulanTitle";

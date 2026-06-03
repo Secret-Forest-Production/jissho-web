@@ -8,12 +8,12 @@ import type {
 
 import { heroImages } from "@/Shared/data/hero-images";
 
-import IconMagang from "@/Shared/assets/icons/program-magang.webp";
-import IconKerja from "@/Shared/assets/icons/program-kerja.webp";
-import IconKuliah from "@/Shared/assets/icons/program-kuliah.webp";
-import IconIndustri from "@/Shared/assets/icons/sektor-industri.webp";
+import IconMagang from "@/Shared/assets-optimized/icons/program-magang.webp";
+import IconKerja from "@/Shared/assets-optimized/icons/program-kerja.webp";
+import IconKuliah from "@/Shared/assets-optimized/icons/program-kuliah.webp";
+import IconIndustri from "@/Shared/assets-optimized/icons/sektor-industri.webp";
 
-import KuliahImg1 from "@/Shared/assets/program/kuliah-1.webp";
+import KuliahImg1 from "@/Shared/assets-optimized/program/kuliah-1.webp";
 
 export const programHeroData: ProgramHeroData = {
     badgeKey: "hero.program.badge",

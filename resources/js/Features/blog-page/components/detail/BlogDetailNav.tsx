@@ -1,7 +1,7 @@
-import { Icon } from "@iconify/react";
 import { Link } from "@inertiajs/react";
 
 import { blogPosts } from "../../data/blog";
+import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 
 interface BlogDetailNavProps {
     currentPostId: number;
@@ -32,8 +32,7 @@ export default function BlogDetailNav({ currentPostId }: BlogDetailNavProps) {
                     className="group flex flex-col justify-center border rounded-lg border-gray-200 bg-white p-6 transition-all hover:border-red-normal hover:shadow-md"
                 >
                     <div className="mb-2 flex items-center text-xs font-bold uppercase tracking-wider text-red-normal">
-                        <Icon
-                            icon="mdi:arrow-left"
+                        <ArrowLeftIcon
                             aria-hidden="true"
                             className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
                         />
@@ -55,8 +54,7 @@ export default function BlogDetailNav({ currentPostId }: BlogDetailNavProps) {
                 >
                     <div className="mb-2 flex items-center justify-end text-xs font-bold uppercase tracking-wider text-red-normal">
                         Artikel Berikutnya
-                        <Icon
-                            icon="mdi:arrow-right"
+                        <ArrowRightIcon
                             aria-hidden="true"
                             className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
                         />

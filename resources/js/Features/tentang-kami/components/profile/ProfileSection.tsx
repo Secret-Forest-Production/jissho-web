@@ -6,15 +6,13 @@ import { completeProfileData } from "../../data/profile/profile-link";
 import CompleteProfileTitle from "./ProfileTitle";
 import { profileImageVariants, profileTextVariants } from "./profile.animation";
 import type { CompleteProfileData } from "./profile.type";
+import ProfileImage from "./ProfileImage";
 
 export default function CompleteProfileSection() {
     const { content } = completeProfileData as CompleteProfileData;
     const { t } = useTranslation("common");
 
-    const paragraphs = [
-        t("about_page.profile.p1"),
-        t("about_page.profile.p2")
-    ];
+    const paragraphs = [t("about_page.profile.p1"), t("about_page.profile.p2")];
 
     return (
         <section
@@ -55,7 +53,6 @@ export default function CompleteProfileSection() {
                             ))}
                         </div>
                     </motion.article>
-
                     <motion.figure
                         variants={profileImageVariants}
                         initial="hidden"
@@ -65,13 +62,7 @@ export default function CompleteProfileSection() {
                             margin: "-80px",
                         }}
                     >
-                        <img
-                            src={content.image}
-                            alt={t("about_page.profile.aria_img")}
-                            loading="lazy"
-                            draggable={false}
-                            className="aspect-4/3 h-auto w-full object-cover"
-                        />
+                        <ProfileImage />
                     </motion.figure>
                 </div>
             </div>

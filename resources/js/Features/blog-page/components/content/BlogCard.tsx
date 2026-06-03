@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Calendar, ArrowRight } from "lucide-react";
 import { Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
 
@@ -39,11 +39,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
 
             <div className="flex grow flex-col p-6">
                 <div className="mb-3 flex items-center gap-2 text-sm text-gray-500">
-                    <Icon
-                        icon="uil:calender"
-                        aria-hidden="true"
-                        className="text-gray-400"
-                    />
+                    <Calendar className="h-4 w-4 text-gray-400" />
                     <time dateTime={post.date}>
                         {new Date(post.date).toLocaleDateString("id-ID", {
                             day: "2-digit",
@@ -72,8 +68,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
                     className="group inline-flex items-center text-sm font-semibold text-red-700 transition-colors hover:text-red-normal-hover"
                 >
                     Baca Selengkapnya
-                    <Icon
-                        icon="mdi:arrow-right"
+                    <ArrowRight
                         aria-hidden="true"
                         className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
                     />

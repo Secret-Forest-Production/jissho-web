@@ -1,7 +1,7 @@
-import IconMagang from "@/Shared/assets/icons/program-magang.webp";
-import IconKerja from "@/Shared/assets/icons/program-kerja.webp";
-import IconKuliah from "@/Shared/assets/icons/program-kuliah.webp";
-import IconIndustri from "@/Shared/assets/icons/sektor-industri.webp";
+import IconMagang from "@/Shared/assets-optimized/icons/program-magang.webp";
+import IconKerja from "@/Shared/assets-optimized/icons/program-kerja.webp";
+import IconKuliah from "@/Shared/assets-optimized/icons/program-kuliah.webp";
+import IconIndustri from "@/Shared/assets-optimized/icons/sektor-industri.webp";
 
 export interface NavChildLink {
     labelKey: string;

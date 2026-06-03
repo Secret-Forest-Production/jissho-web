@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Icon } from "@iconify/react";
+import { Languages, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { router } from "@inertiajs/react";
 
@@ -33,13 +33,17 @@ export default function LanguageSwitcher() {
 
     const handleChangeLanguage = (languageCode: string) => {
         if (i18n.language !== languageCode) {
-            router.post(route("language.switch"), { locale: languageCode }, {
-                onSuccess: () => {
-                    i18n.changeLanguage(languageCode);
-                    localStorage.setItem("language", languageCode);
+            router.post(
+                route("language.switch"),
+                { locale: languageCode },
+                {
+                    onSuccess: () => {
+                        i18n.changeLanguage(languageCode);
+                        localStorage.setItem("language", languageCode);
+                    },
+                    preserveScroll: true,
                 },
-                preserveScroll: true
-            });
+            );
         }
 
         setIsOpen(false);
@@ -83,13 +87,12 @@ export default function LanguageSwitcher() {
                         : "border-gray-300 text-blue-dark/80 hover:text-red-normal"
                 }`}
             >
-                <Icon icon="heroicons:language-20-solid" className="text-lg" />
+                <Languages className="h-4 w-4" />
 
                 <span>{currentLanguage.label}</span>
 
-                <Icon
-                    icon="heroicons:chevron-down-20-solid"
-                    className={`text-base transition-transform duration-300 ${
+                <ChevronDown
+                    className={`h-4 w-4 text-base transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                     }`}
                 />

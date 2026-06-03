@@ -37,13 +37,13 @@ export default function SectionHeader({
             className={`flex max-w-4xl flex-col ${
                 isLeft
                     ? "items-start text-left"
-                    : "mx-auto mb-16 items-center text-center"
-            } ${className}`}
+                    : "mx-auto items-center text-center"
+            } mb-10 md:mb-12 lg:mb-16 ${className}`}
         >
-            <div className={`relative ${showLine ? "pb-4" : ""}`}>
+            <div className={`relative ${showLine ? "pb-4 md:pb-5" : ""}`}>
                 <h2
                     id={id}
-                    className="text-2xl font-bold leading-tight text-blue-dark md:text-3xl lg:text-4xl"
+                    className="text-2xl font-bold leading-tight text-blue-dark sm:text-3xl lg:text-4xl"
                 >
                     {title}
 
@@ -54,7 +54,7 @@ export default function SectionHeader({
                         </>
                     )}
 
-                    {suffix && <> {suffix}</>}
+                    {suffix && ` ${suffix} `}
                 </h2>
 
                 {showLine && (
@@ -81,7 +81,7 @@ export default function SectionHeader({
             {description && (
                 <p
                     className={`text-sm leading-relaxed text-gray-600 md:text-base ${
-                        showLine ? "mt-6" : "mt-3"
+                        showLine ? "mt-6 md:mt-7" : "mt-3 md:mt-4"
                     } ${
                         isLeft ? "max-w-xl" : "mx-auto max-w-3xl"
                     } ${descriptionClassName}`}

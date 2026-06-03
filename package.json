@@ -4,7 +4,8 @@
     "type": "module",
     "scripts": {
         "build": "tsc && vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "compress:images": "node scripts/compress-images.mjs"
     },
     "devDependencies": {
         "@headlessui/react": "^2.0.0",
@@ -18,6 +19,7 @@
         "laravel-vite-plugin": "^3.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "sharp": "^0.34.5",
         "typescript": "^5.0.2",
         "vite": "^8.0.0"
     },
@@ -25,6 +27,7 @@
         "@iconify/react": "^6.0.2",
         "framer-motion": "^12.38.0",
         "i18next": "^26.3.0",
+        "lucide-react": "^1.17.0",
         "react-i18next": "^17.0.8",
         "swiper": "^12.1.4"
     }

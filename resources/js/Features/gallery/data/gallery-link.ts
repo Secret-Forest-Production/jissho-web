@@ -1,6 +1,6 @@
-import GalleryImg1 from "@/Shared/assets/gallery/gallery-1.webp";
-import GalleryImg2 from "@/Shared/assets/gallery/gallery-2.webp";
-import GalleryImg3 from "@/Shared/assets/gallery/gallery-3.webp";
+import GalleryImg1 from "@/Shared/assets-optimized/gallery/gallery-1.webp";
+import GalleryImg2 from "@/Shared/assets-optimized/gallery/gallery-2.webp";
+import GalleryImg3 from "@/Shared/assets-optimized/gallery/gallery-3.webp";
 
 export const galleryData = {
     header: {

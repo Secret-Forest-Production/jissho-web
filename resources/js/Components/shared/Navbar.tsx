@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link, usePage } from "@inertiajs/react";
-import { Icon } from "@iconify/react";
+import { ChevronDown, AlignRight , X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import LanguageSwitcher from "@/Components/ui/LanguageSwitcher";
 import { navLinks } from "@/Shared/data/nav-link";
-import Logo from "@/Shared/assets/logo.webp";
+import Logo from "@/Shared/assets-optimized/logo.webp";
 
 type NavChild = {
     labelKey: string;
@@ -92,9 +92,9 @@ function DesktopNavLink({ link, currentUrl, t }: DesktopNavLinkProps) {
                 >
                     {t(link.labelKey)}
 
-                    <Icon
-                        icon="heroicons:chevron-down-20-solid"
-                        className="text-base transition-transform duration-300 group-hover:rotate-180"
+                    <ChevronDown
+                        className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180"
+                        aria-hidden="true"
                     />
 
                     <ActiveUnderline isActive={isItemActive} />
@@ -209,11 +209,11 @@ function MobileNavLink({
                 >
                     <span>{t(link.labelKey)}</span>
 
-                    <Icon
-                        icon="heroicons:chevron-down-20-solid"
-                        className={`text-xl transition-transform duration-300 ${
+                    <ChevronDown
+                        className={`h-5 w-5 transition-transform duration-300 ${
                             isDropdownOpen ? "rotate-180" : ""
                         }`}
+                        aria-hidden="true"
                     />
                 </button>
 
@@ -368,16 +368,22 @@ export default function Navbar() {
                             aria-expanded={isOpen}
                             className="p-2 text-blue-dark transition-transform active:scale-90"
                         >
-                            <Icon
-                                icon={
+                            <span
+                                className={`block transition-transform duration-300 ${
                                     isOpen
-                                        ? "heroicons:x-mark-20-solid"
-                                        : "heroicons:bars-3-bottom-right-20-solid"
-                                }
-                                className={`text-3xl transition-all duration-300 ${
-                                    isOpen ? "rotate-90 text-red-normal" : ""
+                                        ? "rotate-90 text-red-normal"
+                                        : "rotate-0"
                                 }`}
-                            />
+                            >
+                                {isOpen ? (
+                                    <X className="h-8 w-8" aria-hidden="true" />
+                                ) : (
+                                    <AlignRight
+                                        className="h-8 w-8"
+                                        aria-hidden="true"
+                                    />
+                                )}
+                            </span>
                         </button>
                     </div>
                 </div>
