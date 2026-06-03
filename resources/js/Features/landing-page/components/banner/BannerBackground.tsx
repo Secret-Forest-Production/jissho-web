@@ -1,4 +1,4 @@
-import BannerBgImg from "@/Shared/assets/home/banner-background.webp";
+import BannerBgImg from "@/Shared/assets-optimized/home/banner-background.webp";
 
 export default function BannerBackground() {
     return (

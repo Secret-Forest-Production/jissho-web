@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { ChevronRight } from 'lucide-react';
 import { Link } from "@inertiajs/react";
 
 export default function BlogDetailBreadcrumb({ title }: { title: string }) {
@@ -13,7 +13,7 @@ export default function BlogDetailBreadcrumb({ title }: { title: string }) {
             >
                 Berita
             </Link>
-            <Icon icon="mdi:chevron-right" className="h-4 w-4" />
+            <ChevronRight className="h-4 w-4" />
             <span className="line-clamp-1 font-medium text-red-normal">
                 {title}
             </span>

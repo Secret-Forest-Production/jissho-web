@@ -9,7 +9,6 @@ export default function BlogDetailContent({ post }: { post: BlogPost }) {
                     src={post.imageUrl}
                     alt={post.title}
                     loading="eager"
-                    fetchPriority="high"
                     draggable={false}
                     className="h-full w-full object-cover"
                 />

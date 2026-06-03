@@ -1,7 +1,6 @@
-import { Icon } from "@iconify/react";
-
 import { MAX_VISIBLE_PAGES } from "../utils/gallery.constant";
 import { getPaginationRange } from "../utils/gallery.utils";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface GalleryPaginationProps {
     currentPage: number;
@@ -37,7 +36,7 @@ export default function GalleryPagination({
                 aria-label="Halaman galeri sebelumnya"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-red-light-active text-sm font-semibold text-[#191C1E] transition hover:bg-red-light disabled:cursor-not-allowed disabled:border-gray-200 disabled:text-gray-300 disabled:hover:bg-transparent"
             >
-                <Icon icon="lucide:chevron-left" aria-hidden="true" />
+                <ChevronLeft aria-hidden="true" className="h-4 w-4" />
             </button>
 
             {pages.map((page) => {
@@ -67,7 +66,7 @@ export default function GalleryPagination({
                 aria-label="Halaman galeri berikutnya"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-red-light-active text-sm font-semibold text-[#191C1E] transition hover:bg-red-light disabled:cursor-not-allowed disabled:border-gray-200 disabled:text-gray-300 disabled:hover:bg-transparent"
             >
-                <Icon icon="lucide:chevron-right" aria-hidden="true" />
+                <ChevronRight aria-hidden="true" className="h-4 w-4" />
             </button>
         </nav>
     );

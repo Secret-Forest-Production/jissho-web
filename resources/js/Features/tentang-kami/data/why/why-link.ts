@@ -1,7 +1,7 @@
-import IconKurikulum from "@/Shared/assets/tentang-kami/kurikulum.webp";
-import IconPengajar from "@/Shared/assets/tentang-kami/pengajar.webp";
-import IconKarier from "@/Shared/assets/tentang-kami/karier.webp";
-import IconBukti from "@/Shared/assets/tentang-kami/bukti.webp";
+import IconKurikulum from "@/Shared/assets-optimized/tentang-kami/kurikulum.webp";
+import IconPengajar from "@/Shared/assets-optimized/tentang-kami/pengajar.webp";
+import IconKarier from "@/Shared/assets-optimized/tentang-kami/karier.webp";
+import IconBukti from "@/Shared/assets-optimized/tentang-kami/bukti.webp";
 
 export const whyData = {
     header: {

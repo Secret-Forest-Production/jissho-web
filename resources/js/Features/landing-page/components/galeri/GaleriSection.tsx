@@ -1,8 +1,8 @@
-import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import GaleriTitle from "./GaleriTitle";
 import GaleriImage from "./GaleriImage";
 import Button from "@/Components/ui/Button";
+import { ArrowRight } from "lucide-react";
 
 export default function GaleriSection() {
     const { t } = useTranslation("common");
@@ -21,9 +21,8 @@ export default function GaleriSection() {
                         className="inline-flex items-center gap-2"
                     >
                         {t("hero.services.more")}
-                        <Icon
-                            icon="heroicons:arrow-right-20-solid"
-                            className="text-lg"
+                        <ArrowRight 
+                            className="h-4 w-4"
                         />
                     </Button>
                 </div>

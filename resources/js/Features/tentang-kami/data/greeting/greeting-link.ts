@@ -1,4 +1,4 @@
-import GreetingDirectorImg from "@/Shared/assets/tentang-kami/greeting-director.svg";
+import GreetingDirectorImg from "@/Shared/assets/tentang-kami/greeting-director.webp";
 
 export const greetingData = {
     header: {

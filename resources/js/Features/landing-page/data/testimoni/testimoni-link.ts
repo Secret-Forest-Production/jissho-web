@@ -1,4 +1,4 @@
-import testi from "@/Shared/assets/home/testimoni/testi.jpg";
+import testi from "@/Shared/assets-optimized/home/testimoni/testi.webp";
 
 export const testimoniData = {
     title: { main: "testimoni.title", highlight: "testimoni.highlight" },

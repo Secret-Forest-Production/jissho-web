@@ -1,8 +1,8 @@
-import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 
 import SectionHeader from "@/Components/ui/SectionHeader";
 import { programKuliahData } from "../../data/program.data";
+import { ChevronRight, CircleCheckBig, GraduationCap } from "lucide-react";
 
 export default function ProgramKuliahSection() {
     const { t } = useTranslation("common");
@@ -55,9 +55,8 @@ export default function ProgramKuliahSection() {
                             <div className="p-5">
                                 <div className="mb-5 flex items-start gap-3">
                                     <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-red-normal/10 text-red-normal">
-                                        <Icon
-                                            icon="mdi:academic-cap-outline"
-                                            className="text-3xl"
+                                        <GraduationCap
+                                            className="h-6 w-6"
                                         />
                                     </div>
 
@@ -82,9 +81,8 @@ export default function ProgramKuliahSection() {
                                             key={requirement}
                                             className="flex items-center gap-2 text-sm leading-relaxed text-gray-600"
                                         >
-                                            <Icon
-                                                icon="lucide:circle-check-big"
-                                                className="mt-0.5 shrink-0 text-red-normal"
+                                            <CircleCheckBig
+                                                className="mt-0.5 w-4 h-4 shrink-0 text-red-normal"
                                             />
 
                                             <span>{requirement}</span>
@@ -130,9 +128,8 @@ export default function ProgramKuliahSection() {
                                         >
                                             <div className="flex items-center gap-3">
                                                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-gray-500">
-                                                    <Icon
-                                                        icon="mdi:academic-cap-outline"
-                                                        className="text-xl"
+                                                    <GraduationCap  
+                                                        className="h-5 w-5"
                                                     />
                                                 </span>
 
@@ -147,9 +144,8 @@ export default function ProgramKuliahSection() {
                                                 </div>
                                             </div>
 
-                                            <Icon
-                                                icon="heroicons:chevron-right-20-solid"
-                                                className="shrink-0 text-xl text-blue-dark"
+                                            <ChevronRight
+                                                className="shrink-0 h-5 w-5 text-blue-dark"
                                             />
                                         </button>
                                     ),
@@ -175,9 +171,8 @@ export default function ProgramKuliahSection() {
                                                 key={idx}
                                                 className="flex items-start gap-3 text-sm font-medium leading-relaxed text-slate-600 md:items-center"
                                             >
-                                                <Icon
-                                                    icon="lucide:circle-check-big"
-                                                    className="mt-0.5 shrink-0 text-xl text-slate-500 sm:text-2xl md:mt-0"
+                                                <CircleCheckBig
+                                                    className="mt-0.5 shrink-0 h-5 w-5 text-slate-500 sm:text-2xl md:mt-0"
                                                 />
 
                                                 <span>{t(`program_page.kuliah.assistances.i${idx}`)}</span>
