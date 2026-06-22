@@ -29,7 +29,7 @@
             "testimonials": "利用者の声",
             "contact": "お問い合わせ",
             "basicClass": "基礎クラス",
-            "jlptPreparation": "JLPT対策",
+            "jlptPreparation": "JLPT/JFT対策",
             "languageCulture": "言語 + 文化",
             "workPreparation": "就業準備"
         }
@@ -42,7 +42,7 @@
     "hero": {
         "landing": {
             "title": "日本での留学と就業の夢を実現しましょう",
-            "description": "実習財団（Yayasan Jissho）は、質の高い日本語学習、プロフェッショナルな職場文化、そしてキャリアガイダンスを提供し、日出ずる国での成功に向けてあなたをサポートします。",
+            "description": "実習財団（Yayasan Jissho）は、質の高い日本語学習、倫理とプロフェッショナルな職場文化、そしてキャリアガイダンスを提供し、日出ずる国での成功に向けてあなたをサポートします。",
             "cta_register": "今すぐ登録",
             "cta_consultation": "無料相談"
         },
@@ -79,12 +79,12 @@
                 "description": "初心者向けに、インタラクティブな方法でゼロから日本語を学びます。"
             },
             "jlpt": {
-                "title": "JLPT対策",
-                "description": "日本語能力試験（N5 - N2）合格に向けた集中指導を行います。"
+                "title": "JLPT/JFT対策",
+                "description": "日本語能力試験（N5 - N2/A2）合格に向けた集中指導を行います。"
             },
             "culture": {
                 "title": "言語と文化",
-                "description": "日本での早期適応のため、倫理や職場文化への理解を深めます。"
+                "description": "日本での早期適応のため、言語や倫理、職場文化への理解を深めます。"
             },
             "more": "詳細を見る"
         }
@@ -119,15 +119,15 @@
     "keunggulan": {
         "title": "私たちの",
         "highlight": "強み",
-        "description": "日本へのパートナーとして実習財団が選ばれる理由",
+        "description": "なぜ日本へのパートナーとして実習財団が選ばれるのか？",
         "items": {
             "teachers": {
                 "title": "経験豊富な講師陣",
-                "description": "資格を持ち、5年以上の日本語教育経験を持つプロの講師チーム"
+                "description": "資格を持ち、3年以上の日本語教育経験を持つプロの講師チーム"
             },
             "curriculum": {
                 "title": "体系的なカリキュラム",
-                "description": "JLPT基準と日本の産業界のニーズに合わせた体系的な学習教材"
+                "description": "JLPT/JFT基準と日本の産業界のニーズに合わせた体系的な学習教材"
             },
             "guidance": {
                 "title": "日本での就業指導",
@@ -135,7 +135,7 @@
             },
             "certification": {
                 "title": "公的認定",
-                "description": "就労ビザの申請において、日本の機関や企業に認められている公的な証明書"
+                "description": "日本政府および企業に認められている、日本の機関が発行する公式な証明書"
             }
         }
     },
@@ -152,14 +152,15 @@
                 "features": {
                     "f1": "ひらがな・カタカナ",
                     "f2": "基礎文法",
-                    "f3": "日常会話"
+                    "f3": "日常会話",
+                    "f4": "漢字"
                 }
             },
             "jlpt": {
-                "title": "JLPT対策",
-                "description": "日本語能力試験N5からN2レベルまでの集中的な準備",
+                "title": "JLPT/JFT対策",
+                "description": "日本語能力試験N5からN2/A2レベルまでの集中的な準備",
                 "features": {
-                    "f1": "JLPT問題演習",
+                    "f1": "JLPT/JFT問題演習",
                     "f2": "試験戦略",
                     "f3": "定期的な模擬試験"
                 }
@@ -444,7 +445,7 @@
                 "duration": "最大5年",
                 "durationDesc": "通算で最大5年まで延長可能",
                 "i1": "特定のスキルと知識が必要",
-                "i2": "技能試験と日本語能力試験（JLPT N4）に合格すること",
+                "i2": "技能試験と日本語能力試験（JLPT/JFT N4）に合格すること",
                 "i3": "家族の同伴は不可"
             },
             "ssw2": {
@@ -474,9 +475,9 @@
             "language": {
                 "title": "日本語学校",
                 "duration": "1〜2年",
-                "benefit": "JLPT対策と日本の大学への進学準備。"
+                "benefit": "JLPT/JFT対策と日本の大学への進学準備。"
             },
-            "requirement_common": "高校卒業、JLPT N2またはEJU、完全な学術書類",
+            "requirement_common": "高校卒業、JLPT/JFT N2/A2またはEJU、完全な学術書類",
             "scholarships": {
                 "title": "奨学金",
                 "mext": {
@@ -496,7 +497,7 @@
                 "title": "サポートサービス",
                 "i1": "大学および専攻選択のカウンセリング",
                 "i2": "出願書類準備のサポート",
-                "i3": "入学試験対策（EJU、JLPT）",
+                "i3": "入学試験対策（EJU、JLPT/JFT）",
                 "i4": "学生ビザ申請の案内",
                 "i5": "日本での生活オリエンテーション"
             }

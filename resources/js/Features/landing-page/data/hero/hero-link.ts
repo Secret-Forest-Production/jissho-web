@@ -22,7 +22,6 @@ export const heroServicesData: HeroService[] = [
         title: "hero.services.basicClass.title",
         desc: "hero.services.basicClass.description",
         img: ServiceImg1,
-        linkText: "hero.services.more",
     },
     {
         title: "hero.services.jlpt.title",

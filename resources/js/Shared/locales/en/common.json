@@ -29,7 +29,7 @@
             "testimonials": "Testimonials",
             "contact": "Contact",
             "basicClass": "Basic Class",
-            "jlptPreparation": "JLPT Preparation",
+            "jlptPreparation": "JLPT/JFT Preparation",
             "languageCulture": "Language + Culture",
             "workPreparation": "Work Preparation"
         }
@@ -42,7 +42,7 @@
     "hero": {
         "landing": {
             "title": "Realize Your Dreams to Study & Work in Japan",
-            "description": "With Jissho Foundation, we prepare you with quality Japanese language learning, professional work culture, and career guidance for success in the Land of the Rising Sun.",
+            "description": "With Jissho Foundation, we prepare you with quality Japanese language learning, ethics, and professional work culture, as well as career guidance for success in the Land of the Rising Sun.",
             "cta_register": "Register Now",
             "cta_consultation": "Free Consultation"
         },
@@ -79,12 +79,12 @@
                 "description": "Learning Japanese from scratch for beginners with interactive methods."
             },
             "jlpt": {
-                "title": "JLPT Preparation",
-                "description": "Intensive guidance for Japanese language proficiency test preparation (N5 - N2)."
+                "title": "JLPT/JFT Preparation",
+                "description": "Intensive guidance for Japanese language proficiency test preparation (N5 - N2/A2)."
             },
             "culture": {
                 "title": "Language & Culture",
-                "description": "Understanding ethics and work culture in Japan for quick adaptation."
+                "description": "Understanding language, ethics, and work culture in Japan for quick adaptation."
             },
             "more": "See More"
         }
@@ -119,15 +119,15 @@
     "keunggulan": {
         "title": "Our",
         "highlight": "Advantages",
-        "description": "Why choose Jissho Foundation as your partner towards Japan",
+        "description": "Why choose Jissho Foundation as your partner towards Japan?",
         "items": {
             "teachers": {
                 "title": "Experienced Teachers",
-                "description": "A team of professional teachers with certification and over 5 years of experience in teaching Japanese"
+                "description": "A team of professional teachers with certification and over 3 years of experience in teaching Japanese"
             },
             "curriculum": {
                 "title": "Structured Curriculum",
-                "description": "Systematic learning materials following JLPT standards and Japanese industry needs"
+                "description": "Systematic learning materials following JLPT/JFT standards and Japanese industry needs"
             },
             "guidance": {
                 "title": "Japan Work Guidance",
@@ -135,7 +135,7 @@
             },
             "certification": {
                 "title": "Official Certification",
-                "description": "Official certificates recognized by institutions and companies in Japan for work visa purposes"
+                "description": "Official certificates issued by Japanese institutions recognized by the government and companies in Japan"
             }
         }
     },
@@ -152,14 +152,15 @@
                 "features": {
                     "f1": "Hiragana & Katakana",
                     "f2": "Basic Grammar",
-                    "f3": "Daily Conversation"
+                    "f3": "Daily Conversation",
+                    "f4": "Kanji"
                 }
             },
             "jlpt": {
-                "title": "JLPT Preparation",
-                "description": "Intensive preparation for Japanese language proficiency tests level N5 to N2",
+                "title": "JLPT/JFT Preparation",
+                "description": "Intensive preparation for Japanese language proficiency tests level N5 to N2/A2",
                 "features": {
-                    "f1": "JLPT Question Drill",
+                    "f1": "JLPT/JFT Question Drill",
                     "f2": "Exam Strategy",
                     "f3": "Periodic Mock Test"
                 }
@@ -444,7 +445,7 @@
                 "duration": "Maximum 5 years",
                 "durationDesc": "Can be extended up to a total of 5 years",
                 "i1": "Requires certain skills and knowledge",
-                "i2": "Pass skills exam and JLPT N4",
+                "i2": "Pass skills exam and JLPT/JFT N4",
                 "i3": "Cannot bring family"
             },
             "ssw2": {
@@ -474,9 +475,9 @@
             "language": {
                 "title": "Japanese Language School",
                 "duration": "1–2 Years",
-                "benefit": "JLPT preparation and transition to Japanese universities."
+                "benefit": "JLPT/JFT preparation and transition to Japanese universities."
             },
-            "requirement_common": "Graduate of SMA/SMK, JLPT N2 or EJU, Complete academic documents",
+            "requirement_common": "Graduate of SMA/SMK, JLPT/JFT N2/A2 or EJU, Complete academic documents",
             "scholarships": {
                 "title": "Scholarships",
                 "mext": {
@@ -496,7 +497,7 @@
                 "title": "Assistance Services",
                 "i1": "University and major selection consultation",
                 "i2": "Application document preparation assistance",
-                "i3": "Entrance exam training (EJU, JLPT)",
+                "i3": "Entrance exam training (EJU, JLPT/JFT)",
                 "i4": "Student visa application guidance",
                 "i5": "Japan life orientation"
             }

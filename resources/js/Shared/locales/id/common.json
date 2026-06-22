@@ -29,7 +29,7 @@
             "testimonials": "Testimoni",
             "contact": "Kontak",
             "basicClass": "Kelas Dasar",
-            "jlptPreparation": "Persiapan JLPT",
+            "jlptPreparation": "Persiapan JLPT/JFT",
             "languageCulture": "Bahasa + Budaya",
             "workPreparation": "Persiapan Kerja"
         }
@@ -42,7 +42,7 @@
     "hero": {
         "landing": {
             "title": "Wujudkan Impian Belajar & Bekerja di Jepang",
-            "description": "Bersama Yayasan Jissho, kami mempersiapkan Anda dengan pembelajaran bahasa Jepang berkualitas, budaya kerja profesional, dan bimbingan karir untuk sukses di Negeri Sakura.",
+            "description": "Bersama Yayasan Jissho, kami mempersiapkan Anda dengan pembelajaran bahasa Jepang berkualitas, etika, dan budaya kerja profesional, serta bimbingan karir untuk sukses di Negeri Sakura.",
             "cta_register": "Daftar Sekarang",
             "cta_consultation": "Konsultasi Gratis"
         },
@@ -79,12 +79,12 @@
                 "description": "Pembelajaran bahasa Jepang dari nol untuk pemula dengan metode interaktif."
             },
             "jlpt": {
-                "title": "JLPT Preparation",
-                "description": "Bimbingan intensif persiapan ujian sertifikasi bahasa Jepang (N5 - N2)."
+                "title": "JLPT/JFT Preparation",
+                "description": "Bimbingan intensif persiapan ujian sertifikasi bahasa Jepang (N5 - N2/A2)."
             },
             "culture": {
                 "title": "Bahasa & Budaya",
-                "description": "Pemahaman etika dan budaya kerja di Jepang agar cepat beradaptasi."
+                "description": "Pemahaman bahasa, etika, dan budaya kerja di Jepang agar cepat beradaptasi."
             },
             "more": "Lihat Selengkapnya"
         }
@@ -119,15 +119,15 @@
     "keunggulan": {
         "title": "Keunggulan",
         "highlight": "Kami",
-        "description": "Mengapa memilih Yayasan Jissho sebagai partner Anda menuju Jepang",
+        "description": "Mengapa memilih Yayasan Jissho sebagai partner Anda menuju Jepang?",
         "items": {
             "teachers": {
                 "title": "Pengajar Berpengalaman",
-                "description": "Tim pengajar profesional dengan sertifikasi dan pengalaman mengajar bahasa Jepang lebih dari 5 tahun"
+                "description": "Tim pengajar profesional dengan sertifikasi dan pengalaman mengajar bahasa Jepang lebih dari 3 tahun"
             },
             "curriculum": {
                 "title": "Kurikulum Terstruktur",
-                "description": "Materi pembelajaran yang sistematis mengikuti standar JLPT dan kebutuhan industri Jepang"
+                "description": "Materi pembelajaran yang sistematis mengikuti standar JLPT/JFT dan kebutuhan industri Jepang"
             },
             "guidance": {
                 "title": "Bimbingan Kerja ke Jepang",
@@ -135,7 +135,7 @@
             },
             "certification": {
                 "title": "Sertifikasi Resmi",
-                "description": "Sertifikat resmi yang diakui oleh lembaga dan perusahaan di Jepang untuk keperluan visa kerja"
+                "description": "Sertifikat resmi yang dikeluarkan oleh lembaga Jepang yang diakui oleh pemerintah dan perusahaan di Jepang"
             }
         }
     },
@@ -152,14 +152,15 @@
                 "features": {
                     "f1": "Hiragana & Katakana",
                     "f2": "Grammar Dasar",
-                    "f3": "Percakapan Sehari-hari"
+                    "f3": "Percakapan Sehari-hari",
+                    "f4": "Kanji"
                 }
             },
             "jlpt": {
-                "title": "JLPT Preparation",
-                "description": "Persiapan intensif untuk ujian kemampuan bahasa Jepang level N5 hingga N2",
+                "title": "JLPT/JFT Preparation",
+                "description": "Persiapan intensif untuk ujian kemampuan bahasa Jepang level N5 hingga N2/A2",
                 "features": {
-                    "f1": "Drill Soal JLPT",
+                    "f1": "Drill Soal JLPT/JFT",
                     "f2": "Strategi Ujian",
                     "f3": "Mock Test Berkala"
                 }
@@ -444,7 +445,7 @@
                 "duration": "Maksimal 5 tahun",
                 "durationDesc": "Dapat diperpanjang hingga total 5 tahun",
                 "i1": "Memerlukan keterampilan dan pengetahuan tertentu",
-                "i2": "Lulus ujian keterampilan dan JLPT N4",
+                "i2": "Lulus ujian keterampilan dan JLPT/JFT N4",
                 "i3": "Tidak dapat membawa keluarga"
             },
             "ssw2": {
@@ -474,9 +475,9 @@
             "language": {
                 "title": "Sekolah Bahasa Jepang",
                 "duration": "1–2 Tahun",
-                "benefit": "Persiapan JLPT dan transisi ke universitas Jepang."
+                "benefit": "Persiapan JLPT/JFT dan transisi ke universitas Jepang."
             },
-            "requirement_common": "Lulus SMA/SMK, JLPT N2 atau EJU, Dokumen akademik lengkap",
+            "requirement_common": "Lulus SMA/SMK, JLPT/JFT N2/A2 atau EJU, Dokumen akademik lengkap",
             "scholarships": {
                 "title": "Beasiswa",
                 "mext": {
@@ -496,7 +497,7 @@
                 "title": "Layanan Pendampingan",
                 "i1": "Konsultasi pemilihan universitas dan jurusan",
                 "i2": "Bantuan persiapan dokumen aplikasi",
-                "i3": "Pelatihan ujian masuk (EJU, JLPT)",
+                "i3": "Pelatihan ujian masuk (EJU, JLPT/JFT)",
                 "i4": "Panduan pengurusan visa pelajar",
                 "i5": "Orientasi kehidupan di Jepang"
             }
