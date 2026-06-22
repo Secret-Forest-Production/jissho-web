@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import SectionHeader from "@/Components/ui/SectionHeader";
 import { useTranslation } from "react-i18next";
 
@@ -32,12 +33,10 @@ export default function ProgramMagangSection() {
         >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-10 text-center md:mb-14">
-                    <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-red-50 md:h-16 md:w-16">
-                        <img
-                            src={programMagangData.icon}
-                            alt=""
-                            draggable={false}
-                            className="h-9 w-9 object-contain md:h-10 md:w-10"
+                    <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-red-normal/10 text-red-normal md:h-16 md:w-16">
+                        <Icon
+                            icon={programMagangData.icon}
+                            className="h-7 w-7 md:h-8 md:w-8"
                         />
                     </div>
 

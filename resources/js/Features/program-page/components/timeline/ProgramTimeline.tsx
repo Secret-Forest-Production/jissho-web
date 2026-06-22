@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -13,6 +13,46 @@ export default function ProgramTimeline({ timelines }: ProgramTimelineProps) {
     const [openPhase, setOpenPhase] = useState<string | null>(
         firstItemWithImages?.phase ?? null,
     );
+    const [activePhase, setActivePhase] = useState<string | null>(
+        timelines[0]?.phase ?? null,
+    );
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const viewportCenter = window.innerHeight / 2;
+            let closestPhase: string | null = null;
+            let minDistance = Infinity;
+
+            timelines.forEach((item) => {
+                const el = document.getElementById(`timeline-item-${item.phase}`);
+                if (!el) return;
+                const rect = el.getBoundingClientRect();
+                const elementCenter = rect.top + rect.bottom; // Wait, top + bottom is 2 * elementCenter. Let's do (rect.top + rect.bottom) / 2
+                const distance = Math.abs(viewportCenter - (rect.top + rect.bottom) / 2);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestPhase = item.phase;
+                }
+            });
+
+            if (closestPhase) {
+                setActivePhase((prev) => prev !== closestPhase ? closestPhase : prev);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        window.addEventListener("resize", handleScroll, { passive: true });
+        
+        // Run check after component has mounted and styles settled
+        const timeoutId = setTimeout(handleScroll, 100);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleScroll);
+            clearTimeout(timeoutId);
+        };
+    }, [timelines]);
 
     const togglePhase = (phase: string, hasImages: boolean) => {
         if (!hasImages) return;
@@ -26,9 +66,11 @@ export default function ProgramTimeline({ timelines }: ProgramTimelineProps) {
                 {timelines.map((item, index) => {
                     const hasImages = Boolean(item.images?.length);
                     const isOpen = openPhase === item.phase;
+                    const isActive = activePhase === item.phase;
 
                     return (
                         <motion.div
+                            id={`timeline-item-${item.phase}`}
                             key={item.phase}
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -42,15 +84,15 @@ export default function ProgramTimeline({ timelines }: ProgramTimelineProps) {
                         >
                             <div className="flex flex-col items-center">
                                 <div
-                                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 bg-white p-1 text-xs font-bold sm:h-11 sm:w-11 sm:text-sm ${
-                                        index === 0
-                                            ? "border-red-normal"
-                                            : "border-blue-dark/30"
+                                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 bg-white p-1 text-xs font-bold transition-all duration-300 sm:h-11 sm:w-11 sm:text-sm ${
+                                        isActive
+                                            ? "border-red-normal scale-105"
+                                            : "border-blue-dark/30 scale-100"
                                     }`}
                                 >
                                     <span
-                                        className={`flex h-full w-full items-center justify-center rounded-full ${
-                                            index === 0
+                                        className={`flex h-full w-full items-center justify-center rounded-full transition-all duration-300 ${
+                                            isActive
                                                 ? "bg-red-normal text-white"
                                                 : "bg-white text-blue-dark"
                                         }`}

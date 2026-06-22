@@ -1,8 +1,3 @@
-import IconMagang from "@/Shared/assets-optimized/icons/program-magang.webp";
-import IconKerja from "@/Shared/assets-optimized/icons/program-kerja.webp";
-import IconKuliah from "@/Shared/assets-optimized/icons/program-kuliah.webp";
-import IconIndustri from "@/Shared/assets-optimized/icons/sektor-industri.webp";
-
 export interface NavChildLink {
     labelKey: string;
     href: string;
@@ -25,22 +20,22 @@ export const navLinks: NavLink[] = [
             {
                 labelKey: "nav.programInternship",
                 href: "/program#program-magang",
-                icon: IconMagang,
+                icon: "lucide:folder-open",
             },
             {
                 labelKey: "nav.programWork",
                 href: "/program#program-kerja",
-                icon: IconKerja,
+                icon: "lucide:briefcase",
             },
             {
                 labelKey: "nav.programStudy",
                 href: "/program#program-kuliah",
-                icon: IconKuliah,
+                icon: "lucide:graduation-cap",
             },
             {
                 labelKey: "nav.industrySector",
                 href: "/program#sektor-industri",
-                icon: IconIndustri,
+                icon: "lucide:factory",
             },
         ],
     },

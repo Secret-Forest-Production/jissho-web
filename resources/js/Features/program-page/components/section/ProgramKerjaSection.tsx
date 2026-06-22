@@ -11,12 +11,10 @@ export default function ProgramKerjaSection() {
         <section id="program-kerja" className="scroll-mt-28 bg-white py-20">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-12 text-center">
-                    <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-red-light/30">
-                        <img
-                            src={programKerjaData.icon}
-                            alt=""
-                            draggable={false}
-                            className="h-10 w-10 object-contain"
+                    <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-red-normal/10 text-red-normal">
+                        <Icon
+                            icon={programKerjaData.icon}
+                            className="h-9 w-9"
                         />
                     </div>
 

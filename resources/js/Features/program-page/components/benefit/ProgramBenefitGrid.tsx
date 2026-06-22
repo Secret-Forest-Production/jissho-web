@@ -43,9 +43,7 @@ export default function ProgramBenefitGrid({
             viewport={{ once: true, margin: "-80px" }}
             className="mt-8 grid gap-5 sm:gap-6 md:grid-cols-2"
         >
-            {benefits.map((benefit, index) => {
-                const isHighlighted = index === 0;
-
+            {benefits.map((benefit) => {
                 return (
                     <motion.article
                         key={benefit.title}
@@ -57,23 +55,13 @@ export default function ProgramBenefitGrid({
                                 ease: "easeOut",
                             },
                         }}
-                        className={`rounded-xl p-5 transition-colors duration-300 sm:p-6 ${
-                            isHighlighted
-                                ? "bg-red-normal text-white"
-                                : "bg-gray-100 text-blue-dark"
-                        }`}
+                        className="group rounded-xl p-5 bg-gray-100 text-blue-dark hover:bg-red-normal hover:text-white transition-colors duration-300 sm:p-6"
                     >
-                        <h4 className="text-base font-bold leading-snug sm:text-lg">
+                        <h4 className="text-base font-bold leading-snug sm:text-lg transition-colors duration-300">
                             {benefit.title}
                         </h4>
 
-                        <p
-                            className={`mt-4 text-sm leading-relaxed ${
-                                isHighlighted
-                                    ? "text-white/90"
-                                    : "text-gray-600"
-                            }`}
-                        >
+                        <p className="mt-4 text-sm leading-relaxed text-gray-600 group-hover:text-white/90 transition-colors duration-300">
                             {benefit.description}
                         </p>
                     </motion.article>

@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 
 import SectionHeader from "@/Components/ui/SectionHeader";
@@ -19,12 +20,10 @@ export default function ProgramKuliahSection() {
         <section id="program-kuliah" className="scroll-mt-28 bg-white py-20">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-12 text-center">
-                    <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-red-50">
-                        <img
-                            src={programKuliahData.icon}
-                            alt=""
-                            draggable={false}
-                            className="h-10 w-10 object-contain"
+                    <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-red-normal/10 text-red-normal">
+                        <Icon
+                            icon={programKuliahData.icon}
+                            className="h-9 w-9"
                         />
                     </div>
 

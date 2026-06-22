@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, usePage } from "@inertiajs/react";
 import { ChevronDown, AlignRight , X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Icon } from "@iconify/react";
 
 import LanguageSwitcher from "@/Components/ui/LanguageSwitcher";
 import { navLinks } from "@/Shared/data/nav-link";
@@ -152,19 +153,21 @@ function DesktopDropdownItem({
         <Link
             href={child.href}
             onClick={handleClick}
-            className={`flex items-center gap-3 px-4 py-2.5 text-sm font-medium transition-all ${
+            className={`group flex items-center gap-3 px-4 py-2.5 text-sm font-medium transition-all ${
                 isChildActive
                     ? "bg-red-light/30 text-red-normal"
                     : "text-blue-dark/80 hover:bg-gray-100 hover:text-red-normal"
             }`}
         >
             {child.icon && (
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gray-100">
-                    <img
-                        src={child.icon}
-                        alt={t(child.labelKey)}
-                        draggable={false}
-                        className="h-5 w-5 object-contain"
+                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors duration-300 ${
+                    isChildActive
+                        ? "bg-red-normal/10 text-red-normal"
+                        : "bg-gray-100 text-blue-dark/70 group-hover:bg-red-normal/10 group-hover:text-red-normal"
+                }`}>
+                    <Icon
+                        icon={child.icon}
+                        className="h-5 w-5"
                     />
                 </span>
             )}
@@ -282,19 +285,21 @@ function MobileDropdownItem({
         <Link
             href={child.href}
             onClick={handleClick}
-            className={`flex items-center gap-4 rounded-xl px-4 py-3 transition-all ${
+            className={`group flex items-center gap-4 rounded-xl px-4 py-3 transition-all ${
                 isChildActive
                     ? "bg-red-light/40 text-red-normal"
-                    : "text-blue-dark/80 hover:bg-red-light/20"
+                    : "text-blue-dark/80 hover:bg-red-light/20 hover:text-red-normal"
             }`}
         >
             {child.icon && (
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-50">
-                    <img
-                        src={child.icon}
-                        alt={t(child.labelKey)}
-                        draggable={false}
-                        className="h-7 w-7 object-contain"
+                <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
+                    isChildActive
+                        ? "bg-red-normal/15 text-red-normal"
+                        : "bg-gray-50 text-blue-dark/70 group-hover:bg-red-normal/10 group-hover:text-red-normal"
+                }`}>
+                    <Icon
+                        icon={child.icon}
+                        className="h-6 w-6"
                     />
                 </span>
             )}

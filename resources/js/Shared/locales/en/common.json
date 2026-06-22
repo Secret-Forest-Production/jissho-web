@@ -240,7 +240,9 @@
             "quote": "“Realize your dream career in Japan with a trusted institution.”",
             "p1": "Jissho Foundation is a trusted Japanese job training institution with extensive experience in preparing high-quality Indonesian workers to work in Japan. We provide comprehensive training programs covering Japanese language, work culture, and job placement assistance with high professional standards.",
             "p2": "With a structured curriculum and experienced teachers, we are committed to helping every participant achieve career success in the Land of the Rising Sun with thorough preparation. Since our establishment, we have sent hundreds of alumni who are now successfully building their careers in various leading Japanese companies.",
-            "aria_img": "Jissho Foundation profile in supporting learning and job preparation for Japan"
+            "aria_img": "Jissho Foundation profile in supporting learning and job preparation for Japan",
+            "active_participants_count": "100+",
+            "active_participants_label": "Active Participants"
         },
         "why": {
             "title": "Why Choose",
@@ -377,13 +379,13 @@
                     "title": "Competency & Mental Requirements",
                     "i1": "Learning Commitment: Willing to participate in Centralized Work Training (Diklat) for Japanese language and culture (usually up to N5 or N4 level).",
                     "i2": "Attitude: Have high discipline, strong mentality, and able to work in a team.",
-                    "i3": "Official Permission: Get full support from family to work abroad during the contract period (usually 1 to 3 years)."
+                    "i3": "Official Permission: Get full support from family to work abroad during the contract period (usually 3 to 5 years)."
                 }
             },
             "duration": {
                 "eyebrow": "Program Duration",
-                "title": "Total Contract Duration: 3 to 5 Years",
-                "description": "The main work contract lasts for 3 years, with an opportunity for extension up to 5 years if participants pass the technical evaluation exam in Japan.",
+                "title": "Total Contract Duration: 3 to 8 Years",
+                "description": "The main work contract lasts for 3 years, with an opportunity for extension up to 8 years if participants pass the technical evaluation exam in Japan.",
                 "t1": {
                     "title": "Phase 1: Training in Indonesia (Pre-Departure Training)",
                     "duration": "4 - 6 Months",
@@ -400,9 +402,9 @@
                     "desc": "Activities: Full technical skill improvement. At the end of year 3, participants will take practical and theoretical exams to obtain an official certificate."
                 },
                 "t4": {
-                    "title": "Phase 4: Extension Year 4 & 5 (Ginou Jisshuu 3-Gou - Optional)",
-                    "duration": "2 Years",
-                    "desc": "Activities: Specifically for participants who have a very good work track record and pass the intermediate level exam. Participants are entitled to return to Indonesia first (leave) before continuing the last 2 years of the contract."
+                    "title": "Phase 4: Extension Year 4 to 8 (Ginou Jisshuu 3-Gou - Optional)",
+                    "duration": "5 Years",
+                    "desc": "Activities: Specifically for participants who have a very good work track record and pass the intermediate level exam. Participants are entitled to return to Indonesia first (leave) before continuing the last 5 years of the contract."
                 }
             },
             "benefit": {
@@ -443,7 +445,7 @@
             "ssw1": {
                 "title": "SSW Type 1 (特定技能1号)",
                 "duration": "Maximum 5 years",
-                "durationDesc": "Can be extended up to a total of 5 years",
+                "durationDesc": "Can be extended up to 10 years or more",
                 "i1": "Requires certain skills and knowledge",
                 "i2": "Pass skills exam and JLPT/JFT N4",
                 "i3": "Cannot bring family"
@@ -463,9 +465,9 @@
             "suffix": "& Higher Education",
             "description": "Achieve academic degrees from top universities in Japan with scholarships and complete facilities.",
             "s1": {
-                "title": "Bachelor's Program (S1)",
-                "duration": "4 Years",
-                "benefit": "Bachelor's degree from an internationally recognized Japanese university."
+                "title": "Diploma & Bachelor's Program",
+                "duration": "2-4 Years",
+                "benefit": "Diploma or Bachelor's degree from an internationally recognized Japanese university."
             },
             "s2": {
                 "title": "Postgraduate Program (S2)",
@@ -474,7 +476,7 @@
             },
             "language": {
                 "title": "Japanese Language School",
-                "duration": "1–2 Years",
+                "duration": "1.5 - 2 Years",
                 "benefit": "JLPT/JFT preparation and transition to Japanese universities."
             },
             "requirement_common": "Graduate of SMA/SMK, JLPT/JFT N2/A2 or EJU, Complete academic documents",
@@ -580,6 +582,43 @@
             "upload_btn": "Upload",
             "upload_hint": "Select a file to drag or drop here",
             "upload_max_size": "Maximum file size 5MB"
+        }
+    },
+    "blog": {
+        "sidebar": {
+            "searchTitle": "Search Articles",
+            "searchPlaceholder": "Enter keywords...",
+            "searchAriaLabel": "Search articles",
+            "categoryTitle": "Categories",
+            "popularTitle": "Popular Posts"
+        },
+        "card": {
+            "readMore": "Read More"
+        },
+        "filter": {
+            "allCategory": "All",
+            "showingTag": "Showing articles with tag:",
+            "clearFilter": "Clear Filter",
+            "noResults": "No articles match your filter."
+        },
+        "detail": {
+            "breadcrumb": "News",
+            "previousPost": "Previous Article",
+            "nextPost": "Next Article",
+            "tags": "Tags:"
+        },
+        "cta": {
+            "sidebarTitle": "Ready to Start Your Career?",
+            "sidebarDescription": "Register now for a free consultation with our career consultants.",
+            "sidebarButton": "Register Now",
+            "detailTitle": "Interested in Joining?",
+            "detailDescription": "Get a free consultation about your career opportunities in Japan with the Jissho Foundation expert team.",
+            "contactButton": "Contact Us",
+            "programButton": "View Programs"
+        },
+        "seo": {
+            "title": "Latest News & Insights",
+            "description": "Read the latest articles and information about learning Japanese, JLPT preparation, Japanese work culture, and opportunities to work in Japan."
         }
     }
 }

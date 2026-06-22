@@ -8,11 +8,6 @@ import type {
 
 import { heroImages } from "@/Shared/data/hero-images";
 
-import IconMagang from "@/Shared/assets-optimized/icons/program-magang.webp";
-import IconKerja from "@/Shared/assets-optimized/icons/program-kerja.webp";
-import IconKuliah from "@/Shared/assets-optimized/icons/program-kuliah.webp";
-import IconIndustri from "@/Shared/assets-optimized/icons/sektor-industri.webp";
-
 import KuliahImg1 from "@/Shared/assets-optimized/program/kuliah-1.webp";
 
 export const programHeroData: ProgramHeroData = {
@@ -24,7 +19,7 @@ export const programHeroData: ProgramHeroData = {
 };
 
 export const programMagangData: ProgramMagangData = {
-    icon: IconMagang,
+    icon: "lucide:folder-open",
     title: "Program",
     highlight: "Magang",
     suffix: "(Technical Intern Training)",
@@ -186,7 +181,7 @@ export const programMagangData: ProgramMagangData = {
 };
 
 export const programKerjaData: ProgramKerjaData = {
-    icon: IconKerja,
+    icon: "lucide:briefcase",
     title: "Program",
     highlight: "Kerja",
     suffix: "SSW (Specified Skilled Worker)",
@@ -218,7 +213,7 @@ export const programKerjaData: ProgramKerjaData = {
 };
 
 export const programKuliahData: ProgramKuliahData = {
-    icon: IconKuliah,
+    icon: "lucide:graduation-cap",
     title: "Program",
     highlight: "Kuliah",
     suffix: "& Perguruan Tinggi",
@@ -284,7 +279,7 @@ export const programKuliahData: ProgramKuliahData = {
 };
 
 export const sektorIndustriData: SektorIndustriData = {
-    icon: IconIndustri,
+    icon: "lucide:factory",
     title: "Sektor Industri yang Tersedia",
     description:
         "Visa kerja profesional untuk tenaga terampil di berbagai sektor industri Jepang.",
