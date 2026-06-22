@@ -1,6 +1,6 @@
 import "../css/app.css";
 
-import { createInertiaApp } from "@inertiajs/react";
+import { createInertiaApp, router } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { createRoot } from "react-dom/client";
 import type { ReactNode } from "react";
@@ -32,10 +32,28 @@ createInertiaApp({
         const root = createRoot(el);
 
         const locale = props.initialPage.props.locale as string | undefined;
+        const siteSettings = props.initialPage.props.siteSettings as any;
 
         if (locale) {
             i18n.changeLanguage(locale);
+            if (siteSettings) {
+                i18n.addResourceBundle(locale, "common", siteSettings, true, true);
+            }
         }
+
+        // Listen for subsequent successful page transitions to update i18n dynamically
+        router.on("success", (event) => {
+            const page = event.detail.page;
+            const currentLocale = page.props.locale as string | undefined;
+            const currentSiteSettings = page.props.siteSettings as any;
+
+            if (currentLocale) {
+                i18n.changeLanguage(currentLocale);
+                if (currentSiteSettings) {
+                    i18n.addResourceBundle(currentLocale, "common", currentSiteSettings, true, true);
+                }
+            }
+        });
 
         root.render(<App {...props} />);
     },

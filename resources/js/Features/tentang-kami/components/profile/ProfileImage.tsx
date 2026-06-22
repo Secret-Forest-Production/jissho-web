@@ -45,10 +45,10 @@ export default function ProfileImage() {
 
                         <div>
                             <p className="text-4xl font-bold leading-none sm:text-5xl">
-                                100+
+                                {t("about_page.profile.active_participants_count")}
                             </p>
                             <p className="mt-3 text-base font-medium sm:text-lg">
-                                Peserta Aktif
+                                {t("about_page.profile.active_participants_label")}
                             </p>
                         </div>
                     </div>

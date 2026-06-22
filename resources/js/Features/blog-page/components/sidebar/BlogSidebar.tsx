@@ -3,12 +3,15 @@ import CtaWidget from "./CtaWidget";
 import PopularPostsWidget from "./PopularPostsWidget";
 import SearchWidget from "./SearchWidget";
 
+import type { BlogPost } from "../../types/blog.type";
+
 interface BlogSidebarProps {
     searchQuery: string;
     activeCategory: string;
     onSearchChange: (value: string) => void;
     onCategoryChange: (value: string) => void;
     showCta?: boolean;
+    dbPosts?: BlogPost[];
 }
 
 export default function BlogSidebar({
@@ -17,6 +20,7 @@ export default function BlogSidebar({
     onSearchChange,
     onCategoryChange,
     showCta = true,
+    dbPosts,
 }: BlogSidebarProps) {
     return (
         <aside
@@ -28,9 +32,10 @@ export default function BlogSidebar({
             <CategoryWidget
                 activeCategory={activeCategory}
                 onCategoryChange={onCategoryChange}
+                dbPosts={dbPosts}
             />
 
-            <PopularPostsWidget />
+            <PopularPostsWidget dbPosts={dbPosts} />
 
             {showCta && <CtaWidget />}
         </aside>

@@ -1,21 +1,32 @@
-import React from "react";
-import { popularPosts } from "../../data/blog";
+import type { BlogPost } from "../../types/blog.type";
+import { blogPosts } from "../../data/blog";
 import { Link } from "@inertiajs/react";
 import { TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-export default function PopularPostsWidget() {
+interface PopularPostsWidgetProps {
+    dbPosts?: BlogPost[];
+}
+
+export default function PopularPostsWidget({
+    dbPosts,
+}: PopularPostsWidgetProps) {
+    const { t } = useTranslation("common");
+    const activePosts = dbPosts && dbPosts.length > 0 ? dbPosts : blogPosts;
+    const popularList = activePosts.slice(0, 3);
+
     return (
         <div className="bg-white border border-grey-border p-6 rounded-lg">
             <div className="flex items-center gap-2 mb-4">
                 <TrendingUp className="text-red-700 w-5 h-5" />
                 <h3 className="font-bold text-gray-900 text-lg">
-                    Postingan Populer
+                    {t("blog.sidebar.popularTitle")}
                 </h3>
             </div>
             <ul className="space-y-4">
-                {popularPosts.map((post) => (
+                {popularList.map((post) => (
                     <li key={post.id}>
-                        <Link href="#" className="flex gap-4 group items-start">
+                        <Link href={`/blog/${post.slug}`} className="flex gap-4 group items-start">
                             <div className="w-16 h-16 shrink-0 overflow-hidden rounded-sm">
                                 <img
                                     src={post.imageUrl}
@@ -28,7 +39,7 @@ export default function PopularPostsWidget() {
                                     {post.title}
                                 </h4>
                                 <span className="text-xs text-grey-border mt-1 uppercase tracking-wider">
-                                    {post.views} VIEWS
+                                    {post.views}
                                 </span>
                             </div>
                         </Link>

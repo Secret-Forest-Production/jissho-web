@@ -61,12 +61,10 @@ export default function SektorIndustriSection() {
                     }}
                     className="mb-12 text-center"
                 >
-                    <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-red-50">
-                        <img
-                            src={sektorIndustriData.icon}
-                            alt=""
-                            draggable={false}
-                            className="h-10 w-10 object-contain"
+                    <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-red-normal/10 text-red-normal">
+                        <Icon
+                            icon={sektorIndustriData.icon}
+                            className="h-9 w-9"
                         />
                     </div>
 

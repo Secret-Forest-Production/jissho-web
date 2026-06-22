@@ -1,5 +1,5 @@
 import { Search } from "lucide-react";
-
+import { useTranslation } from "react-i18next";
 
 interface SearchWidgetProps {
     value: string;
@@ -7,12 +7,14 @@ interface SearchWidgetProps {
 }
 
 export default function SearchWidget({ value, onChange }: SearchWidgetProps) {
+    const { t } = useTranslation("common");
+
     return (
         <section className="border border-grey-border bg-white p-6 rounded-lg">
             <div className="mb-4 flex items-center gap-2">
                 <Search className="h-4 w-4 text-red-700" />
                 <h2 className="text-lg font-bold text-gray-900">
-                    Cari Artikel
+                    {t("blog.sidebar.searchTitle")}
                 </h2>
             </div>
 
@@ -26,8 +28,8 @@ export default function SearchWidget({ value, onChange }: SearchWidgetProps) {
                     type="search"
                     value={value}
                     onChange={(event) => onChange(event.target.value)}
-                    placeholder="Masukkan kata kunci..."
-                    aria-label="Cari artikel"
+                    placeholder={t("blog.sidebar.searchPlaceholder")}
+                    aria-label={t("blog.sidebar.searchAriaLabel")}
                     className="w-full border rounded-sm border-grey-border py-2 pl-10 pr-4 text-sm transition-colors focus:border-red-700 focus:outline-none focus:ring-1 focus:ring-red-700"
                 />
             </div>

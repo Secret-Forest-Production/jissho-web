@@ -1,15 +1,29 @@
 import SEO from "@/Components/shared/SEO";
 import BlogContainer from "@/Features/blog-page/containers/blog-container";
+import type { BlogPost } from "@/Features/blog-page/types/blog.type";
+import { useTranslation } from "react-i18next";
 
-export default function Index() {
+interface IndexProps {
+    posts: {
+        data: BlogPost[];
+        current_page: number;
+        last_page: number;
+        per_page: number;
+        total: number;
+    };
+}
+
+export default function Index({ posts }: IndexProps) {
+    const { t } = useTranslation("common");
+
     return (
         <>
             <SEO
-                title="Berita & Wawasan Terbaru"
-                description="Baca artikel dan informasi terbaru seputar belajar bahasa Jepang, persiapan JLPT, budaya kerja Jepang, dan peluang bekerja di Jepang."
+                title={t("blog.seo.title")}
+                description={t("blog.seo.description")}
             />
 
-            <BlogContainer />
+            <BlogContainer dbPosts={posts?.data} />
         </>
     );
 }
