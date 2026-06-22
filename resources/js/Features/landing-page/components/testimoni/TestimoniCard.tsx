@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 
 import type { TestimoniItem } from "./testimoni.type";
+import { QuoteIcon } from "lucide-react";
 
 interface TestimoniCardProps {
     item: TestimoniItem;
@@ -12,10 +13,9 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
 
     return (
         <article className="relative m-1 bg-white p-6 shadow-md md:m-2 md:p-8">
-            <Icon
-                icon="lucide:quote"
+            <QuoteIcon
                 aria-hidden="true"
-                className="text-[48px] text-red-normal opacity-20"
+                className="h-6 w-6 text-red-normal opacity-20"
             />
 
             <figure className="flex items-center gap-6">
@@ -23,7 +23,9 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
                     <div className="h-16 w-16 overflow-hidden rounded-full border-4 border-red-light-active">
                         <img
                             src={item.image}
-                            alt={t("testimoni.aria_photo", { name: t(item.name) })}
+                            alt={t("testimoni.aria_photo", {
+                                name: t(item.name),
+                            })}
                             loading="lazy"
                             draggable={false}
                             className="h-full w-full object-cover"

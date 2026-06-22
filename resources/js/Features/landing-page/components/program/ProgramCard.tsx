@@ -6,6 +6,7 @@ import Button from "@/Components/ui/Button";
 
 import { programCardVariants } from "./program.animation";
 import type { ProgramItem } from "./program.type";
+import { Dot } from "lucide-react";
 
 interface ProgramCardProps {
     item: ProgramItem;
@@ -52,10 +53,9 @@ export default function ProgramCard({ item, index }: ProgramCardProps) {
                             key={feature}
                             className="group/item flex items-center gap-1 text-sm text-text-gray md:text-base"
                         >
-                            <Icon
-                                icon="radix-icons:dot-filled"
+                            <Dot
                                 aria-hidden="true"
-                                className="shrink-0 text-lg text-red-normal transition-transform group-hover/item:scale-110"
+                                className="shrink-0 w-4 h-4 text-red-normal transition-transform group-hover/item:scale-110"
                             />
 
                             <span className="leading-tight">{t(feature)}</span>

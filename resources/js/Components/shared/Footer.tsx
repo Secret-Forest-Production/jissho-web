@@ -1,5 +1,6 @@
 import { Link } from "@inertiajs/react";
 import { Icon } from "@iconify/react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import { footerLinks } from "@/Shared/data/footer-link";
@@ -33,7 +34,11 @@ export default function Footer() {
                                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-gray-400 transition-all hover:bg-red-normal hover:text-white"
                                 aria-label={social.label}
                             >
-                                <Icon icon={social.icon} width="20" height="20" />
+                                <Icon
+                                    icon={social.icon}
+                                    className="h-5 w-5"
+                                    aria-hidden="true"
+                                />
                             </a>
                         ))}
                     </div>
@@ -84,9 +89,9 @@ export default function Footer() {
 
                     <ul className="space-y-5 text-sm">
                         <li className="flex items-start gap-3">
-                            <Icon
-                                icon="tabler:map-pin"
-                                className="shrink-0 text-xl text-red-normal"
+                            <MapPin
+                                className="h-5 w-5 shrink-0 text-red-normal"
+                                aria-hidden="true"
                             />
                             <span className="leading-tight">
                                 {footerLinks.contact.address}
@@ -94,19 +99,22 @@ export default function Footer() {
                         </li>
 
                         <li className="flex items-center gap-3">
-                            <Icon
-                                icon="mdi:phone-outline"
-                                className="shrink-0 text-xl text-red-normal"
+                            <Phone
+                                className="h-5 w-5 shrink-0 text-red-normal"
+                                aria-hidden="true"
                             />
                             <span>{footerLinks.contact.phone}</span>
                         </li>
 
                         <li className="flex items-center gap-3">
-                            <Icon
-                                icon="mdi:email-outline"
-                                className="shrink-0 text-xl text-red-normal"
+                            <Mail
+                                className="h-5 w-5 shrink-0 text-red-normal"
+                                aria-hidden="true"
                             />
-                            <span>{footerLinks.contact.email}</span>
+                            <span>
+                                info<span className="sr-only"> at </span>
+                                @yayasanjissho.com
+                            </span>
                         </li>
                     </ul>
                 </div>

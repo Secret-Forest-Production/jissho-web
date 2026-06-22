@@ -1,5 +1,5 @@
-import FlagIndo from "@/Shared/assets/tentang-kami/flag-indo.webp";
-import FlagJapan from "@/Shared/assets/tentang-kami/flag-japan.webp";
+import FlagIndo from "@/Shared/assets-optimized/tentang-kami/flag-indo.webp";
+import FlagJapan from "@/Shared/assets-optimized/tentang-kami/flag-japan.webp";
 
 export const locationData = {
     header: {

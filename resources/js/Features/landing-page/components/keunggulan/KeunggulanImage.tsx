@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import Dokumentasi from "@/Shared/assets/home/keunggulan-img.webp";
+import Dokumentasi from "@/Shared/assets-optimized/home/keunggulan-img.webp";
 import { fadeInLeftVariants } from "./keunggulan.animation";
 
 export default function KeunggulanImage() {

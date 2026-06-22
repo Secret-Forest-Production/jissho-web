@@ -1,6 +1,6 @@
-import ServiceImg1 from "@/Shared/assets/home/hero/service-1.webp";
-import ServiceImg2 from "@/Shared/assets/home/hero/service-2.webp";
-import ServiceImg3 from "@/Shared/assets/home/hero/service-3.webp";
+import ServiceImg1 from "@/Shared/assets-optimized/home/hero/service-1.webp";
+import ServiceImg2 from "@/Shared/assets-optimized/home/hero/service-2.webp";
+import ServiceImg3 from "@/Shared/assets-optimized/home/hero/service-3.webp";
 import { heroImages } from "@/Shared/data/hero-images";
 import type { TranslatedHeroData } from "@/Shared/types/hero.type";
 

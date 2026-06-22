@@ -1,12 +1,14 @@
-import React from "react";
-import { Head } from "@inertiajs/react";
-import { PageProps } from "@/types";
+import SEO from "@/Components/shared/SEO";
 import GalleryContainers from "@/Features/gallery/containers/gallery-containers";
+import { PageProps } from "@/types";
 
 export default function Galeri({ auth }: PageProps) {
     return (
         <>
-            <Head title="Galeri" />
+            <SEO
+                title="Galeri"
+                description="Lihat dokumentasi kegiatan, suasana pembelajaran, pelatihan, dan aktivitas Yayasan Jissho dalam mempersiapkan peserta untuk belajar dan bekerja di Jepang."
+            />
 
             <main className="pt-20">
                 <GalleryContainers />

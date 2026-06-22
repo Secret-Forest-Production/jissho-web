@@ -50,7 +50,7 @@
             "badge": "About Us",
             "title": "Why Choose",
             "highlight": "Jissho Foundation",
-            "titleSuffix": "As Your Career Partner?",
+            "titleSuffix": " As Your Career Partner?",
             "description": "We believe that thorough preparation is the key to success. Through intensive training programs covering language and professional work ethics, we ensure you are ready to compete globally and adapt quickly to the Japanese work environment."
         },
         "program": {
@@ -63,7 +63,7 @@
             "badge": "Jissho News",
             "title": "Latest Insights",
             "highlight": "& tips",
-            "titleSuffix": "Successful Career in Japan",
+            "titleSuffix": " Successful Career in Japan",
             "description": "Discover a collection of exclusive articles about Japanese learning methods, work document preparation, and inspiring stories from Jissho Foundation alumni."
         },
         "register": {

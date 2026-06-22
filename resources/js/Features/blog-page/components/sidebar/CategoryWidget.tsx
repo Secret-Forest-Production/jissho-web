@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Shapes } from 'lucide-react';
 
 import { BLOG_ALL_CATEGORY } from "../../constants/blog.constant";
 import { categories } from "../../data/blog";
@@ -23,9 +23,8 @@ export default function CategoryWidget({
     return (
         <section className="border border-grey-border bg-white p-6 rounded-lg">
             <div className="mb-4 flex items-center gap-2">
-                <Icon
-                    icon="mdi:shape-outline"
-                    className="h-5 w-5 text-red-700"
+                <Shapes
+                    className="h-4 w-4 text-red-700"
                 />
                 <h2 className="text-lg font-bold text-gray-900">Kategori</h2>
             </div>
