@@ -1,15 +1,22 @@
-import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
-
-import type { TestimoniItem } from "./testimoni.type";
 import { QuoteIcon } from "lucide-react";
+import defaultTesti from "@/Shared/assets-optimized/home/testimoni/testi.webp";
 
 interface TestimoniCardProps {
-    item: TestimoniItem;
+    item: any;
 }
 
 export default function TestimoniCard({ item }: TestimoniCardProps) {
-    const { t } = useTranslation("common");
+    const { t, i18n } = useTranslation("common");
+    const lang = i18n.language as 'id' | 'en' | 'ja';
+
+    const getLocalizedText = (field: any) => {
+        if (!field) return '';
+        if (typeof field === 'string') return field;
+        return field[lang] || field['id'] || '';
+    };
+
+    const imageUrl = item.image ? `/storage/${item.image}` : defaultTesti;
 
     return (
         <article className="relative m-1 bg-white p-6 shadow-md md:m-2 md:p-8">
@@ -22,9 +29,9 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
                 <div className="mt-2 shrink-0">
                     <div className="h-16 w-16 overflow-hidden rounded-full border-4 border-red-light-active">
                         <img
-                            src={item.image}
+                            src={imageUrl}
                             alt={t("testimoni.aria_photo", {
-                                name: t(item.name),
+                                name: item.name,
                             })}
                             loading="lazy"
                             draggable={false}
@@ -35,16 +42,16 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
 
                 <figcaption className="flex flex-col gap-4">
                     <blockquote className="line-clamp-4 text-sm leading-relaxed text-text-gray md:text-base">
-                        “{t(item.message)}”
+                        “{getLocalizedText(item.message)}”
                     </blockquote>
 
                     <div>
                         <h3 className="text-lg font-bold text-blue-dark">
-                            {t(item.name)}
+                            {item.name}
                         </h3>
 
                         <p className="text-sm text-red-normal md:text-base">
-                            {t(item.role)}
+                            {getLocalizedText(item.role)}
                         </p>
                     </div>
                 </figcaption>
