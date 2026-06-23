@@ -8,7 +8,11 @@ import MitraSection from '../components/mitra/MitraSection';
 import TestimoniSection from '../components/testimoni/TestimoniSection';
 import GaleriSection from '../components/galeri/GaleriSection';
 
-export default function LandingContainers() {
+interface LandingContainersProps {
+  testimonials: any[];
+}
+
+export default function LandingContainers({ testimonials }: LandingContainersProps) {
   return (
     <main className="relative w-full">
       <HeroSection />
@@ -17,7 +21,7 @@ export default function LandingContainers() {
       <ProgramSection />
       <BannerSection />
       <MitraSection />
-      <TestimoniSection />
+      <TestimoniSection testimonials={testimonials} />
       <GaleriSection />
     </main>
   );

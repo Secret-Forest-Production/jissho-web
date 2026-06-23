@@ -13,7 +13,8 @@
         "programInternship": "インターンシッププログラム",
         "programWork": "就労プログラム",
         "programStudy": "留学プログラム",
-        "industrySector": "産業セクター"
+        "industrySector": "産業セクター",
+        "gallery": "ギャラリー"
     },
     "footer": {
         "brandTitle": "財団",
@@ -619,6 +620,17 @@
         "seo": {
             "title": "最新ニュースと洞察",
             "description": "日本語学習、JLPT対策、日本の仕事文化、日本での就労機会に関する最新の記事と情報をお読みください。"
+        }
+    },
+    "gallery": {
+        "title": "活動ギャラリー",
+        "description": "様々な感動的な活動を通じて、日本で学び、働くという夢を実現する生徒たちの歩みをご覧ください。",
+        "categories": {
+            "all": "すべての写真",
+            "language_class": "語学クラス",
+            "japanese_culture": "日本文化",
+            "job_preparation": "就職準備",
+            "foundation_event": "財団行事"
         }
     }
 }

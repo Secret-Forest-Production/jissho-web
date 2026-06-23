@@ -13,7 +13,8 @@
         "programInternship": "Program Magang",
         "programWork": "Program Kerja",
         "programStudy": "Program Kuliah",
-        "industrySector": "Sektor Industri"
+        "industrySector": "Sektor Industri",
+        "gallery": "Galeri"
     },
     "footer": {
         "brandTitle": "Yayasan",
@@ -619,6 +620,17 @@
         "seo": {
             "title": "Berita & Wawasan Terbaru",
             "description": "Baca artikel dan informasi terbaru seputar belajar bahasa Jepang, persiapan JLPT, budaya kerja Jepang, dan peluang bekerja di Jepang."
+        }
+    },
+    "gallery": {
+        "title": "Galeri Aktivitas Kami",
+        "description": "Melihat lebih dekat perjalanan siswa kami dalam menggapai impian belajar dan bekerja di Jepang melalui berbagai kegiatan inspiratif.",
+        "categories": {
+            "all": "Semua Foto",
+            "language_class": "Kelas Bahasa",
+            "japanese_culture": "Budaya Jepang",
+            "job_preparation": "Persiapan Kerja",
+            "foundation_event": "Acara Yayasan"
         }
     }
 }

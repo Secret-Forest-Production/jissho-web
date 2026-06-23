@@ -1,14 +1,14 @@
 import React from "react";
 import SectionHeader from "@/Components/ui/SectionHeader";
-import { galleryData } from "../../../data/gallery-link";
+import { useTranslation } from "react-i18next";
 
 export default function GalleryTitle() {
-    const { header } = galleryData;
+    const { t } = useTranslation();
     return (
         <SectionHeader
-            title={header.title}
-            description={header.description}
-            showLine={header.showLine}
+            title={t("gallery.title")}
+            description={t("gallery.description")}
+            showLine={false}
         />
     );
 }

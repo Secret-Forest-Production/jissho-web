@@ -13,14 +13,7 @@ Route::post('/language', function (Illuminate\Http\Request $request) {
     return back();
 })->name('language.switch');
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/tentang-kami', function () {
     return Inertia::render('TentangKami');
@@ -42,9 +35,7 @@ Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name
 
 Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
 
-Route::get('/galeri', function () {
-    return Inertia::render('Galeri');
-})->name('galeri');
+Route::get('/galeri', [App\Http\Controllers\GalleryController::class, 'index'])->name('galeri');
 
 
 Route::get('/dashboard', function () {

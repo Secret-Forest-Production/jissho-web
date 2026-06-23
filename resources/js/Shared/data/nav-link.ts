@@ -41,5 +41,6 @@ export const navLinks: NavLink[] = [
     },
     /* { labelKey: "nav.history", href: "/sejarah" }, */
     { labelKey: "nav.blog", href: "/blog" },
+    { labelKey: "nav.gallery", href: "/galeri" },
     /* { labelKey: "nav.contact", href: "/kontak" }, */
 ];

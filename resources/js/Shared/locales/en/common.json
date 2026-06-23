@@ -13,7 +13,8 @@
         "programInternship": "Internship Program",
         "programWork": "Work Program",
         "programStudy": "Study Program",
-        "industrySector": "Industry Sector"
+        "industrySector": "Industry Sector",
+        "gallery": "Gallery"
     },
     "footer": {
         "brandTitle": "Foundation",
@@ -619,6 +620,17 @@
         "seo": {
             "title": "Latest News & Insights",
             "description": "Read the latest articles and information about learning Japanese, JLPT preparation, Japanese work culture, and opportunities to work in Japan."
+        }
+    },
+    "gallery": {
+        "title": "Our Activities Gallery",
+        "description": "Take a closer look at our students' journey in achieving their dreams of studying and working in Japan through various inspiring activities.",
+        "categories": {
+            "all": "All Photos",
+            "language_class": "Language Class",
+            "japanese_culture": "Japanese Culture",
+            "job_preparation": "Job Preparation",
+            "foundation_event": "Foundation Event"
         }
     }
 }
