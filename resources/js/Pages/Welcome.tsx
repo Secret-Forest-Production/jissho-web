@@ -2,7 +2,11 @@ import SEO from "@/Components/shared/SEO";
 import LandingContainers from "@/Features/landing-page/containers/landing-container";
 import { PageProps } from "@/types";
 
-export default function Welcome({ auth }: PageProps) {
+interface WelcomeProps extends PageProps {
+    testimonials: any[];
+}
+
+export default function Welcome({ auth, testimonials }: WelcomeProps) {
     return (
         <>
             <SEO
@@ -11,7 +15,7 @@ export default function Welcome({ auth }: PageProps) {
             />
 
             <main>
-                <LandingContainers />
+                <LandingContainers testimonials={testimonials} />
             </main>
         </>
     );
