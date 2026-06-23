@@ -35,9 +35,7 @@ Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name
 
 Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
 
-Route::get('/galeri', function () {
-    return Inertia::render('Galeri');
-})->name('galeri');
+Route::get('/galeri', [App\Http\Controllers\GalleryController::class, 'index'])->name('galeri');
 
 
 Route::get('/dashboard', function () {

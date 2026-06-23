@@ -2,7 +2,11 @@ import SEO from "@/Components/shared/SEO";
 import GalleryContainers from "@/Features/gallery/containers/gallery-containers";
 import { PageProps } from "@/types";
 
-export default function Galeri({ auth }: PageProps) {
+interface GaleriProps extends PageProps {
+    galleries: any[];
+}
+
+export default function Galeri({ auth, galleries }: GaleriProps) {
     return (
         <>
             <SEO
@@ -11,7 +15,7 @@ export default function Galeri({ auth }: PageProps) {
             />
 
             <main className="pt-20">
-                <GalleryContainers />
+                <GalleryContainers galleries={galleries} />
             </main>
         </>
     );
