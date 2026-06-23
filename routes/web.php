@@ -13,14 +13,7 @@ Route::post('/language', function (Illuminate\Http\Request $request) {
     return back();
 })->name('language.switch');
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/tentang-kami', function () {
     return Inertia::render('TentangKami');
