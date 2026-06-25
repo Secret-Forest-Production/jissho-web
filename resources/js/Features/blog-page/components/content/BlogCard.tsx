@@ -1,6 +1,7 @@
 import { Calendar, ArrowRight } from "lucide-react";
 import { Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { fadeUpVariants } from "../../animations/blog.animation";
 import type { BlogPost } from "../../types/blog.type";
@@ -11,6 +12,10 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post, index }: BlogCardProps) {
+    const { t, i18n } = useTranslation("common");
+
+    const dateLocale = i18n.language === "ja" ? "ja-JP" : i18n.language === "en" ? "en-US" : "id-ID";
+
     return (
         <motion.article
             custom={index}
@@ -41,7 +46,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
                 <div className="mb-3 flex items-center gap-2 text-sm text-gray-500">
                     <Calendar className="h-4 w-4 text-gray-400" />
                     <time dateTime={post.date}>
-                        {new Date(post.date).toLocaleDateString("id-ID", {
+                        {new Date(post.date).toLocaleDateString(dateLocale, {
                             day: "2-digit",
                             month: "long",
                             year: "numeric",
@@ -64,10 +69,10 @@ export default function BlogCard({ post, index }: BlogCardProps) {
 
                 <Link
                     href={`/blog/${post.slug}`}
-                    aria-label={`Baca selengkapnya: ${post.title}`}
+                    aria-label={`${t("blog.card.readMore")}: ${post.title}`}
                     className="group inline-flex items-center text-sm font-semibold text-red-700 transition-colors hover:text-red-normal-hover"
                 >
-                    Baca Selengkapnya
+                    {t("blog.card.readMore")}
                     <ArrowRight
                         aria-hidden="true"
                         className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"

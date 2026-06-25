@@ -13,7 +13,8 @@
         "programInternship": "Program Magang",
         "programWork": "Program Kerja",
         "programStudy": "Program Kuliah",
-        "industrySector": "Sektor Industri"
+        "industrySector": "Sektor Industri",
+        "gallery": "Galeri"
     },
     "footer": {
         "brandTitle": "Yayasan",
@@ -29,7 +30,7 @@
             "testimonials": "Testimoni",
             "contact": "Kontak",
             "basicClass": "Kelas Dasar",
-            "jlptPreparation": "Persiapan JLPT",
+            "jlptPreparation": "Persiapan JLPT/JFT",
             "languageCulture": "Bahasa + Budaya",
             "workPreparation": "Persiapan Kerja"
         }
@@ -42,7 +43,7 @@
     "hero": {
         "landing": {
             "title": "Wujudkan Impian Belajar & Bekerja di Jepang",
-            "description": "Bersama Yayasan Jissho, kami mempersiapkan Anda dengan pembelajaran bahasa Jepang berkualitas, budaya kerja profesional, dan bimbingan karir untuk sukses di Negeri Sakura.",
+            "description": "Bersama Yayasan Jissho, kami mempersiapkan Anda dengan pembelajaran bahasa Jepang berkualitas, etika, dan budaya kerja profesional, serta bimbingan karir untuk sukses di Negeri Sakura.",
             "cta_register": "Daftar Sekarang",
             "cta_consultation": "Konsultasi Gratis"
         },
@@ -79,12 +80,12 @@
                 "description": "Pembelajaran bahasa Jepang dari nol untuk pemula dengan metode interaktif."
             },
             "jlpt": {
-                "title": "JLPT Preparation",
-                "description": "Bimbingan intensif persiapan ujian sertifikasi bahasa Jepang (N5 - N2)."
+                "title": "JLPT/JFT Preparation",
+                "description": "Bimbingan intensif persiapan ujian sertifikasi bahasa Jepang (N5 - N2/A2)."
             },
             "culture": {
                 "title": "Bahasa & Budaya",
-                "description": "Pemahaman etika dan budaya kerja di Jepang agar cepat beradaptasi."
+                "description": "Pemahaman bahasa, etika, dan budaya kerja di Jepang agar cepat beradaptasi."
             },
             "more": "Lihat Selengkapnya"
         }
@@ -119,15 +120,15 @@
     "keunggulan": {
         "title": "Keunggulan",
         "highlight": "Kami",
-        "description": "Mengapa memilih Yayasan Jissho sebagai partner Anda menuju Jepang",
+        "description": "Mengapa memilih Yayasan Jissho sebagai partner Anda menuju Jepang?",
         "items": {
             "teachers": {
                 "title": "Pengajar Berpengalaman",
-                "description": "Tim pengajar profesional dengan sertifikasi dan pengalaman mengajar bahasa Jepang lebih dari 5 tahun"
+                "description": "Tim pengajar profesional dengan sertifikasi dan pengalaman mengajar bahasa Jepang lebih dari 3 tahun"
             },
             "curriculum": {
                 "title": "Kurikulum Terstruktur",
-                "description": "Materi pembelajaran yang sistematis mengikuti standar JLPT dan kebutuhan industri Jepang"
+                "description": "Materi pembelajaran yang sistematis mengikuti standar JLPT/JFT dan kebutuhan industri Jepang"
             },
             "guidance": {
                 "title": "Bimbingan Kerja ke Jepang",
@@ -135,7 +136,7 @@
             },
             "certification": {
                 "title": "Sertifikasi Resmi",
-                "description": "Sertifikat resmi yang diakui oleh lembaga dan perusahaan di Jepang untuk keperluan visa kerja"
+                "description": "Sertifikat resmi yang dikeluarkan oleh lembaga Jepang yang diakui oleh pemerintah dan perusahaan di Jepang"
             }
         }
     },
@@ -152,14 +153,15 @@
                 "features": {
                     "f1": "Hiragana & Katakana",
                     "f2": "Grammar Dasar",
-                    "f3": "Percakapan Sehari-hari"
+                    "f3": "Percakapan Sehari-hari",
+                    "f4": "Kanji"
                 }
             },
             "jlpt": {
-                "title": "JLPT Preparation",
-                "description": "Persiapan intensif untuk ujian kemampuan bahasa Jepang level N5 hingga N2",
+                "title": "JLPT/JFT Preparation",
+                "description": "Persiapan intensif untuk ujian kemampuan bahasa Jepang level N5 hingga N2/A2",
                 "features": {
-                    "f1": "Drill Soal JLPT",
+                    "f1": "Drill Soal JLPT/JFT",
                     "f2": "Strategi Ujian",
                     "f3": "Mock Test Berkala"
                 }
@@ -239,7 +241,9 @@
             "quote": "“Wujudkan karier impianmu di Jepang bersama lembaga terpercaya.”",
             "p1": "Yayasan Jissho adalah lembaga pelatihan kerja Jepang terpercaya yang telah berpengalaman dalam mempersiapkan tenaga kerja Indonesia berkualitas untuk bekerja di Jepang. Kami menyediakan program pelatihan komprehensif yang mencakup bahasa Jepang, budaya kerja, hingga pendampingan penempatan kerja dengan standar profesional tinggi.",
             "p2": "Dengan kurikulum terstruktur dan pengajar berpengalaman, kami berkomitmen mengantarkan setiap peserta meraih kesuksesan karir di Negeri Sakura dengan persiapan yang matang dan menyeluruh. Sejak berdiri, kami telah memberangkatkan ratusan alumni yang kini sukses berkarir di berbagai perusahaan Jepang terkemuka.",
-            "aria_img": "Profil Yayasan Jissho dalam mendukung pembelajaran dan persiapan kerja ke Jepang"
+            "aria_img": "Profil Yayasan Jissho dalam mendukung pembelajaran dan persiapan kerja ke Jepang",
+            "active_participants_count": "100+",
+            "active_participants_label": "Peserta Aktif"
         },
         "why": {
             "title": "Mengapa Memilih",
@@ -376,13 +380,13 @@
                     "title": "Persyaratan Kompetensi & Mental",
                     "i1": "Komitmen Belajar: Bersedia mengikuti Pelatihan Kerja Terpusat (Diklat) bahasa dan budaya Jepang (biasanya hingga level N5 atau N4).",
                     "i2": "Sikap (Attitude): Memiliki disiplin tinggi, mental yang kuat, dan mampu bekerja sama dalam tim.",
-                    "i3": "Izin Resmi: Mendapatkan dukungan penuh dari keluarga untuk bekerja di luar negeri selama kurun waktu kontrak (biasanya 1 hingga 3 tahun)."
+                    "i3": "Izin Resmi: Mendapatkan dukungan penuh dari keluarga untuk bekerja di luar negeri selama kurun waktu kontrak (biasanya 3 hingga 5 tahun)."
                 }
             },
             "duration": {
                 "eyebrow": "Durasi Program",
-                "title": "Total Durasi Kontrak: 3 hingga 5 Tahun",
-                "description": "Kontrak kerja utama berlangsung selama 3 tahun, dengan peluang perpanjangan hingga 5 tahun jika peserta lulus ujian evaluasi teknis di Jepang.",
+                "title": "Total Durasi Kontrak: 3 hingga 8 Tahun",
+                "description": "Kontrak kerja utama berlangsung selama 3 tahun, dengan peluang perpanjangan hingga 8 tahun jika peserta lulus ujian evaluasi teknis di Jepang.",
                 "t1": {
                     "title": "Tahap 1: Pelatihan di Indonesia (Diklat Pra-Pemberangkatan)",
                     "duration": "4 - 6 Bulan",
@@ -399,9 +403,9 @@
                     "desc": "Aktivitas: Peningkatan keahlian teknis secara penuh. Di akhir tahun ke-3, peserta akan mengikuti ujian praktik dan teori untuk mendapatkan sertifikat resmi."
                 },
                 "t4": {
-                    "title": "Tahap 4: Perpanjangan Tahun Ke-4 & Ke-5 (Ginou Jisshuu 3-Gou - Opsional)",
-                    "duration": "2 Tahun",
-                    "desc": "Aktivitas: Khusus bagi peserta yang memiliki rekam jejak kerja yang sangat baik dan lulus ujian tingkat madya. Peserta berhak pulang ke Indonesia terlebih dahulu (cuti) sebelum melanjutkan kontrak 2 tahun terakhir."
+                    "title": "Tahap 4: Perpanjangan Tahun Ke-4 hingga Ke-8 (Ginou Jisshuu 3-Gou - Opsional)",
+                    "duration": "5 Tahun",
+                    "desc": "Aktivitas: Khusus bagi peserta yang memiliki rekam jejak kerja yang sangat baik dan lulus ujian tingkat madya. Peserta berhak pulang ke Indonesia terlebih dahulu (cuti) sebelum melanjutkan kontrak 5 tahun terakhir."
                 }
             },
             "benefit": {
@@ -442,9 +446,9 @@
             "ssw1": {
                 "title": "SSW Type 1 (特定技能1号)",
                 "duration": "Maksimal 5 tahun",
-                "durationDesc": "Dapat diperpanjang hingga total 5 tahun",
+                "durationDesc": "Dapat diperpanjang hingga 10 tahun atau lebih",
                 "i1": "Memerlukan keterampilan dan pengetahuan tertentu",
-                "i2": "Lulus ujian keterampilan dan JLPT N4",
+                "i2": "Lulus ujian keterampilan dan JLPT/JFT N4",
                 "i3": "Tidak dapat membawa keluarga"
             },
             "ssw2": {
@@ -462,9 +466,9 @@
             "suffix": "& Perguruan Tinggi",
             "description": "Raih gelar akademik dari universitas ternama di Jepang dengan beasiswa dan fasilitas lengkap.",
             "s1": {
-                "title": "Program Sarjana (S1)",
-                "duration": "4 Tahun",
-                "benefit": "Gelar sarjana dari universitas Jepang yang diakui internasional."
+                "title": "Program Diploma & Sarjana",
+                "duration": "2-4 Tahun",
+                "benefit": "Gelar diploma atau sarjana dari universitas Jepang yang diakui internasional."
             },
             "s2": {
                 "title": "Program Pascasarjana (S2)",
@@ -473,10 +477,10 @@
             },
             "language": {
                 "title": "Sekolah Bahasa Jepang",
-                "duration": "1–2 Tahun",
-                "benefit": "Persiapan JLPT dan transisi ke universitas Jepang."
+                "duration": "1.5 - 2 Tahun",
+                "benefit": "Persiapan JLPT/JFT dan transisi ke universitas Jepang."
             },
-            "requirement_common": "Lulus SMA/SMK, JLPT N2 atau EJU, Dokumen akademik lengkap",
+            "requirement_common": "Lulus SMA/SMK, JLPT/JFT N2/A2 atau EJU, Dokumen akademik lengkap",
             "scholarships": {
                 "title": "Beasiswa",
                 "mext": {
@@ -496,7 +500,7 @@
                 "title": "Layanan Pendampingan",
                 "i1": "Konsultasi pemilihan universitas dan jurusan",
                 "i2": "Bantuan persiapan dokumen aplikasi",
-                "i3": "Pelatihan ujian masuk (EJU, JLPT)",
+                "i3": "Pelatihan ujian masuk (EJU, JLPT/JFT)",
                 "i4": "Panduan pengurusan visa pelajar",
                 "i5": "Orientasi kehidupan di Jepang"
             }
@@ -579,6 +583,54 @@
             "upload_btn": "Upload",
             "upload_hint": "Pilih sebuah file drag atau drop disini",
             "upload_max_size": "Maksimal 5MB ukuran file"
+        }
+    },
+    "blog": {
+        "sidebar": {
+            "searchTitle": "Cari Artikel",
+            "searchPlaceholder": "Masukkan kata kunci...",
+            "searchAriaLabel": "Cari artikel",
+            "categoryTitle": "Kategori",
+            "popularTitle": "Postingan Populer"
+        },
+        "card": {
+            "readMore": "Baca Selengkapnya"
+        },
+        "filter": {
+            "allCategory": "Semua",
+            "showingTag": "Menampilkan artikel dengan tag:",
+            "clearFilter": "Hapus Filter",
+            "noResults": "Tidak ada artikel yang cocok dengan filter Anda."
+        },
+        "detail": {
+            "breadcrumb": "Berita",
+            "previousPost": "Artikel Sebelumnya",
+            "nextPost": "Artikel Berikutnya",
+            "tags": "Tags:"
+        },
+        "cta": {
+            "sidebarTitle": "Siap Memulai Karir Anda?",
+            "sidebarDescription": "Daftar sekarang untuk konsultasi gratis dengan konsultan karir kami.",
+            "sidebarButton": "Daftar Sekarang",
+            "detailTitle": "Tertarik Bergabung?",
+            "detailDescription": "Dapatkan konsultasi gratis mengenai peluang karier Anda di Jepang bersama tim ahli Yayasan Jissho.",
+            "contactButton": "Hubungi Kami",
+            "programButton": "Lihat Program"
+        },
+        "seo": {
+            "title": "Berita & Wawasan Terbaru",
+            "description": "Baca artikel dan informasi terbaru seputar belajar bahasa Jepang, persiapan JLPT, budaya kerja Jepang, dan peluang bekerja di Jepang."
+        }
+    },
+    "gallery": {
+        "title": "Galeri Aktivitas Kami",
+        "description": "Melihat lebih dekat perjalanan siswa kami dalam menggapai impian belajar dan bekerja di Jepang melalui berbagai kegiatan inspiratif.",
+        "categories": {
+            "all": "Semua Foto",
+            "language_class": "Kelas Bahasa",
+            "japanese_culture": "Budaya Jepang",
+            "job_preparation": "Persiapan Kerja",
+            "foundation_event": "Acara Yayasan"
         }
     }
 }

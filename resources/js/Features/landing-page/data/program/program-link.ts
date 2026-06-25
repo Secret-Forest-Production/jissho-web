@@ -6,7 +6,7 @@ export const programData = {
       icon: "solar:book-bookmark-bold-duotone",
       title: "program_list.items.basic.title",
       desc: "program_list.items.basic.description",
-      features: ["program_list.items.basic.features.f1", "program_list.items.basic.features.f2", "program_list.items.basic.features.f3"]
+      features: ["program_list.items.basic.features.f1", "program_list.items.basic.features.f2", "program_list.items.basic.features.f3", "program_list.items.basic.features.f4"]
     },
     {
       icon: "solar:square-academic-cap-2-bold-duotone",

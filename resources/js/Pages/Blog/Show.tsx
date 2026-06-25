@@ -1,16 +1,24 @@
 import { Head } from "@inertiajs/react";
-
 import BlogDetailContainer from "@/Features/blog-page/containers/blog-detail-container";
+import type { BlogPost } from "@/Features/blog-page/types/blog.type";
 
 interface ShowProps {
-    slug: string;
+    post: BlogPost;
+    recentPosts: BlogPost[];
+    previousPost: { title: string; slug: string; } | null;
+    nextPost: { title: string; slug: string; } | null;
 }
 
-export default function Show({ slug }: ShowProps) {
+export default function Show({ post, recentPosts, previousPost, nextPost }: ShowProps) {
     return (
         <>
-            <Head title="Detail Artikel - Yayasan Jissho" />
-            <BlogDetailContainer slug={slug} />
+            <Head title={`${post.title} - Yayasan Jissho`} />
+            <BlogDetailContainer
+                post={post}
+                recentPosts={recentPosts}
+                previousPost={previousPost}
+                nextPost={nextPost}
+            />
         </>
     );
 }

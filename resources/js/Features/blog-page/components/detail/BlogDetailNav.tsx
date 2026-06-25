@@ -1,23 +1,17 @@
 import { Link } from "@inertiajs/react";
-
-import { blogPosts } from "../../data/blog";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface BlogDetailNavProps {
-    currentPostId: number;
+    previousPost: { title: string; slug: string; } | null;
+    nextPost: { title: string; slug: string; } | null;
 }
 
-export default function BlogDetailNav({ currentPostId }: BlogDetailNavProps) {
-    const currentIndex = blogPosts.findIndex(
-        (post) => post.id === currentPostId,
-    );
-
-    const previousPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
-
-    const nextPost =
-        currentIndex < blogPosts.length - 1
-            ? blogPosts[currentIndex + 1]
-            : null;
+export default function BlogDetailNav({
+    previousPost,
+    nextPost,
+}: BlogDetailNavProps) {
+    const { t } = useTranslation("common");
 
     if (!previousPost && !nextPost) return null;
 
@@ -36,7 +30,7 @@ export default function BlogDetailNav({ currentPostId }: BlogDetailNavProps) {
                             aria-hidden="true"
                             className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
                         />
-                        Artikel Sebelumnya
+                        {t("blog.detail.previousPost")}
                     </div>
 
                     <h3 className="line-clamp-2 font-bold text-gray-900 transition-colors group-hover:text-red-normal">
@@ -53,7 +47,7 @@ export default function BlogDetailNav({ currentPostId }: BlogDetailNavProps) {
                     className="group flex flex-col justify-center border rounded-lg border-gray-200 bg-white p-6 text-right transition-all hover:border-red-normal hover:shadow-md"
                 >
                     <div className="mb-2 flex items-center justify-end text-xs font-bold uppercase tracking-wider text-red-normal">
-                        Artikel Berikutnya
+                        {t("blog.detail.nextPost")}
                         <ArrowRightIcon
                             aria-hidden="true"
                             className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"

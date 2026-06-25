@@ -8,11 +8,6 @@ import type {
 
 import { heroImages } from "@/Shared/data/hero-images";
 
-import IconMagang from "@/Shared/assets-optimized/icons/program-magang.webp";
-import IconKerja from "@/Shared/assets-optimized/icons/program-kerja.webp";
-import IconKuliah from "@/Shared/assets-optimized/icons/program-kuliah.webp";
-import IconIndustri from "@/Shared/assets-optimized/icons/sektor-industri.webp";
-
 import KuliahImg1 from "@/Shared/assets-optimized/program/kuliah-1.webp";
 
 export const programHeroData: ProgramHeroData = {
@@ -24,7 +19,7 @@ export const programHeroData: ProgramHeroData = {
 };
 
 export const programMagangData: ProgramMagangData = {
-    icon: IconMagang,
+    icon: "lucide:folder-open",
     title: "Program",
     highlight: "Magang",
     suffix: "(Technical Intern Training)",
@@ -186,7 +181,7 @@ export const programMagangData: ProgramMagangData = {
 };
 
 export const programKerjaData: ProgramKerjaData = {
-    icon: IconKerja,
+    icon: "lucide:briefcase",
     title: "Program",
     highlight: "Kerja",
     suffix: "SSW (Specified Skilled Worker)",
@@ -199,7 +194,7 @@ export const programKerjaData: ProgramKerjaData = {
             durationDescription: "Dapat diperpanjang hingga total 5 tahun",
             items: [
                 "Memerlukan keterampilan dan pengetahuan tertentu",
-                "Lulus ujian keterampilan dan JLPT N4",
+                "Lulus ujian keterampilan dan JLPT/JFT N4",
                 "Tidak dapat membawa keluarga",
             ],
         },
@@ -218,7 +213,7 @@ export const programKerjaData: ProgramKerjaData = {
 };
 
 export const programKuliahData: ProgramKuliahData = {
-    icon: IconKuliah,
+    icon: "lucide:graduation-cap",
     title: "Program",
     highlight: "Kuliah",
     suffix: "& Perguruan Tinggi",
@@ -231,7 +226,7 @@ export const programKuliahData: ProgramKuliahData = {
             image: KuliahImg1,
             requirements: [
                 "Lulus SMA/SMK",
-                "JLPT N2 atau EJU",
+                "JLPT/JFT N2/A2 atau EJU",
                 "Dokumen akademik lengkap",
             ],
             benefit:
@@ -243,7 +238,7 @@ export const programKuliahData: ProgramKuliahData = {
             image: KuliahImg1,
             requirements: [
                 "Lulus SMA/SMK",
-                "JLPT N2 atau EJU",
+                "JLPT/JFT N2/A2 atau EJU",
                 "Dokumen akademik lengkap",
             ],
             benefit: "Riset akademik dan networking profesional global.",
@@ -254,10 +249,10 @@ export const programKuliahData: ProgramKuliahData = {
             image: KuliahImg1,
             requirements: [
                 "Lulus SMA/SMK",
-                "JLPT N2 atau EJU",
+                "JLPT/JFT N2/A2 atau EJU",
                 "Dokumen akademik lengkap",
             ],
-            benefit: "Persiapan JLPT dan transisi ke universitas Jepang.",
+            benefit: "Persiapan JLPT/JFT dan transisi ke universitas Jepang.",
         },
     ],
     scholarships: [
@@ -277,14 +272,14 @@ export const programKuliahData: ProgramKuliahData = {
     assistances: [
         "Konsultasi pemilihan universitas dan jurusan",
         "Bantuan persiapan dokumen aplikasi",
-        "Pelatihan ujian masuk (EJU, JLPT)",
+        "Pelatihan ujian masuk (EJU, JLPT/JFT)",
         "Panduan pengurusan visa pelajar",
         "Orientasi kehidupan di Jepang",
     ],
 };
 
 export const sektorIndustriData: SektorIndustriData = {
-    icon: IconIndustri,
+    icon: "lucide:factory",
     title: "Sektor Industri yang Tersedia",
     description:
         "Visa kerja profesional untuk tenaga terampil di berbagai sektor industri Jepang.",

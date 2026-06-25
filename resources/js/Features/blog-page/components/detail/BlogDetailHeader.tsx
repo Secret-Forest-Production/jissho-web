@@ -1,7 +1,12 @@
 import type { BlogPost } from "../../types/blog.type";
 import { Calendar, Clock, User } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function BlogDetailHeader({ post }: { post: BlogPost }) {
+    const { i18n } = useTranslation("common");
+
+    const dateLocale = i18n.language === "ja" ? "ja-JP" : i18n.language === "en" ? "en-US" : "id-ID";
+
     return (
         <header className="mb-8">
             <p className="mb-4 inline-block rounded-full bg-red-normal px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
@@ -16,7 +21,7 @@ export default function BlogDetailHeader({ post }: { post: BlogPost }) {
                 <div className="flex items-center gap-1.5">
                     <Calendar className="h-4 w-4" />
                     <time dateTime={post.date}>
-                        {new Date(post.date).toLocaleDateString("id-ID", {
+                        {new Date(post.date).toLocaleDateString(dateLocale, {
                             day: "2-digit",
                             month: "long",
                             year: "numeric",

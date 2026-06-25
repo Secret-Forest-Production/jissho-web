@@ -1,7 +1,10 @@
 import { ChevronRight } from 'lucide-react';
 import { Link } from "@inertiajs/react";
+import { useTranslation } from "react-i18next";
 
 export default function BlogDetailBreadcrumb({ title }: { title: string }) {
+    const { t } = useTranslation("common");
+
     return (
         <nav
             aria-label="Breadcrumb"
@@ -11,7 +14,7 @@ export default function BlogDetailBreadcrumb({ title }: { title: string }) {
                 href="/blog"
                 className="transition-colors hover:text-red-normal"
             >
-                Berita
+                {t("blog.detail.breadcrumb")}
             </Link>
             <ChevronRight className="h-4 w-4" />
             <span className="line-clamp-1 font-medium text-red-normal">

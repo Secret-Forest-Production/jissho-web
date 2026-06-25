@@ -7,13 +7,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { testimoniData } from "../../data/testimoni/testimoni-link";
 import TestimoniCard from "./TestimoniCard";
 import { TESTIMONI_SWIPER_CONFIG } from "./testimoni.constant";
-import type { TestimoniItem } from "./testimoni.type";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function TestimoniSlider() {
+interface TestimoniSliderProps {
+    testimonials: any[];
+}
+
+export default function TestimoniSlider({ testimonials = [] }: TestimoniSliderProps) {
     const prevRef = useRef<HTMLButtonElement | null>(null);
     const nextRef = useRef<HTMLButtonElement | null>(null);
 
@@ -59,8 +61,8 @@ export default function TestimoniSlider() {
                 }}
                 className="pb-16"
             >
-                {testimoniData.list.map((item: TestimoniItem) => (
-                    <SwiperSlide key={item.name} className="h-auto">
+                {testimonials.map((item: any) => (
+                    <SwiperSlide key={item.id} className="h-auto">
                         <TestimoniCard item={item} />
                     </SwiperSlide>
                 ))}
