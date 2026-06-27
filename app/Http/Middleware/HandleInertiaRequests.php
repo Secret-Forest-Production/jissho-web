@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\SiteSetting;
+use App\Models\SocialLink;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Schema;
@@ -52,6 +53,16 @@ class HandleInertiaRequests extends Middleware
             ],
             'locale' => $locale,
             'siteSettings' => $siteSettings,
+            'socialLinks' => cache()->remember('social_links', 3600, function () {
+                if (! Schema::hasTable('social_links')) {
+                    return [];
+                }
+
+                return SocialLink::where('is_active', true)
+                    ->get(['name', 'url', 'icon'])
+                    ->keyBy('name')
+                    ->toArray();
+            }),
             'flash' => [
                 'success' => fn () => $request->session()->get('success'),
                 'error' => fn () => $request->session()->get('error'),

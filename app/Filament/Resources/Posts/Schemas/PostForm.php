@@ -4,11 +4,11 @@ namespace App\Filament\Resources\Posts\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Schemas\Components\Grid;
 use Filament\Forms\Components\RichEditor;
-use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
@@ -48,6 +48,9 @@ class PostForm
                         FileUpload::make('image')
                             ->label('Gambar Sampul (Cover)')
                             ->image()
+                            ->imageEditor()
+                            ->disk('public')
+                            ->visibility('public')
                             ->directory('posts/covers')
                             ->maxSize(5120) // 5MB
                             ->columnSpanFull(),

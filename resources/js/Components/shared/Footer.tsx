@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import { Icon } from "@iconify/react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -8,6 +8,7 @@ import { footerLinks } from "@/Shared/data/footer-link";
 export default function Footer() {
     const currentYear = new Date().getFullYear();
     const { t } = useTranslation("common");
+    const { socialLinks } = usePage().props as any;
 
     return (
         <footer className="bg-blue-dark pb-8 pt-16 font-sans text-gray-400">
@@ -25,22 +26,28 @@ export default function Footer() {
                     </p>
 
                     <div className="flex items-center gap-3">
-                        {footerLinks.socials.map((social) => (
-                            <a
-                                key={social.href}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-gray-400 transition-all hover:bg-red-normal hover:text-white"
-                                aria-label={social.label}
-                            >
-                                <Icon
-                                    icon={social.icon}
-                                    className="h-5 w-5"
-                                    aria-hidden="true"
-                                />
-                            </a>
-                        ))}
+                        {footerLinks.socials.map((social) => {
+                            const nameKey = social.label.toLowerCase();
+                            const href = socialLinks?.[nameKey]?.url || social.href;
+                            const icon = socialLinks?.[nameKey]?.icon || social.icon;
+
+                            return (
+                                <a
+                                    key={social.label}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-gray-400 transition-all hover:bg-red-normal hover:text-white"
+                                    aria-label={social.label}
+                                >
+                                    <Icon
+                                        icon={icon}
+                                        className="h-5 w-5"
+                                        aria-hidden="true"
+                                    />
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
 
