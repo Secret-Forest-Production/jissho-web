@@ -27,7 +27,7 @@ class TestimonialResource extends Resource
     protected static ?string $model = Testimonial::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleBottomCenterText;
-    
+
     protected static string|\UnitEnum|null $navigationGroup = 'Landing Page';
 
     protected static ?string $recordTitleAttribute = 'name';
@@ -40,7 +40,7 @@ class TestimonialResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->columnSpanFull(),
-                    
+
                 Tabs::make('Translations')
                     ->tabs([
                         Tabs\Tab::make('Indonesian')
@@ -78,14 +78,17 @@ class TestimonialResource extends Resource
 
                 FileUpload::make('image')
                     ->image()
+                    ->imageEditor()
+                    ->disk('public')
+                    ->visibility('public')
                     ->directory('testimonials')
                     ->columnSpanFull(),
-                    
+
                 Toggle::make('is_active')
                     ->label('Active')
                     ->default(true)
                     ->required(),
-                    
+
                 TextInput::make('sort_order')
                     ->label('Sort Order')
                     ->required()

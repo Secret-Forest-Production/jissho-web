@@ -13,7 +13,7 @@ export default function HeroActions() {
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             className="flex flex-wrap gap-4 pt-6 justify-center md:justify-start"
         >
-            <Button href="/daftar" variant="primary" size="lg">
+            <Button href="/daftar-sekarang" variant="primary" size="lg">
                 {t("hero.landing.cta_register")}
             </Button>
 

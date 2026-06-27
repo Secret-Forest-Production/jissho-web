@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { usePage } from "@inertiajs/react";
 
 import ContactForm from "./ContactForm";
 import ContactTitle from "./ContactTitle";
@@ -12,6 +13,7 @@ import type { ContactData, ContactSocial } from "./contact.type";
 export default function ContactSection() {
     const { content, socials } = contactData as ContactData;
     const { t } = useTranslation("common");
+    const { socialLinks } = usePage().props as any;
 
     return (
         <section
@@ -36,21 +38,32 @@ export default function ContactSection() {
                             aria-label={t("about_page.contact.aria_social")}
                             className="mt-10 flex gap-4"
                         >
-                            {socials.map((social: ContactSocial) => (
-                                <a
-                                    key={social.href}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={social.label}
-                                    className={`flex h-12 w-12 items-center justify-center rounded-xl text-3xl transition-transform hover:-translate-y-1 ${social.color}`}
-                                >
-                                    <Icon
-                                        icon={social.icon}
-                                        aria-hidden="true"
-                                    />
-                                </a>
-                            ))}
+                            {socials.map((social: ContactSocial) => {
+                                const lowerLabel = social.label.toLowerCase();
+                                const nameKey = lowerLabel.includes("instagram")
+                                    ? "instagram"
+                                    : lowerLabel.includes("facebook")
+                                    ? "facebook"
+                                    : "youtube";
+                                const href = socialLinks?.[nameKey]?.url || social.href;
+                                const icon = socialLinks?.[nameKey]?.icon || social.icon;
+
+                                return (
+                                    <a
+                                        key={social.label}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={social.label}
+                                        className={`flex h-12 w-12 items-center justify-center rounded-xl text-3xl transition-transform hover:-translate-y-1 ${social.color}`}
+                                    >
+                                        <Icon
+                                            icon={icon}
+                                            aria-hidden="true"
+                                        />
+                                    </a>
+                                );
+                            })}
                         </nav>
                     </div>
 

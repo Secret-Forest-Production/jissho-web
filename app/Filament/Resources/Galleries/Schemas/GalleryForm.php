@@ -18,8 +18,10 @@ class GalleryForm
             ->components([
                 FileUpload::make('image')
                     ->image()
-                    ->directory('galleries')
+                    ->imageEditor()
+                    ->disk('public')
                     ->visibility('public')
+                    ->directory('galleries')
                     ->required()
                     ->columnSpanFull(),
 
