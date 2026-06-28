@@ -1,11 +1,14 @@
 import TestimoniSlider from "./TestimoniSlider";
 import TestimoniTitle from "./TestimoniTitle";
+import TestimoniEmpty from "./TestimoniEmpty";
 
 interface TestimoniSectionProps {
     testimonials: any[];
 }
 
-export default function TestimoniSection({ testimonials }: TestimoniSectionProps) {
+export default function TestimoniSection({
+    testimonials = [],
+}: TestimoniSectionProps) {
     return (
         <section
             id="testimoni"
@@ -16,7 +19,11 @@ export default function TestimoniSection({ testimonials }: TestimoniSectionProps
                 <TestimoniTitle />
 
                 <div className="mt-12">
-                    <TestimoniSlider testimonials={testimonials} />
+                    {testimonials.length > 0 ? (
+                        <TestimoniSlider testimonials={testimonials} />
+                    ) : (
+                        <TestimoniEmpty />
+                    )}
                 </div>
             </div>
         </section>
