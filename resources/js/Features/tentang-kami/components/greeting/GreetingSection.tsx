@@ -11,10 +11,7 @@ export default function GreetingSection() {
     const { content } = greetingData as GreetingData;
     const { t } = useTranslation("common");
 
-    const quotes = [
-        t("about_page.greeting.q1"),
-        t("about_page.greeting.q2")
-    ];
+    const quotes = [t("about_page.greeting.q1"), t("about_page.greeting.q2")];
 
     return (
         <section
@@ -39,7 +36,9 @@ export default function GreetingSection() {
                         <div className="h-full lg:col-span-5">
                             <img
                                 src={content.image}
-                                alt={t("about_page.greeting.aria_img", { name: t("about_page.greeting.name") })}
+                                alt={t("about_page.greeting.aria_img", {
+                                    name: t("about_page.greeting.name"),
+                                })}
                                 loading="lazy"
                                 draggable={false}
                                 className="h-full w-full object-cover"
