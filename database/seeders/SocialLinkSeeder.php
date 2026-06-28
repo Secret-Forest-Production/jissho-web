@@ -31,6 +31,12 @@ class SocialLinkSeeder extends Seeder
                 'icon' => 'mdi:youtube',
                 'is_active' => true,
             ],
+            [
+                'name' => 'tiktok',
+                'url' => 'https://tiktok.com/@yayasanjissho',
+                'icon' => 'ic:baseline-tiktok',
+                'is_active' => true,
+            ],
         ];
 
         foreach ($socials as $social) {

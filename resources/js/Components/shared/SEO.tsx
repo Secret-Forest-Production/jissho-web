@@ -62,6 +62,7 @@ const SEO: React.FC<SEOProps> = ({
             socialLinks?.instagram?.url || "https://instagram.com/yayasanjissho",
             socialLinks?.facebook?.url || "https://facebook.com/yayasanjissho",
             socialLinks?.youtube?.url || "https://youtube.com/@yayasanjissho",
+            socialLinks?.tiktok?.url || "https://tiktok.com/@yayasanjissho",
         ],
     };
 

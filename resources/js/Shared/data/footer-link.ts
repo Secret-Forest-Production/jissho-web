@@ -32,5 +32,10 @@ export const footerLinks = {
             href: "https://youtube.com/@yayasanjissho",
             icon: "basil:youtube-outline",
         },
+        {
+            label: "TikTok",
+            href: "https://tiktok.com/@yayasanjissho",
+            icon: "ic:baseline-tiktok",
+        },
     ],
 };
