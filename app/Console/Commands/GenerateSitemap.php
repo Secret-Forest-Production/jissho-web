@@ -37,11 +37,33 @@ class GenerateSitemap extends Command
             ->add(Url::create(route('galeri'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
             ->add(Url::create(route('blog.index'))->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY));
 
-        // Note: If you have dynamic blog posts in the database, you can loop through them here:
-        // $posts = App\Models\Post::all();
-        // foreach ($posts as $post) {
-        //     $sitemap->add(Url::create(route('blog.show', $post->slug))->setPriority(0.6)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
-        // }
+        // Add database blog posts
+        $dbPosts = \App\Models\Post::whereNotNull('published_at')
+            ->where('published_at', '<=', now())
+            ->get();
+
+        foreach ($dbPosts as $post) {
+            $sitemap->add(Url::create(route('blog.show', $post->slug))
+                ->setPriority(0.6)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
+        }
+
+        // Add mock blog posts that are displayed on the site
+        $mockSlugs = [
+            'cara-efektif-menghafal-kanji',
+            'daftar-gaji-magang-di-jepang',
+            'cara-mengatur-keuangan-selama-di-jepang',
+            'budaya-kerja-jepang-omotenashi-horenso',
+        ];
+
+        $existingSlugs = $dbPosts->pluck('slug')->toArray();
+        foreach ($mockSlugs as $slug) {
+            if (! in_array($slug, $existingSlugs)) {
+                $sitemap->add(Url::create(route('blog.show', $slug))
+                    ->setPriority(0.6)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
+            }
+        }
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
 

@@ -18,7 +18,8 @@ const SEO: React.FC<SEOProps> = ({
     url,
     structuredData,
 }) => {
-    const { url: currentUrl } = usePage();
+    const { url: currentUrl, props } = usePage();
+    const { socialLinks } = props as any;
 
     const appUrl = import.meta.env.VITE_APP_URL || window.location.origin;
 
@@ -58,9 +59,9 @@ const SEO: React.FC<SEOProps> = ({
             availableLanguage: ["Indonesian", "Japanese"],
         },
         sameAs: [
-            "https://instagram.com/yayasanjissho",
-            "https://facebook.com/yayasanjissho",
-            "https://youtube.com/@yayasanjissho",
+            socialLinks?.instagram?.url || "https://instagram.com/yayasanjissho",
+            socialLinks?.facebook?.url || "https://facebook.com/yayasanjissho",
+            socialLinks?.youtube?.url || "https://youtube.com/@yayasanjissho",
         ],
     };
 
