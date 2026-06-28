@@ -2,9 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "@/Components/ui/Button";
 import { useTranslation } from "react-i18next";
+import { usePage } from "@inertiajs/react";
 
 export default function HeroActions() {
     const { t } = useTranslation("common");
+    const { socialLinks } = usePage().props as any;
+    const whatsappUrl = socialLinks?.whatsapp?.url || "https://wa.me/6281234567890";
 
     return (
         <motion.div
@@ -17,7 +20,13 @@ export default function HeroActions() {
                 {t("hero.landing.cta_register")}
             </Button>
 
-            <Button href="/konsultasi" variant="outline" size="lg">
+            <Button
+                href={whatsappUrl}
+                variant="outline"
+                size="lg"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 {t("hero.landing.cta_consultation")}
             </Button>
         </motion.div>

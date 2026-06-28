@@ -30,4 +30,29 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
             </url>
+    <url>
+    <loc>http://localhost/blog/strategi-employer-branding-yang-menarik-bagi-generasi-digital-panduan-untuk-perusahaan-konvensional</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/blog/cara-efektif-menghafal-kanji</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/blog/daftar-gaji-magang-di-jepang</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/blog/cara-mengatur-keuangan-selama-di-jepang</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/blog/budaya-kerja-jepang-omotenashi-horenso</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+            </url>
 </urlset>

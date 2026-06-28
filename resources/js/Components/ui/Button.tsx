@@ -12,6 +12,8 @@ interface ButtonProps {
     iconRight?: string;
     onClick?: () => void;
     type?: 'button' | 'submit' | 'reset';
+    target?: string;
+    rel?: string;
 }
 
 export default function Button({
@@ -24,6 +26,8 @@ export default function Button({
     iconRight,
     onClick,
     type = 'button',
+    target,
+    rel,
 }: ButtonProps) {
     
     // Base styles 
@@ -49,8 +53,20 @@ export default function Button({
     const renderIcon = (name?: string) => name ? <Icon icon={name} className="text-xl" /> : null;
 
     if (href) {
+        const isExternal = href.startsWith('http') || href.startsWith('//');
+
+        if (isExternal) {
+            return (
+                <a href={href} className={combinedClasses} target={target} rel={rel}>
+                    {renderIcon(iconLeft)}
+                    {children}
+                    {renderIcon(iconRight)}
+                </a>
+            );
+        }
+
         return (
-            <Link href={href} className={combinedClasses}>
+            <Link href={href} className={combinedClasses} target={target} rel={rel}>
                 {renderIcon(iconLeft)}
                 {children}
                 {renderIcon(iconRight)}

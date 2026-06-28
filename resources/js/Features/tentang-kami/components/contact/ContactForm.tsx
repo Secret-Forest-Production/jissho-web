@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { usePage } from "@inertiajs/react";
 
 import Button from "@/Components/ui/Button";
 import { Pencil, Phone, User } from "lucide-react";
@@ -13,6 +14,8 @@ const iconClassName =
 
 export default function ContactForm() {
     const { t } = useTranslation("common");
+    const { socialLinks } = usePage().props as any;
+    const whatsappUrl = socialLinks?.whatsapp?.url || "https://wa.me/6281234567890";
 
     return (
         <div className="rounded-[30px] bg-white p-8 shadow-lg md:p-10">
@@ -96,7 +99,14 @@ export default function ContactForm() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
-                    <Button type="button" variant="outlinered" size="md">
+                    <Button 
+                        type="button" 
+                        variant="outlinered" 
+                        size="md"
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         {t("hero.landing.cta_consultation")}
                     </Button>
 

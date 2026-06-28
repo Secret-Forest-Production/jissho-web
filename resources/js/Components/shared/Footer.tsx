@@ -110,7 +110,7 @@ export default function Footer() {
                                 className="h-5 w-5 shrink-0 text-red-normal"
                                 aria-hidden="true"
                             />
-                            <span>{footerLinks.contact.phone}</span>
+                            <span>{socialLinks?.phone?.url || footerLinks.contact.phone}</span>
                         </li>
 
                         <li className="flex items-center gap-3">
@@ -118,10 +118,7 @@ export default function Footer() {
                                 className="h-5 w-5 shrink-0 text-red-normal"
                                 aria-hidden="true"
                             />
-                            <span>
-                                info<span className="sr-only"> at </span>
-                                @yayasanjissho.com
-                            </span>
+                            <span>{socialLinks?.email?.url || footerLinks.contact.email}</span>
                         </li>
                     </ul>
                 </div>

@@ -31,6 +31,36 @@ class SocialLinkSeeder extends Seeder
                 'icon' => 'mdi:youtube',
                 'is_active' => true,
             ],
+            [
+                'name' => 'tiktok',
+                'url' => 'https://tiktok.com/@yayasanjissho',
+                'icon' => 'ic:baseline-tiktok',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'phone',
+                'url' => '+62 61 123 4567',
+                'icon' => 'mdi:phone',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'phone_jp',
+                'url' => '+62 61 123 4567',
+                'icon' => 'mdi:phone',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'email',
+                'url' => 'info@yayasanjissho.com',
+                'icon' => 'mdi:email',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'whatsapp',
+                'url' => 'https://wa.me/6281234567890',
+                'icon' => 'mdi:whatsapp',
+                'is_active' => true,
+            ],
         ];
 
         foreach ($socials as $social) {
