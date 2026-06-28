@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { usePage } from "@inertiajs/react";
 
 import type { OfficeLocation } from "./location.type";
 import { Mail, MapPinIcon, Phone } from "lucide-react";
@@ -13,6 +14,11 @@ export default function LocationCard({
     translationKey,
 }: LocationCardProps) {
     const { t } = useTranslation("common");
+    const { socialLinks } = usePage().props as any;
+
+    const phoneKey = translationKey === "japan" ? "phone_jp" : "phone";
+    const officePhone = socialLinks?.[phoneKey]?.url || office.phone;
+    const officeEmail = socialLinks?.email?.url || office.email;
 
     return (
         <article className="flex h-full flex-col rounded-[20px] border border-gray-50 bg-white p-8 shadow-lg">
@@ -70,10 +76,10 @@ export default function LocationCard({
                         </h4>
 
                         <a
-                            href={`tel:${office.phone.replace(/\s+/g, "")}`}
+                            href={`tel:${officePhone.replace(/\s+/g, "")}`}
                             className="mt-1 block text-base text-text-gray transition hover:text-red-normal"
                         >
-                            {office.phone}
+                            {officePhone}
                         </a>
                     </div>
                 </div>
@@ -90,10 +96,10 @@ export default function LocationCard({
                         </h4>
 
                         <a
-                            href={`mailto:${office.email}`}
+                            href={`mailto:${officeEmail}`}
                             className="mt-1 block text-base text-text-gray transition hover:text-red-normal"
                         >
-                            {office.email}
+                            {officeEmail}
                         </a>
                     </div>
                 </div>
