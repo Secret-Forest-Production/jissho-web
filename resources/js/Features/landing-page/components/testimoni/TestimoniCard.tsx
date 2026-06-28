@@ -1,121 +1,189 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
-import { QuoteIcon, X } from "lucide-react";
-import defaultTesti from "@/Shared/assets-optimized/home/testimoni/testi.webp";
 import { AnimatePresence, motion } from "framer-motion";
+import { QuoteIcon, X } from "lucide-react";
+
+import defaultTesti from "@/Shared/assets-optimized/home/testimoni/testi.webp";
 
 interface TestimoniCardProps {
     item: any;
 }
 
 export default function TestimoniCard({ item }: TestimoniCardProps) {
-    const [isImageExpanded, setIsImageExpanded] = useState(false);
     const [mounted, setMounted] = useState(false);
+    const [showImage, setShowImage] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
+
     const { t, i18n } = useTranslation("common");
-    const lang = i18n.language as 'id' | 'en' | 'ja';
+    const lang = i18n.language as "id" | "en" | "ja";
 
     useEffect(() => {
         setMounted(true);
     }, []);
 
     useEffect(() => {
-        if (isImageExpanded) {
+        if (showImage || showMessage) {
             document.body.style.overflow = "hidden";
         } else {
-            document.body.style.overflow = "unset";
+            document.body.style.overflow = "";
         }
+
         return () => {
-            document.body.style.overflow = "unset";
+            document.body.style.overflow = "";
         };
-    }, [isImageExpanded]);
+    }, [showImage, showMessage]);
 
     const getLocalizedText = (field: any) => {
-        if (!field) return '';
-        if (typeof field === 'string') return field;
-        return field[lang] || field['id'] || '';
+        if (!field) return "";
+        if (typeof field === "string") return field;
+
+        return field[lang] || field.id || "";
     };
+
+    const message = getLocalizedText(item.message);
+    const role = getLocalizedText(item.role);
 
     const imageUrl = item.image ? `/storage/${item.image}` : defaultTesti;
 
-    const modalContent = (
-        <AnimatePresence>
-            {isImageExpanded && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={() => setIsImageExpanded(false)}
-                    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4 backdrop-blur-md cursor-zoom-out"
-                >
-                    <button
-                        type="button"
-                        className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 md:right-8 md:top-8 focus:outline-none focus:ring-2 focus:ring-white"
-                        onClick={() => setIsImageExpanded(false)}
-                    >
-                        <X className="h-6 w-6" />
-                    </button>
-                    <motion.img
-                        initial={{ scale: 0.8, opacity: 0, y: 20 }}
-                        animate={{ scale: 1, opacity: 1, y: 0 }}
-                        exit={{ scale: 0.8, opacity: 0, y: 20 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                        src={imageUrl}
-                        alt={item.name}
-                        className="max-h-[85vh] max-w-[90vw] cursor-default rounded-2xl object-contain shadow-2xl ring-1 ring-white/10"
-                        onClick={(e) => e.stopPropagation()}
-                    />
-                </motion.div>
-            )}
-        </AnimatePresence>
-    );
+    const needReadMore = message.length > 180;
 
     return (
         <>
-            <article className="relative m-1 bg-white p-6 shadow-md md:m-2 md:p-8">
-                <QuoteIcon
-                    aria-hidden="true"
-                    className="h-6 w-6 text-red-normal opacity-20"
-                />
+            <article className="m-2 flex h-75 flex-col rounded-xl bg-white p-8 shadow-md">
+                <QuoteIcon className="h-7 w-7 text-red-normal/20" />
 
-                <figure className="flex items-center gap-6">
-                    <div className="mt-2 shrink-0">
-                        <button
-                            type="button"
-                            onClick={() => setIsImageExpanded(true)}
-                            className="group h-16 w-16 overflow-hidden rounded-full border-4 border-red-light-active focus:outline-none focus:ring-2 focus:ring-red-normal focus:ring-offset-2 transition-all hover:border-red-normal cursor-zoom-in"
-                        >
-                            <img
-                                src={imageUrl}
-                                alt={t("testimoni.aria_photo", {
-                                    name: item.name,
-                                })}
-                                loading="lazy"
-                                draggable={false}
-                                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                            />
-                        </button>
-                    </div>
+                <div className="mt-4 flex flex-1 gap-5">
+                    <button
+                        type="button"
+                        onClick={() => setShowImage(true)}
+                        className="h-16 w-16 shrink-0 overflow-hidden rounded-full border-4 border-red-light transition hover:border-red-normal"
+                    >
+                        <img
+                            src={imageUrl}
+                            alt={item.name}
+                            draggable={false}
+                            loading="lazy"
+                            className="h-full w-full object-cover"
+                        />
+                    </button>
 
-                    <figcaption className="flex flex-col gap-4">
-                        <blockquote className="line-clamp-4 text-sm leading-relaxed text-text-gray md:text-base">
-                            “{getLocalizedText(item.message)}”
+                    <div className="flex flex-1 flex-col">
+                        <blockquote className="text-sm leading-7 text-text-gray">
+                            <p className="line-clamp-3">"{message}"</p>
+
+                            {needReadMore && (
+                                <button
+                                    type="button"
+                                    onClick={() => setShowMessage(true)}
+                                    className="mt-2 font-semibold text-red-normal hover:underline"
+                                >
+                                    Read more →
+                                </button>
+                            )}
                         </blockquote>
 
-                        <div>
-                            <h3 className="text-lg font-bold text-blue-dark">
+                        <div className="mt-auto pt-5">
+                            <h3 className="text-xl font-bold text-blue-dark">
                                 {item.name}
                             </h3>
 
-                            <p className="text-sm text-red-normal md:text-base">
-                                {getLocalizedText(item.role)}
-                            </p>
+                            <p className="mt-1 text-red-normal">{role}</p>
                         </div>
-                    </figcaption>
-                </figure>
+                    </div>
+                </div>
             </article>
 
-            {mounted && createPortal(modalContent, document.body)}
+            {mounted &&
+                createPortal(
+                    <AnimatePresence>
+                        {showImage && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="fixed inset-0 z-9999 flex items-center justify-center bg-black/70 p-6"
+                                onClick={() => setShowImage(false)}
+                            >
+                                <button
+                                    className="absolute right-6 top-6 text-white"
+                                    onClick={() => setShowImage(false)}
+                                >
+                                    <X size={28} />
+                                </button>
+
+                                <motion.img
+                                    initial={{
+                                        scale: 0.9,
+                                        opacity: 0,
+                                    }}
+                                    animate={{
+                                        scale: 1,
+                                        opacity: 1,
+                                    }}
+                                    exit={{
+                                        scale: 0.9,
+                                        opacity: 0,
+                                    }}
+                                    src={imageUrl}
+                                    alt={item.name}
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="max-h-[85vh] max-w-[90vw] rounded-2xl"
+                                />
+                            </motion.div>
+                        )}
+
+                        {showMessage && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="fixed inset-0 z-9999 flex items-center justify-center bg-black/60 p-5"
+                                onClick={() => setShowMessage(false)}
+                            >
+                                <motion.div
+                                    initial={{
+                                        scale: 0.95,
+                                        opacity: 0,
+                                    }}
+                                    animate={{
+                                        scale: 1,
+                                        opacity: 1,
+                                    }}
+                                    exit={{
+                                        scale: 0.95,
+                                        opacity: 0,
+                                    }}
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="w-full max-w-xl rounded-2xl bg-white p-8 shadow-2xl"
+                                >
+                                    <div className="mb-5 flex items-center justify-between">
+                                        <h3 className="text-xl font-bold text-blue-dark">
+                                            {item.name}
+                                        </h3>
+
+                                        <button
+                                            onClick={() =>
+                                                setShowMessage(false)
+                                            }
+                                        >
+                                            <X />
+                                        </button>
+                                    </div>
+
+                                    <p className="mb-4 text-red-normal">
+                                        {role}
+                                    </p>
+
+                                    <p className="whitespace-pre-wrap leading-8 text-text-gray text-justify">
+                                        {message}
+                                    </p>
+                                </motion.div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>,
+                    document.body,
+                )}
         </>
     );
 }
