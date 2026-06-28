@@ -10,7 +10,6 @@ export default function MitraTitle() {
             title={t("mitra.title")}
             highlight={t("mitra.highlight")}
             description={t("mitra.description")}
-            align="left"
             className="mb-0"
         />
     );

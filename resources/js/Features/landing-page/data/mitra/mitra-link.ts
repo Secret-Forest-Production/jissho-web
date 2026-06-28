@@ -1,18 +1,55 @@
-import Mitra1 from "@/Shared/assets-optimized/home/mitra/mitra (1).webp";
-import Mitra2 from "@/Shared/assets-optimized/home/mitra/mitra (2).webp";
-import Mitra3 from "@/Shared/assets-optimized/home/mitra/mitra (3).webp";
+import JapanInterstudyCenterIndonesia from "@/Shared/assets/home/mitra/japan-interstudy-center-indonesia.webp";
+import LVILEngineeringConsultantsCoLtd from "@/Shared/assets/home/mitra/lvil-engineering-consultants-co-ltd.webp";
+import SankyoFujikiGroup from "@/Shared/assets/home/mitra/sankyo-fujiki-group.webp";
+import SynergyGlobalHousing from "@/Shared/assets/home/mitra/synergy-global-housing.webp";
+import SyonanJapaneseAcademyHamamatsuCampus from "@/Shared/assets/home/mitra/syonan-japanese-academy-hamamatsu-campus.webp";
 
 export const mitraData = {
-    title: { main: "Mitra", highlight: "Kami" },
+    title: {
+        main: "Mitra",
+        highlight: "Kami",
+    },
+
     description: "Mitra yang bekerja sama dengan kami",
-    logos: [
-        { name: "Mitra 1", src: Mitra1 },
-        { name: "Mitra 2", src: Mitra2 },
-        { name: "Mitra 3", src: Mitra3 },
-        { name: "Mitra 4", src: Mitra1 },
-        { name: "Mitra 5", src: Mitra2 },
-        { name: "Mitra 6", src: Mitra3 },
-        { name: "Mitra 7", src: Mitra1 },
-        { name: "Mitra 8", src: Mitra2 },
+
+    rows: [
+        {
+            titles: ["Friendly Cooperative", "BMA Cooperative"],
+
+            logos: [
+                {
+                    name: "Japan Interstudy Center Indonesia",
+                    src: JapanInterstudyCenterIndonesia,
+                    width: "w-44",
+                },
+                {
+                    name: "LVIL Engineering Consultants Co., Ltd.",
+                    src: LVILEngineeringConsultantsCoLtd,
+                    width: "w-72",
+                },
+                {
+                    name: "Sankyo Fujiki Group",
+                    src: SankyoFujikiGroup,
+                    width: "w-52",
+                },
+            ],
+        },
+
+        {
+            titles: ["Ren Cooperative", "Business Communication CO., LTD"],
+
+            logos: [
+                {
+                    name: "Synergy Global Housing",
+                    src: SynergyGlobalHousing,
+                    width: "w-56",
+                },
+                {
+                    name: "Syonan Japanese Academy Hamamatsu Campus",
+                    src: SyonanJapaneseAcademyHamamatsuCampus,
+                    width: "w-64",
+                },
+            ],
+        },
     ],
 };
