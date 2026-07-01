@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
@@ -14,6 +14,11 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
     const [mounted, setMounted] = useState(false);
     const [showImage, setShowImage] = useState(false);
     const [showMessage, setShowMessage] = useState(false);
+    const [needReadMore, setNeedReadMore] = useState(false);
+
+    const messageRef = useRef<HTMLParagraphElement>(null);
+    const nameRef = useRef<HTMLHeadingElement>(null);
+    const roleRef = useRef<HTMLParagraphElement>(null);
 
     const { t, i18n } = useTranslation("common");
     const lang = i18n.language as "id" | "en" | "ja";
@@ -46,18 +51,48 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
 
     const imageUrl = item.image ? `/storage/${item.image}` : defaultTesti;
 
-    const needReadMore = message.length > 180;
+    useEffect(() => {
+        const checkOverflow = () => {
+            const messageOverflow =
+                !!messageRef.current &&
+                messageRef.current.scrollHeight >
+                    messageRef.current.clientHeight;
+
+            const nameOverflow =
+                !!nameRef.current &&
+                nameRef.current.scrollHeight > nameRef.current.clientHeight;
+
+            const roleOverflow =
+                !!roleRef.current &&
+                roleRef.current.scrollHeight > roleRef.current.clientHeight;
+
+            setNeedReadMore(messageOverflow || nameOverflow || roleOverflow);
+        };
+
+        const timer = setTimeout(checkOverflow, 0);
+
+        window.addEventListener("resize", checkOverflow);
+
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener("resize", checkOverflow);
+        };
+    }, [message, role, item.name]);
 
     return (
         <>
-            <article className="m-2 flex h-75 flex-col rounded-xl bg-white p-8 shadow-md">
-                <QuoteIcon className="h-7 w-7 text-red-normal/20" />
+            <article className="m-2 flex h-80 flex-col rounded-xl bg-white p-6 lg:p-8 shadow-md">
+                {/* Quote */}
+                <div className="flex h-6 items-center">
+                    <QuoteIcon className="h-7 w-7 shrink-0 text-red-normal/20" />
+                </div>
 
-                <div className="mt-4 flex flex-1 gap-5">
+                <div className="mt-4 flex flex-1 gap-4 overflow-hidden">
+                    {/* Avatar */}
                     <button
                         type="button"
                         onClick={() => setShowImage(true)}
-                        className="h-16 w-16 shrink-0 overflow-hidden rounded-full border-4 border-red-light transition hover:border-red-normal"
+                        className="h-14 w-14 lg:h-16 lg:w-16 shrink-0 overflow-hidden rounded-full border-4 border-red-light transition hover:border-red-normal"
                     >
                         <img
                             src={imageUrl}
@@ -68,27 +103,40 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
                         />
                     </button>
 
-                    <div className="flex flex-1 flex-col">
-                        <blockquote className="text-sm leading-7 text-text-gray">
-                            <p className="line-clamp-3">"{message}"</p>
+                    {/* Content */}
+                    <div className="flex min-w-0 flex-1 flex-col">
+                        {/* Message */}
+                        <blockquote className="text-sm lg:text-base leading-6 text-text-gray">
+                            <p ref={messageRef} className="line-clamp-3">
+                                "{message}"
+                            </p>
 
                             {needReadMore && (
                                 <button
                                     type="button"
                                     onClick={() => setShowMessage(true)}
-                                    className="mt-2 font-semibold text-red-normal hover:underline"
+                                    className="mt-2 text-sm font-semibold text-red-normal hover:underline"
                                 >
                                     Read more →
                                 </button>
                             )}
                         </blockquote>
 
-                        <div className="mt-auto pt-5">
-                            <h3 className="text-xl font-bold text-blue-dark">
+                        {/* Footer */}
+                        <div className="mt-auto pt-4">
+                            <h3
+                                ref={nameRef}
+                                className="line-clamp-2 lg:text-lg font-bold leading-7 text-blue-dark"
+                            >
                                 {item.name}
                             </h3>
 
-                            <p className="mt-1 text-red-normal">{role}</p>
+                            <p
+                                ref={roleRef}
+                                className="mt-2 line-clamp-2 text-sm leading-5 text-red-normal"
+                            >
+                                {role}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -175,7 +223,7 @@ export default function TestimoniCard({ item }: TestimoniCardProps) {
                                         {role}
                                     </p>
 
-                                    <p className="whitespace-pre-wrap leading-8 text-text-gray text-justify">
+                                    <p className="whitespace-pre-wrap text-justify leading-8 text-text-gray">
                                         {message}
                                     </p>
                                 </motion.div>
