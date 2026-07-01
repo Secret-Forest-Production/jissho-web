@@ -1,49 +1,31 @@
 <?php
 
-namespace App\Filament\Resources\Registrations\Tables;
+namespace App\Filament\Resources\Users\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
-use Filament\Tables\Columns\SelectColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class RegistrationsTable
+class UsersTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('full_name')
+                TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('email')
+                    ->label('Email address')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('phone_number')
-                    ->label('Phone')
-                    ->searchable(),
-                TextColumn::make('gender')
+                TextColumn::make('roles.name')
                     ->badge()
-                    ->formatStateUsing(fn (string $state): string => ucfirst($state))
-                    ->color(fn (string $state): string => match ($state) {
-                        'laki-laki' => 'info',
-                        'perempuan' => 'success',
-                        default => 'gray',
-                    }),
-                TextColumn::make('age')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('origin')
-                    ->searchable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                SelectColumn::make('status')->options([
-                    'pending' => 'Pending',
-                    'approved' => 'Approved',
-                    'rejected' => 'Rejected',
-                ]),
+                    ->label('Roles')
+                    ->color('info'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -58,12 +40,12 @@ class RegistrationsTable
             ])
             ->recordActions([
                 ViewAction::make(),
+                EditAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ])
-            ->defaultSort('created_at', 'desc');
+            ]);
     }
 }

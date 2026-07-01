@@ -43,7 +43,6 @@ class SocialLinkResource extends Resource
     {
         return [
             'index' => ListSocialLinks::route('/'),
-            'create' => CreateSocialLink::route('/create'),
             'edit' => EditSocialLink::route('/{record}/edit'),
         ];
     }

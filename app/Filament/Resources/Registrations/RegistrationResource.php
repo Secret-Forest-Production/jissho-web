@@ -24,6 +24,11 @@ class RegistrationResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = 'Management';
 
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
     public static function form(Schema $schema): Schema
     {
         return RegistrationForm::configure($schema);
@@ -50,9 +55,7 @@ class RegistrationResource extends Resource
     {
         return [
             'index' => ListRegistrations::route('/'),
-            'create' => CreateRegistration::route('/create'),
             'view' => ViewRegistration::route('/{record}'),
-            'edit' => EditRegistration::route('/{record}/edit'),
         ];
     }
 }

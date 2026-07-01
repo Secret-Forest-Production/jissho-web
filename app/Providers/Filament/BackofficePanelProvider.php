@@ -18,7 +18,7 @@ use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Waguilar\FilamentGuardian\FilamentGuardianPlugin;
+use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 
 class BackofficePanelProvider extends PanelProvider
 {
@@ -28,9 +28,11 @@ class BackofficePanelProvider extends PanelProvider
             ->default()
             ->id('backoffice')
             ->path('backoffice')
+            ->globalSearch(false)
             ->login()
+            ->profile()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Rose,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
@@ -39,8 +41,7 @@ class BackofficePanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
+
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -56,7 +57,7 @@ class BackofficePanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])->plugins([
-                FilamentGuardianPlugin::make(),
+                FilamentShieldPlugin::make(),
             ]);
     }
 }

@@ -100,10 +100,12 @@ class TestimonialResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->reorderable('sort_order')
             ->recordTitleAttribute('name')
             ->columns([
                 ImageColumn::make('image')
-                    ->circular(),
+                    ->circular()
+                    ->visibility('public'),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('role.id')
@@ -135,8 +137,7 @@ class TestimonialResource extends Resource
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ])
-            ->defaultSort('sort_order', 'asc');
+            ]);
     }
 
     public static function getPages(): array
