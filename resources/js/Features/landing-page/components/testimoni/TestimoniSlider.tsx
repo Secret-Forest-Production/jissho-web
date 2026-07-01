@@ -20,7 +20,7 @@ export default function TestimoniSlider({
     const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
     return (
-        <div className="relative px-6 md:px-16 lg:px-24">
+        <div className="relative px-6 md:px-16">
             {testimonials.length > 1 && (
                 <>
                     <button
