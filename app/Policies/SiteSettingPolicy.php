@@ -1,47 +1,75 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Policies;
 
+use Illuminate\Foundation\Auth\User as AuthUser;
 use App\Models\SiteSetting;
-use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class SiteSettingPolicy
 {
     use HandlesAuthorization;
-
-    public function viewAny(User $user): bool
+    
+    public function viewAny(AuthUser $authUser): bool
     {
-        return $user->hasAnyRole(['Admin', 'admin']);
+        return $authUser->can('ViewAny:SiteSetting');
     }
 
-    public function view(User $user, SiteSetting $siteSetting): bool
+    public function view(AuthUser $authUser, SiteSetting $siteSetting): bool
     {
-        return $user->hasAnyRole(['Admin', 'admin']);
+        return $authUser->can('View:SiteSetting');
     }
 
-    public function create(User $user): bool
+    public function create(AuthUser $authUser): bool
     {
-        return $user->hasAnyRole(['Admin', 'admin']);
+        return $authUser->can('Create:SiteSetting');
     }
 
-    public function update(User $user, SiteSetting $siteSetting): bool
+    public function update(AuthUser $authUser, SiteSetting $siteSetting): bool
     {
-        return $user->hasAnyRole(['Admin', 'admin']);
+        return $authUser->can('Update:SiteSetting');
     }
 
-    public function delete(User $user, SiteSetting $siteSetting): bool
+    public function delete(AuthUser $authUser, SiteSetting $siteSetting): bool
     {
-        return $user->hasAnyRole(['Admin', 'admin']);
+        return $authUser->can('Delete:SiteSetting');
     }
 
-    public function restore(User $user, SiteSetting $siteSetting): bool
+    public function deleteAny(AuthUser $authUser): bool
     {
-        return $user->hasAnyRole(['Admin', 'admin']);
+        return $authUser->can('DeleteAny:SiteSetting');
     }
 
-    public function forceDelete(User $user, SiteSetting $siteSetting): bool
+    public function restore(AuthUser $authUser, SiteSetting $siteSetting): bool
     {
-        return $user->hasAnyRole(['Admin', 'admin']);
+        return $authUser->can('Restore:SiteSetting');
     }
+
+    public function forceDelete(AuthUser $authUser, SiteSetting $siteSetting): bool
+    {
+        return $authUser->can('ForceDelete:SiteSetting');
+    }
+
+    public function forceDeleteAny(AuthUser $authUser): bool
+    {
+        return $authUser->can('ForceDeleteAny:SiteSetting');
+    }
+
+    public function restoreAny(AuthUser $authUser): bool
+    {
+        return $authUser->can('RestoreAny:SiteSetting');
+    }
+
+    public function replicate(AuthUser $authUser, SiteSetting $siteSetting): bool
+    {
+        return $authUser->can('Replicate:SiteSetting');
+    }
+
+    public function reorder(AuthUser $authUser): bool
+    {
+        return $authUser->can('Reorder:SiteSetting');
+    }
+
 }

@@ -20,12 +20,17 @@ class User extends Authenticatable implements FilamentUser
     /** @use HasFactory<UserFactory> */
     use HasFactory, HasRoles, Notifiable;
 
-    /**
-     * Determine if the user can access the given panel.
-     */
     public function canAccessPanel(Panel $panel): bool
     {
-        return $this->hasAnyRole(['Admin', 'admin']);
+        if ($this->hasAnyRole(['Admin', 'admin'])) {
+            return true;
+        }
+
+        if ($this->hasAnyRole(['Candidate', 'Employer'])) {
+            return false;
+        }
+
+        return $this->roles()->exists() || $this->permissions()->exists();
     }
 
     /**

@@ -16,7 +16,8 @@ class GalleriesTable
     {
         return $table
             ->columns([
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                ->visibility('public'),
                 TextColumn::make('title.id')
                     ->label('Title (ID)')
                     ->searchable(),
@@ -47,6 +48,7 @@ class GalleriesTable
             ->filters([
                 //
             ])
+            ->reorderable('sort_order')
             ->recordActions([
                 EditAction::make(),
             ])
